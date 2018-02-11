@@ -1,0 +1,1901 @@
+<?xml version="1.0"?>
+
+<protocols version="1.0" author="zhou.liu">
+	<!-- 请求从-1000到-9999 -->
+	<!-- 业务对象从-10000到-19999 -->
+	<!-- 响应从-21000到-29999 -->
+	<!-- 游戏中间的请求从-1000到-7999 -->
+	<!-- GM请求从-8000到-9999 -->
+
+
+	<!-- 这里用来定义消息请求 -->
+	<catalog id="-900" value="com.jour.gameserver.model.console.packet.CM_CONSOLE_ADDEXP" />
+	<catalog id="-901" value="com.jour.gameserver.model.console.packet.CM_CONSOLE_ADDMONEY" />
+	<catalog id="-902" value="com.jour.gameserver.model.console.packet.CM_CONSOLE_ITEM" />
+	<catalog id="-903" value="com.jour.gameserver.model.console.packet.CM_CONSOLE_SETPOSITION" />
+	<catalog id="-904" value="com.jour.gameserver.model.console.packet.CM_I_AM_KING" />
+	<catalog id="-905" value="com.jour.gameserver.model.console.packet.CM_START_KINGOFWAR" />
+	<catalog id="-906" value="com.jour.gameserver.model.console.packet.CM_START_GANGOFWAR" />
+	<catalog id="-907" value="com.jour.gameserver.model.console.packet.CM_CONSOLE_SETVIP" />
+	<catalog id="-908" value="com.jour.gameserver.model.console.packet.CM_CONSOLE_REWARD" />
+	<catalog id="-909" value="com.jour.gameserver.model.console.packet.CM_CONSOLE_ADD_MILITARY" />
+	<catalog id="-910" value="com.jour.gameserver.model.console.packet.CM_Console_BECOME_KINGOFKING" />
+	<catalog id="-911" value="com.jour.gameserver.model.console.packet.CM_Get_Server_Version_Md5" />
+	<catalog id="-912" value="com.jour.gameserver.model.console.packet.CM_Console_OpenModule" />
+	<catalog id="-913" value="com.jour.gameserver.model.console.packet.CM_Console_Upgrade_Horse" />
+	<catalog id="-914" value="com.jour.gameserver.model.console.packet.CM_Console_Upgrade_Artifact" />
+	<catalog id="-915" value="com.jour.gameserver.model.console.packet.CM_Console_Upgrade_Soul" />
+	<catalog id="-916" value="com.jour.gameserver.model.console.packet.CM_Console_Kill_Myself" />
+	<catalog id="-917" value="com.jour.gameserver.model.console.packet.CM_CONSOLE_GM" />
+
+	<catalog id="-950" value="com.jour.gameserver.model.world.packet.CM_Get_MapChannel" />
+
+	<catalog id="-999" value="com.jour.gameserver.model.player.packet.CM_CheckNameExist" />
+	<catalog id="-1000" value="com.jour.gameserver.model.player.packet.CM_CheckExist" />
+	<catalog id="-1001" value="com.jour.gameserver.model.player.packet.CM_CreatePlayer" />
+	<catalog id="-1002" value="com.jour.gameserver.model.player.packet.CM_Login" />
+
+	<catalog id="-1003" value="com.jour.gameserver.model.world.packet.CM_EnterWorld" />
+	<catalog id="-1004" value="com.jour.gameserver.model.world.packet.CM_ChangeChannel" />
+	<catalog id="-1005" value="com.jour.gameserver.model.world.packet.CM_Move" />
+	<catalog id="-1006" value="com.jour.gameserver.model.relive.packet.CM_Respawn" />
+	<catalog id="-1007" value="com.jour.gameserver.model.world.packet.CM_PickUp" />
+	<catalog id="-1008" value="com.jour.gameserver.model.world.packet.CM_GatherStart" />
+	<catalog id="-1009" value="com.jour.gameserver.model.world.packet.CM_GatherEnd" />
+	<catalog id="-1010" value="com.jour.gameserver.model.world.packet.CM_StatusNpcStart" />
+	<catalog id="-1011" value="com.jour.gameserver.model.world.packet.CM_StatusNpcEnd" />
+	<catalog id="-1012" value="com.jour.gameserver.model.world.packet.CM_CallBigBrother" />
+
+	<catalog id="-1100" value="com.jour.gameserver.model.skill.packet.CM_UseSkill" />
+	<catalog id="-1111" value="com.jour.gameserver.model.skill.packet.CM_Attack" />
+	<catalog id="-1112" value="com.jour.gameserver.model.player.packet.CM_Heartbeat" />
+
+	<catalog id="-1113" value="com.jour.gameserver.model.item.packet.CM_Drop" />
+	<catalog id="-1114" value="com.jour.gameserver.model.item.packet.CM_Equip" />
+	<catalog id="-1115" value="com.jour.gameserver.model.item.packet.CM_ExchagePack" />
+	<catalog id="-1116" value="com.jour.gameserver.model.item.packet.CM_Store" />
+	<catalog id="-1117" value="com.jour.gameserver.model.item.packet.CM_Take" />
+	<catalog id="-1118" value="com.jour.gameserver.model.item.packet.CM_UnEquip" />
+	<catalog id="-1119" value="com.jour.gameserver.model.item.packet.CM_AddPackSize" />
+	<catalog id="-1120" value="com.jour.gameserver.model.item.packet.CM_Merge" />
+	<catalog id="-1121" value="com.jour.gameserver.model.item.packet.CM_MovePack" />
+	<catalog id="-1122" value="com.jour.gameserver.model.item.packet.CM_UseItem" />
+	<catalog id="-1123" value="com.jour.gameserver.model.item.packet.CM_Split" />
+	<catalog id="-1124" value="com.jour.gameserver.model.item.packet.CM_Sell" />
+	<catalog id="-1125" value="com.jour.gameserver.model.clientdb.packet.CM_KEYBOARD" />
+	<catalog id="-1126" value="com.jour.gameserver.model.transport.packet.CM_Transport" />
+	<catalog id="-1127" value="com.jour.gameserver.model.quest.packet.CM_Accept_Quest" />
+	<catalog id="-1128" value="com.jour.gameserver.model.quest.packet.CM_Reward_Quest" />
+	<catalog id="-1129" value="com.jour.gameserver.model.quest.packet.CM_Complete_Quest" />
+	<catalog id="-1130" value="com.jour.gameserver.model.horse.packet.CM_Ride" />
+	<catalog id="-1131" value="com.jour.gameserver.model.horse.packet.CM_UnRide" />
+	<catalog id="-1132" value="com.jour.gameserver.model.horse.packet.CM_Upgrade" />
+	<catalog id="-1133" value="com.jour.gameserver.model.transport.packet.CM_PlayerTransport" />
+	<catalog id="-1134" value="com.jour.gameserver.model.shop.packet.CM_ShopBuy" />
+	<catalog id="-1135" value="com.jour.gameserver.model.gang.packet.CM_Apply_Gang" />
+	<catalog id="-1136" value="com.jour.gameserver.model.gang.packet.CM_ChangePosition_Gang" />
+	<catalog id="-1137" value="com.jour.gameserver.model.gang.packet.CM_Create_Gang" />
+	<catalog id="-1138" value="com.jour.gameserver.model.gang.packet.CM_DealApply_Gang" />
+	<catalog id="-1139" value="com.jour.gameserver.model.gang.packet.CM_Disband_Gang" />
+	<catalog id="-1140" value="com.jour.gameserver.model.gang.packet.CM_Quit_Gang" />
+	<catalog id="-1141" value="com.jour.gameserver.model.gang.packet.CM_DealInvite_Gang" />
+	<catalog id="-1142" value="com.jour.gameserver.model.gang.packet.CM_Gang_DetailInfo" />
+	<catalog id="-1143" value="com.jour.gameserver.model.gang.packet.CM_Gang_List" />
+	<catalog id="-1144" value="com.jour.gameserver.model.gang.packet.CM_ApplyList_Gang" />
+	<catalog id="-1145" value="com.jour.gameserver.model.gang.packet.CM_ApplyCancel_Gang" />
+	<catalog id="-1146" value="com.jour.gameserver.model.gang.packet.CM_Set_GangInfo" />
+	<catalog id="-1147" value="com.jour.gameserver.model.group.packet.CM_APPLY_LIST_PLAYER" />
+	<catalog id="-1148" value="com.jour.gameserver.model.group.packet.CM_CHANGE_LEADER" />
+	<catalog id="-1149" value="com.jour.gameserver.model.group.packet.CM_DEAL_APPLY_GROUP" />
+	<catalog id="-1150" value="com.jour.gameserver.model.group.packet.CM_EXPEL_GROUP" />
+	<catalog id="-1151" value="com.jour.gameserver.model.group.packet.CM_INVITE_PLAYER" />
+	<catalog id="-1152" value="com.jour.gameserver.model.group.packet.CM_QUIT_GROUP" />
+	<catalog id="-1153" value="com.jour.gameserver.model.group.packet.CM_CREATE_GROUP" />
+	<catalog id="-1154" value="com.jour.gameserver.model.group.packet.CM_GROUP_LIST" />
+	<catalog id="-1155" value="com.jour.gameserver.model.group.packet.CM_APPLY_GROUP" />
+	<catalog id="-1156" value="com.jour.gameserver.model.player.packet.CM_PlayerSimple_Map" />
+	<catalog id="-1157" value="com.jour.gameserver.model.gang.packet.CM_PlayerSimple_Name" />
+	<catalog id="-1158" value="com.jour.gameserver.model.skill.packet.CM_Skill_LevelUp" />
+	<catalog id="-1159" value="com.jour.gameserver.model.gang.packet.CM_Set_AutoDeal" />
+	<catalog id="-1160" value="com.jour.gameserver.model.gang.packet.CM_Expel_Gang" />
+	<catalog id="-1161" value="com.jour.gameserver.model.chat.packet.CM_Chat_Request" />
+	<catalog id="-1162" value="com.jour.gameserver.model.quest.packet.CM_AtOnce_Complete_Quest" />
+	<catalog id="-1163" value="com.jour.gameserver.model.quest.packet.CM_CompleteAllDay_Quest" />
+	<catalog id="-1164" value="com.jour.gameserver.model.quest.packet.CM_LevelUpStar_Quest" />
+	<catalog id="-1165" value="com.jour.gameserver.model.player.packet.CM_SetAutoBattle" />
+	<catalog id="-1166" value="com.jour.gameserver.model.copy.packet.CM_Leave_Copy" />
+	<catalog id="-1167" value="com.jour.gameserver.model.copy.packet.CM_Encourage_Copy" />
+	<catalog id="-1168" value="com.jour.gameserver.model.copy.packet.CM_Enter_Copy" />
+	<catalog id="-1169" value="com.jour.gameserver.model.copy.packet.CM_Copy_BuyCount" />
+	<catalog id="-1170" value="com.jour.gameserver.model.country.packet.CM_Country_Appoint" />
+	<catalog id="-1171" value="com.jour.gameserver.model.country.packet.CM_Country_Depose" />
+	<catalog id="-1172" value="com.jour.gameserver.model.country.packet.CM_Country_Offical" />
+	<catalog id="-1173" value="com.jour.gameserver.model.country.packet.CM_Country_Contribution" />
+	<catalog id="-1174" value="com.jour.gameserver.model.country.packet.CM_Country_Shop_Buy" />
+	<catalog id="-1175" value="com.jour.gameserver.model.copy.packet.CM_Copy_Reward" />
+	<catalog id="-1176" value="com.jour.gameserver.model.country.packet.CM_Country_Store" />
+	<catalog id="-1177" value="com.jour.gameserver.model.country.packet.CM_Country_Take" />
+	<catalog id="-1178" value="com.jour.gameserver.model.country.packet.CM_Country_Coppers" />
+	<catalog id="-1179" value="com.jour.gameserver.model.country.packet.CM_Country_UpgradeDoor" />
+	<catalog id="-1180" value="com.jour.gameserver.model.item.packet.CM_BuyBack" />
+	<catalog id="-1181" value="com.jour.gameserver.model.country.packet.CM_Country_UpgradeFactory" />
+	<catalog id="-1182" value="com.jour.gameserver.model.country.packet.CM_Country_Appoint_Guard" />
+	<catalog id="-1183" value="com.jour.gameserver.model.country.packet.CM_Country_SetNotice" />
+	<catalog id="-1184" value="com.jour.gameserver.model.country.packet.CM_Country_CreateTank" />
+	<catalog id="-1185" value="com.jour.gameserver.model.country.packet.CM_Country_UpgrageTank" />
+	<catalog id="-1186" value="com.jour.gameserver.model.country.packet.CM_Country_Factory" />
+	<catalog id="-1187" value="com.jour.gameserver.model.country.packet.CM_Country_Door" />
+	<catalog id="-1188" value="com.jour.gameserver.model.country.packet.CM_Country_Storage" />
+	<catalog id="-1189" value="com.jour.gameserver.model.copy.packet.CM_Copy_LadderReset" />
+	<catalog id="-1190" value="com.jour.gameserver.model.country.packet.CM_Country_Depose_Guard" />
+	<catalog id="-1191" value="com.jour.gameserver.model.copy.packet.CM_Copy_Batch" />
+	<catalog id="-1192" value="com.jour.gameserver.model.military.packet.CM_strategy_upgrade" />
+	<catalog id="-1193" value="com.jour.gameserver.model.country.packet.CM_Country_UpgradeFlag" />
+	<catalog id="-1194" value="com.jour.gameserver.model.country.packet.CM_Country_Flag" />
+	<catalog id="-1195" value="com.jour.gameserver.model.country.packet.CM_Country_CallTogether" />
+	<catalog id="-1196" value="com.jour.gameserver.model.country.packet.CM_Country_CallTogether_Guard" />
+	<catalog id="-1197" value="com.jour.gameserver.model.copy.packet.CM_Copy_LadderReward" />
+	<catalog id="-1198" value="com.jour.gameserver.model.country.packet.CM_Country_ForbidChat" />
+	<catalog id="-1199" value="com.jour.gameserver.model.country.packet.CM_Country_SetTraitor" />
+	<catalog id="-1200" value="com.jour.gameserver.model.player.packet.CM_Question_Response" />
+	<catalog id="-1201" value="com.jour.gameserver.model.country.packet.CM_Country_OpenCivilSalary" />
+	<catalog id="-1202" value="com.jour.gameserver.model.country.packet.CM_Country_OpenOfficialSalary" />
+	<catalog id="-1203" value="com.jour.gameserver.model.country.packet.CM_Country_ReceivedCivilSalary" />
+	<catalog id="-1204" value="com.jour.gameserver.model.country.packet.CM_Country_ReceivedOfficialSalary" />
+	<catalog id="-1205" value="com.jour.gameserver.model.country.packet.CM_Country_DistributeTank" />
+	<catalog id="-1206" value="com.jour.gameserver.model.country.packet.CM_Country_CallbackTank" />
+	<catalog id="-1207" value="com.jour.gameserver.model.country.packet.CM_Country_DistributeTogetherToken" />
+	<catalog id="-1208" value="com.jour.gameserver.model.copy.packet.SM_Copy_LadderComplete" />
+	<catalog id="-1209" value="com.jour.gameserver.model.country.packet.CM_Country_UseCallToken" />
+	<catalog id="-1210" value="com.jour.gameserver.model.country.packet.CM_Country_MovePack" />
+	<catalog id="-1211" value="com.jour.gameserver.model.country.packet.CM_Country_Shop" />
+	<catalog id="-1212" value="com.jour.gameserver.model.quest.packet.CM_GiveUp_Quest" />
+	<catalog id="-1213" value="com.jour.gameserver.model.item.packet.CM_Compose" />
+	<catalog id="-1214" value="com.jour.gameserver.model.item.packet.CM_EnhanceEquip" />
+	<catalog id="-1215" value="com.jour.gameserver.model.item.packet.CM_ExtendsEquip" />
+	<catalog id="-1216" value="com.jour.gameserver.model.item.packet.CM_SmeltEquipment" />
+	<catalog id="-1217" value="com.jour.gameserver.model.item.packet.CM_EquipReElement" />
+	<catalog id="-1218" value="com.jour.gameserver.model.clientdb.packet.CM_CLIENT_SETTINGS" />
+	<catalog id="-1219" value="com.jour.gameserver.model.contact.packet.CM_SET_DISBAND_ADD" />
+	<catalog id="-1220" value="com.jour.gameserver.model.player.packet.CM_ComplexStat_Settings" />
+	<catalog id="-1221" value="com.jour.gameserver.model.copy.packet.CM_Copy_Boss_Reward" />
+	<catalog id="-1222" value="com.jour.gameserver.model.copy.packet.CM_Clear_ExpCopyMonster" />
+
+	<catalog id="-1223" value="com.jour.gameserver.model.quest.packet.CM_Refresh_Quest" />
+
+	<catalog id="-1224" value="com.jour.gameserver.model.country.packet.CM_Country_StartExpress" />
+	<catalog id="-1225" value="com.jour.gameserver.model.country.packet.CM_Country_StartTemple" />
+	<catalog id="-1226" value="com.jour.gameserver.model.country.packet.CM_Country_QuestStatus" />
+
+	<catalog id="-1227" value="com.jour.gameserver.model.item.packet.CM_Equip_Inset_Gem" />
+	<catalog id="-1228" value="com.jour.gameserver.model.item.packet.CM_Equip_Unset_Gem" />
+
+	<catalog id="-1230" value="com.jour.gameserver.model.copy.packet.CM_IndividualBoss_Reset" />
+
+	<catalog id="-1237" value="com.jour.gameserver.model.gang.packet.CM_Invite_Gang" />
+	<catalog id="-1238" value="com.jour.gameserver.model.gang.packet.CM_Join_Gang_Chat" />
+	<catalog id="-1239" value="com.jour.gameserver.model.transport.packet.CM_PlayerChatTransport" />
+	<catalog id="-1240" value="com.jour.gameserver.model.skill.packet.CM_Learn_PassiveSkill" />
+
+	<catalog id="-1250" value="com.jour.gameserver.model.express.packet.CM_Express_Reward" />
+	<catalog id="-1251" value="com.jour.gameserver.model.express.packet.CM_Express_Start" />
+	<catalog id="-1252" value="com.jour.gameserver.model.express.packet.CM_Express_Reset" />
+	<catalog id="-1253" value="com.jour.gameserver.model.express.packet.CM_Lorry_AttackTime" />
+	<catalog id="-1254" value="com.jour.gameserver.model.express.packet.CM_Fly_ToLorry" />
+	<catalog id="-1255" value="com.jour.gameserver.model.express.packet.CM_Faraway_Status" />
+	<catalog id="-1256" value="com.jour.gameserver.model.express.packet.CM_Ask_For_Help" />
+
+	<catalog id="-1258" value="com.jour.gameserver.model.contact.packet.CM_ADD_FRIEND" />
+	<catalog id="-1259" value="com.jour.gameserver.model.contact.packet.CM_DELETE_FRIEND" />
+	<catalog id="-1260" value="com.jour.gameserver.model.contact.packet.CM_DELETE_ENEMY" />
+	<catalog id="-1261" value="com.jour.gameserver.model.contact.packet.CM_DELIVER_MOOD" />
+	<catalog id="-1262" value="com.jour.gameserver.model.contact.packet.CM_GET_CONTACTINFO" />
+	<catalog id="-1263" value="com.jour.gameserver.model.contact.packet.CM_SET_MY_SETTINGS" />
+	<catalog id="-1264" value="com.jour.gameserver.model.contact.packet.CM_ADDTO_BLACKLIST" />
+	<catalog id="-1265" value="com.jour.gameserver.model.contact.packet.CM_CANCEL_SHIELD" />
+	<catalog id="-1266" value="com.jour.gameserver.model.contact.packet.CM_QUERY_FRIENDS" />
+	<catalog id="-1267" value="com.jour.gameserver.model.player.packet.CM_Query_Player" />
+	<catalog id="-1268" value="com.jour.gameserver.model.rank.packet.CM_Get_Rank" />
+	<catalog id="-1269" value="com.jour.gameserver.model.rank.packet.CM_Get_Hero_Reward" />
+
+	<catalog id="-1270" value="com.jour.gameserver.model.temple.packet.CM_Temple_Change_Brick" />
+	<catalog id="-1271" value="com.jour.gameserver.model.temple.packet.CM_Temple_Put_Brick" />
+	<catalog id="-1272" value="com.jour.gameserver.model.temple.packet.CM_Temple_Take_Brick" />
+	<catalog id="-1273" value="com.jour.gameserver.model.temple.packet.CM_Temple_StartTake_Brick" />
+	<catalog id="-1277" value="com.jour.gameserver.model.temple.packet.CM_Temple_AccpetQuest" />
+
+	<catalog id="-1278" value="com.jour.gameserver.model.capturetown.packet.CM_Apply_Capture_Town" />
+	<catalog id="-1279" value="com.jour.gameserver.model.capturetown.packet.CM_Buy_Motion" />
+	<catalog id="-1280" value="com.jour.gameserver.model.capturetown.packet.CM_ChallengeTown" />
+	<catalog id="-1281" value="com.jour.gameserver.model.capturetown.packet.CM_Clear_CD" />
+	<catalog id="-1282" value="com.jour.gameserver.model.capturetown.packet.CM_Get_Country_Fight_Info" />
+	<catalog id="-1283" value="com.jour.gameserver.model.capturetown.packet.CM_Get_My_Fight_Info" />
+	<catalog id="-1284" value="com.jour.gameserver.model.capturetown.packet.CM_Get_Specified_Town_Info" />
+	<catalog id="-1285" value="com.jour.gameserver.model.capturetown.packet.CM_Get_Towns_Info" />
+	<catalog id="-1286" value="com.jour.gameserver.model.capturetown.packet.CM_Recieved_Town_Reward" />
+	<catalog id="-1287" value="com.jour.gameserver.model.capturetown.packet.CM_Leave_ChallengeTown" />
+	<catalog id="-1288" value="com.jour.gameserver.model.capturetown.packet.CM_Refresh_Town" />
+
+	<catalog id="-1290" value="com.jour.gameserver.model.investigate.packet.CM_Investigate_Accept" />
+	<catalog id="-1291" value="com.jour.gameserver.model.investigate.packet.CM_Investigate_TakeInfo" />
+	<catalog id="-1292" value="com.jour.gameserver.model.investigate.packet.CM_Investigate_ChangeInfo" />
+	<catalog id="-1293" value="com.jour.gameserver.model.investigate.packet.CM_Investigate_Complete" />
+	<catalog id="-1294" value="com.jour.gameserver.model.rescue.packet.CM_Rescue_Complete" />
+	<catalog id="-1295" value="com.jour.gameserver.model.rescue.packet.CM_Rescue_Start" />
+	<catalog id="-1296" value="com.jour.gameserver.model.gascopy.packet.CM_Enter_GasCopy" />
+	<catalog id="-1297" value="com.jour.gameserver.model.gascopy.packet.CM_Leave_GasCopy" />
+	<catalog id="-1298" value="com.jour.gameserver.model.commonactivity.packet.CM_Get_Recollect" />
+	<catalog id="-1299" value="com.jour.gameserver.model.commonactivity.packet.CM_Draw_Recollect_Rewards" />
+
+
+	<catalog id="-1300" value="com.jour.gameserver.model.exchange.packet.CM_Exchange_Add_Currency" />
+	<catalog id="-1301" value="com.jour.gameserver.model.exchange.packet.CM_Exchange_Add_Item" />
+	<catalog id="-1302" value="com.jour.gameserver.model.exchange.packet.CM_Exchange_Remove_Item" />
+	<catalog id="-1303" value="com.jour.gameserver.model.exchange.packet.CM_Exchange_Ex_Item" />
+	<catalog id="-1304" value="com.jour.gameserver.model.exchange.packet.CM_Exchange_Lock" />
+	<catalog id="-1305" value="com.jour.gameserver.model.exchange.packet.CM_Exchange_Cancel" />
+	<catalog id="-1306" value="com.jour.gameserver.model.exchange.packet.CM_Exchange_Confirm" />
+	<catalog id="-1307" value="com.jour.gameserver.model.exchange.packet.CM_Exchange_Request" />
+	<catalog id="-1308" value="com.jour.gameserver.model.boss.packet.CM_Boss_Coins_Buy" />
+	<catalog id="-1309" value="com.jour.gameserver.model.boss.packet.CM_Boss_Coins_Upgrade" />
+	<catalog id="-1310" value="com.jour.gameserver.model.commonactivity.packet.CM_Recollect_All" />
+
+
+	<catalog id="-1330" value="com.jour.gameserver.model.item.packet.CM_Equip_Create_Soul" />
+	<catalog id="-1331" value="com.jour.gameserver.model.item.packet.CM_Combining_Create_Soul" />
+	<catalog id="-1332" value="com.jour.gameserver.model.collect.packet.CM_Reward_FamedGeneral" />
+	<catalog id="-1333" value="com.jour.gameserver.model.item.packet.CM_Decompose_Item" />
+
+	<catalog id="-1349" value="com.jour.gameserver.model.boss.packet.CM_Boss_View" />
+	<catalog id="-1350" value="com.jour.gameserver.model.boss.packet.CM_Boss_BossView" />
+	<catalog id="-1351" value="com.jour.gameserver.model.boss.packet.CM_Boss_DropInfo" />
+	<catalog id="-1352" value="com.jour.gameserver.model.boss.packet.CM_Boss_Receive_FHReward" />
+	
+	<catalog id="-1374" value="com.jour.gameserver.model.assassin.packet.CM_Enter_Assassin" />
+	<catalog id="-1375" value="com.jour.gameserver.model.assassin.packet.CM_Leave_Assassin" />
+	<catalog id="-1376" value="com.jour.gameserver.model.assassin.packet.CM_Assassin_Ranks" />
+	<catalog id="-1378" value="com.jour.gameserver.model.assassin.packet.CM_Assassin_Dice" />
+
+
+	<catalog id="-1379" value="com.jour.gameserver.model.ministerfete.packet.CM_Enter_Minister" />
+	<catalog id="-1380" value="com.jour.gameserver.model.ministerfete.packet.CM_Leave_Minister" />
+	<catalog id="-1381" value="com.jour.gameserver.model.ministerfete.packet.CM_Minister_Ranks" />
+	<catalog id="-1382" value="com.jour.gameserver.model.ministerfete.packet.CM_Minister_Dice" />
+
+
+	<catalog id="-1400" value="com.jour.gameserver.model.mail.packet.CM_ReadMail" />
+	<catalog id="-1401" value="com.jour.gameserver.model.mail.packet.CM_DeleteMail" />
+	<catalog id="-1402" value="com.jour.gameserver.model.mail.packet.CM_RewardMail" />
+
+	<catalog id="-1410" value="com.jour.gameserver.model.footprint.packet.CM_Close_Footprint" />
+	<catalog id="-1411" value="com.jour.gameserver.model.footprint.packet.CM_Open_Footprint" />
+
+	<catalog id="-1420" value="com.jour.gameserver.model.item.packet.CM_Super_Forge_Equip" />
+
+	<catalog id="-1423" value="com.jour.gameserver.model.country.packet.CM_Country_Relieve_Traitor" />
+	<catalog id="-1424" value="com.jour.gameserver.model.country.packet.CM_Country_Traitor_Num" />
+	<catalog id="-1425" value="com.jour.gameserver.model.country.packet.CM_Country_Traitor_Rank" />
+	<catalog id="-1426" value="com.jour.gameserver.model.copy.packet.CM_MingJiangBoss_Reset" />
+	<!--英魂 -->
+	<catalog id="-1450" value="com.jour.gameserver.model.soul.packet.CM_Soul_Uplevel" />
+	<!--神兵 -->
+	<catalog id="-1451" value="com.jour.gameserver.model.artifact.packet.CM_Artifact_Uplevel" />
+
+	<!-- 国家砍大臣 -->
+	<catalog id="-1452" value="com.jour.gameserver.model.country.packet.CM_Country_Open_Diplomacy" />
+	<catalog id="-1453" value="com.jour.gameserver.model.country.packet.CM_Country_Request_Send_Message" />
+	<!-- 砍国旗 -->
+	<catalog id="-1454" value="com.jour.gameserver.model.country.packet.CM_Country_Open_Flag" />
+	<catalog id="-1455" value="com.jour.gameserver.model.country.packet.CM_Country_Request_Send_Message_Flag" />
+
+	<!-- 国旗,大臣复活 -->
+	<catalog id="-1456" value="com.jour.gameserver.model.country.packet.CM_Country_Flag_Reilve" />
+	<catalog id="-1457" value="com.jour.gameserver.model.country.packet.CM_Country_Diplomacy_Reilve" />
+	<catalog id="-1458" value="com.jour.gameserver.model.country.packet.CM_Country_Check_Activity_Status" />
+
+	<catalog id="-1500" value="com.jour.gameserver.model.kingofwar.packet.CM_KingOfWar_Enter" />
+	<catalog id="-1501" value="com.jour.gameserver.model.kingofwar.packet.CM_KingOfWar_Leave" />
+	<catalog id="-1502" value="com.jour.gameserver.model.kingofwar.packet.CM_KingOfWar_Rank" />
+	<catalog id="-1503" value="com.jour.gameserver.model.kingofwar.packet.CM_KingOfWar_Status" />
+	<catalog id="-1505" value="com.jour.gameserver.model.kingofwar.packet.CM_KingOfWar_ForbidChat" />
+	<catalog id="-1506" value="com.jour.gameserver.model.kingofwar.packet.CM_KingOfWar_CommandPlayerList" />
+	<catalog id="-1507" value="com.jour.gameserver.model.kingofwar.packet.CM_KingOfWar_SetKingCommand" />
+	<catalog id="-1508" value="com.jour.gameserver.model.kingofwar.packet.CM_KingOfWar_Rank_All" />
+	<catalog id="-1509" value="com.jour.gameserver.model.gang.packet.CM_Cry_For_Help" />
+	<catalog id="-1510" value="com.jour.gameserver.model.country.packet.CM_Country_UpgradeShop" />
+	<catalog id="-1511" value="com.jour.gameserver.model.country.packet.CM_Country_Contribute_Shop" />
+
+	<catalog id="-1512" value="com.jour.gameserver.model.item.packet.CM_Attach_God" />
+	<catalog id="-1513" value="com.jour.gameserver.model.mergeactive.packet.CM_Draw_Merge_Consume" />
+	<catalog id="-1514" value="com.jour.gameserver.model.mergeactive.packet.CM_Get_Merge_Consume" />
+	<catalog id="-1515" value="com.jour.gameserver.model.item.packet.CM_Change_Equipment_Suit" />
+	<catalog id="-1516" value="com.jour.gameserver.model.item.packet.CM_Upgrade_Soul" />
+	<catalog id="-1517" value="com.jour.gameserver.model.item.packet.CM_Call_Pet" />
+	<catalog id="-1518" value="com.jour.gameserver.model.item.packet.CM_CallBack_Pet" />
+	<catalog id="-1519" value="com.jour.gameserver.model.world.packet.CM_Pet_PickUp" />
+
+	<catalog id="-1521" value="com.jour.gameserver.model.gangofwar.packet.CM_GangOfWar_Enter" />
+	<catalog id="-1522" value="com.jour.gameserver.model.gangofwar.packet.CM_GangOfWar_Leave" />
+	<catalog id="-1523" value="com.jour.gameserver.model.gangofwar.packet.CM_GangOfWar_Rank" />
+	<catalog id="-1524" value="com.jour.gameserver.model.gangofwar.packet.CM_GangOfWar_Status" />
+	<catalog id="-1525" value="com.jour.gameserver.model.gangofwar.packet.CM_GangOfWar_BackHome" />
+
+	<!-- 国家福利 -->
+	<catalog id="-1530" value="com.jour.gameserver.model.country.packet.CM_Country_Check_Salary_Status" />
+	<catalog id="-1531" value="com.jour.gameserver.model.welfare.packet.CM_One_Off_Gift" />
+	<catalog id="-1532" value="com.jour.gameserver.model.country.packet.CM_Country_Fete" />
+	<catalog id="-1533" value="com.jour.gameserver.model.country.packet.CM_Country_Fete_Log" />
+
+	<catalog id="-1534" value="com.jour.gameserver.model.combatspirit.packet.CM_Query_CombatSpirit" />
+
+	<catalog id="-1535" value="com.jour.gameserver.model.country.packet.CM_Official_Mobilization" />
+	<catalog id="-1536" value="com.jour.gameserver.model.country.packet.CM_Hidden_Mission_Info" />
+
+	<!-- 签到 -->
+	<catalog id="-1600" value="com.jour.gameserver.model.welfare.packet.CM_Welfare_Sign_Open_Panel" />
+	<catalog id="-1601" value="com.jour.gameserver.model.welfare.packet.CM_Welfare_Sign_Ing" />
+	<catalog id="-1602" value="com.jour.gameserver.model.welfare.packet.CM_Welfare_Sign_Reward" />
+	<catalog id="-1603" value="com.jour.gameserver.model.welfare.packet.CM_Welfare_Sign_Fill_Sign" />
+	<!-- 离线经验 -->
+	<catalog id="-1604" value="com.jour.gameserver.model.welfare.packet.CM_Welfare_Offline_OpenPanel" />
+	<catalog id="-1605" value="com.jour.gameserver.model.welfare.packet.CM_Welfare_Offline_Reward" />
+	<!-- 活跃值 -->
+	<catalog id="-1606" value="com.jour.gameserver.model.welfare.packet.CM_Welfare_Active_Open_Panel" />
+	<catalog id="-1607" value="com.jour.gameserver.model.welfare.packet.CM_Welfare_Active_Reward" />
+	<!-- 在线奖励 -->
+	<catalog id="-1608" value="com.jour.gameserver.model.welfare.packet.CM_Welfare_Online_Open" />
+	<catalog id="-1609" value="com.jour.gameserver.model.welfare.packet.CM_Welfare_Online_Reward" />
+
+	<!-- 收益追回 -->
+	<catalog id="-1610" value="com.jour.gameserver.model.welfare.packet.CM_Welfare_Clawback_Open" />
+	<catalog id="-1611" value="com.jour.gameserver.model.welfare.packet.CM_Welfare_Clawback_Reward" />
+	<catalog id="-1612" value="com.jour.gameserver.model.welfare.packet.CM_Welfare_Clawback_Reward_Auto" />
+	<catalog id="-1613" value="com.jour.gameserver.model.welfare.packet.CM_Welfare_Clawback_Reward_Superme" />
+	<catalog id="-1614" value="com.jour.gameserver.model.welfare.packet.CM_Welfare_Draw_Sevenday_Reward" />
+
+	<!-- vip首充领取奖励 -->
+	<catalog id="-1615" value="com.jour.gameserver.model.welfare.packet.CM_Welfare_Draw_FirstPay_Reward" />
+
+	<catalog id="-1620" value="com.jour.gameserver.model.country.packet.CM_All_CountryStatus" />
+
+	<catalog id="-1630" value="com.jour.gameserver.model.countrycopy.packet.CM_CountryCopy_Encourage" />
+	<catalog id="-1631" value="com.jour.gameserver.model.countrycopy.packet.CM_CountryCopy_Enroll" />
+	<catalog id="-1632" value="com.jour.gameserver.model.countrycopy.packet.CM_CountryCopy_UnEnroll" />
+	<catalog id="-1633" value="com.jour.gameserver.model.countrycopy.packet.CM_CountryCopy_Enter" />
+	<catalog id="-1634" value="com.jour.gameserver.model.countrycopy.packet.CM_CountryCopy_Quit" />
+	<catalog id="-1635" value="com.jour.gameserver.model.countrycopy.packet.CM_Encourage_Apply" />
+	<catalog id="-1636" value="com.jour.gameserver.model.countrycopy.packet.CM_Get_Encourage_Info" />
+	<catalog id="-1637" value="com.jour.gameserver.model.countrycopy.packet.CM_CountryCopy_Status" />
+	<catalog id="-1638" value="com.jour.gameserver.model.countrycopy.packet.CM_Get_Encourage_List" />
+
+
+	<!-- 国家操作日志 -->
+	<catalog id="-1700" value="com.jour.gameserver.model.country.packet.CM_Country_Action_See_All_Log" />
+
+	<!-- 弹劾族长 -->
+	<catalog id="-1750" value="com.jour.gameserver.model.gang.packet.CM_IMPEACH_GANG" />
+
+	<catalog id="-1751" value="com.jour.gameserver.model.item.packet.CM_Combining" />
+	<catalog id="-1752" value="com.jour.gameserver.model.chat.packet.CM_Big_Face" />
+	<catalog id="-1753" value="com.jour.gameserver.model.combatspirit.packet.CM_Upgrade_CombatSpirit" />
+	<catalog id="-1754" value="com.jour.gameserver.model.military.packet.CM_Military_Star_Change" />
+
+	<catalog id="-1755" value="com.jour.gameserver.model.express.packet.CM_Get_Current_Express" />
+	<catalog id="-1756" value="com.jour.gameserver.model.express.packet.CM_Rob_Specified_Lorry" />
+	<catalog id="-1757" value="com.jour.gameserver.model.investigate.packet.CM_Query_Investigate_Status" />
+	<catalog id="-1758" value="com.jour.gameserver.model.temple.packet.CM_Query_Temple_Status" />
+
+	<catalog id="-1759" value="com.jour.gameserver.model.world.packet.CM_PlayerSimple_All" />
+	<catalog id="-1760" value="com.jour.gameserver.model.welfare.packet.CM_Welfare_Tag" />
+	<catalog id="-1761" value="com.jour.gameserver.model.moduleopen.packet.CM_Query_Module_Status" />
+	<catalog id="-1762" value="com.jour.gameserver.model.welfare.packet.CM_Get_Red_Gift" />
+	<catalog id="-1763" value="com.jour.gameserver.model.welfare.packet.CM_Query_Red_Gift" />
+	<catalog id="-1764" value="com.jour.gameserver.model.player.packet.CM_Upgrade_General_Soul" />
+	<catalog id="-1765" value="com.jour.gameserver.model.rank.packet.CM_Get_Power_Player" />
+	<catalog id="-1766" value="com.jour.gameserver.model.skill.packet.CM_Buff_Accumulate" />
+	<catalog id="-1767" value="com.jour.gameserver.model.promote.packet.CM_Buy_Promotion" />
+
+	<catalog id="-1800" value="com.jour.gameserver.model.vip.packet.CM_Vip_LevelReward" />
+	<catalog id="-1801" value="com.jour.gameserver.model.vip.packet.CM_Vip_WeekReward" />
+	<catalog id="-1802" value="com.jour.gameserver.model.vip.packet.CM_Vip_ReceiveTempVip" />
+	<catalog id="-1803" value="com.jour.gameserver.model.country.packet.CM_Query_Mobilization" />
+	<catalog id="-1804" value="com.jour.gameserver.model.world.packet.CM_Query_Map_Players" />
+
+	<catalog id="-1805" value="com.jour.gameserver.model.warship.packet.CM_Warship_King" />
+	<catalog id="-1806" value="com.jour.gameserver.model.warship.packet.CM_Warship_Refresh" />
+	<catalog id="-1807" value="com.jour.gameserver.model.warship.packet.CM_Warship_Status" />
+	<catalog id="-1808" value="com.jour.gameserver.model.country.packet.CM_CountryFlag_Damage_Rank" />
+	<catalog id="-1809" value="com.jour.gameserver.model.country.packet.CM_Diplomacy_Damage_Rank" />
+
+	<catalog id="-1810" value="com.jour.gameserver.model.nickname.packet.CM_Nickname_Equip" />
+	<catalog id="-1811" value="com.jour.gameserver.model.nickname.packet.CM_Nickname_UnEquip" />
+	<catalog id="-1812" value="com.jour.gameserver.model.nickname.packet.CM_Nickname_Active" />
+
+	<catalog id="-1850" value="com.jour.gameserver.model.world.packet.CM_BackHome_Start" />
+	<catalog id="-1851" value="com.jour.gameserver.model.world.packet.CM_BackHome_End" />
+
+	<catalog id="-1900" value="com.jour.gameserver.model.world.packet.CM_PlayerChatSimple" />
+	<catalog id="-1901" value="com.jour.gameserver.model.chat.packet.CM_Query_ChatMan" />
+
+	<catalog id="-1910" value="com.jour.gameserver.model.horse.packet.CM_ActiveIllution" />
+	<catalog id="-1911" value="com.jour.gameserver.model.horse.packet.CM_Cancel_Illution" />
+	<catalog id="-1912" value="com.jour.gameserver.model.horse.packet.CM_Effect_Illution" />
+
+	<catalog id="-1920" value="com.jour.gameserver.model.operator.packet.CM_MobilePhone_Reward" />
+	<catalog id="-1921" value="com.jour.gameserver.model.operator.packet.CM_SubInformation_Reward" />
+	<catalog id="-1922" value="com.jour.gameserver.model.operator.packet.CM_OpVip_Reward" />
+	<catalog id="-1923" value="com.jour.gameserver.model.operator.packet.CM_Operator_Ban" />
+	<catalog id="-1924" value="com.jour.gameserver.model.operator.packet.CM_Operator_UnBan" />
+	<catalog id="-1925" value="com.jour.gameserver.model.operator.packet.CM_Operator_ForbidChat" />
+	<catalog id="-1926" value="com.jour.gameserver.model.operator.packet.CM_Operator_Hide" />
+	<catalog id="-1927" value="com.jour.gameserver.model.operator.packet.CM_Operator_Kick" />
+	<catalog id="-1928" value="com.jour.gameserver.model.operator.packet.CM_Operator_ShowGMNickname" />
+	<catalog id="-1929" value="com.jour.gameserver.model.operator.packet.CM_Operator_UnForbidChat" />
+	<catalog id="-1930" value="com.jour.gameserver.model.operator.packet.CM_Operator_UnHide" />
+	<catalog id="-1931" value="com.jour.gameserver.model.operator.packet.CM_Operator_UnShowGMNickname" />
+	<catalog id="-1932" value="com.jour.gameserver.model.operator.packet.CM_Operator_Trace" />
+	<catalog id="-1933" value="com.jour.gameserver.model.operator.packet.CM_WeChat_Reward" />
+
+	<!-- 开服活动 -->
+	<catalog id="-1934" value="com.jour.gameserver.model.openactive.packet.CM_CollectItem_Receive_Reward" />
+	<catalog id="-1935" value="com.jour.gameserver.model.openactive.packet.CM_Query_CountryFlagStatus" />
+	<catalog id="-1936" value="com.jour.gameserver.model.openactive.packet.CM_Query_CompeteStatus" />
+	<catalog id="-1937" value="com.jour.gameserver.model.openactive.packet.CM_Draw_CompeteReward" />
+	<catalog id="-1938" value="com.jour.gameserver.model.openactive.packet.CM_ArtifactUpgrade_Draw_Reward" />
+	<catalog id="-1940" value="com.jour.gameserver.model.openactive.packet.CM_EquipActive_Draw_Reward" />
+	<catalog id="-1942" value="com.jour.gameserver.model.openactive.packet.CM_ExpActive_Draw_Reward" />
+	<catalog id="-1943" value="com.jour.gameserver.model.openactive.packet.CM_EnhenacePower_Draw_Reward" />
+	<catalog id="-1944" value="com.jour.gameserver.model.openactive.packet.CM_SoulUpgrade_Draw_Reward" />
+	<catalog id="-1945" value="com.jour.gameserver.model.operator.packet.CM_OpVip_Reward2" />
+	<catalog id="-1947" value="com.jour.gameserver.model.openactive.packet.CM_EveryDayRecharge_Draw_Reward" />
+	<catalog id="-1948" value="com.jour.gameserver.model.openactive.packet.CM_HorseUpgrade_Draw_Reward" />
+	<catalog id="-1962" value="com.jour.gameserver.model.openactive.packet.CM_Public_Test_Gift_Reward" />
+
+
+	<!-- 投资理财 -->
+	<catalog id="-1949" value="com.jour.gameserver.model.invest.packet.CM_Invest_Buy" />
+	<catalog id="-1950" value="com.jour.gameserver.model.invest.packet.CM_Draw_Reward" />
+	<catalog id="-1951" value="com.jour.gameserver.model.invest.packet.CM_Get_History_Record" />
+
+	<catalog id="-1952" value="com.jour.gameserver.model.agateinvest.packet.CM_Agate_Invest_Buy" />
+	<catalog id="-1953" value="com.jour.gameserver.model.agateinvest.packet.CM_Agate_Draw_Reward" />
+	<catalog id="-1954" value="com.jour.gameserver.model.agateinvest.packet.CM_Agate_Get_History_Record" />
+
+
+	<!-- 储君系统 -->
+	<catalog id="-1958" value="com.jour.gameserver.model.country.packet.CM_ReserveKing_GetInfo" />
+	<catalog id="-1959" value="com.jour.gameserver.model.country.packet.CM_ReserveKing_CallTogether" />
+	<catalog id="-2000" value="com.jour.gameserver.model.country.packet.CM_ReserveKing_Task_Reward" />
+	<catalog id="-2001" value="com.jour.gameserver.model.country.packet.CM_ReserveKing_InitiativeAdbicate" />
+	<catalog id="-2002" value="com.jour.gameserver.model.country.packet.CM_ReserveKing_Become" />
+
+	<!-- 神兵首充 -->
+	<catalog id="-2005" value="com.jour.gameserver.model.artifact.packet.CM_Artifact_Buy_Buff" />
+	<catalog id="-2006" value="com.jour.gameserver.model.artifact.packet.CM_Artifact_Buff_Deprect" />
+
+	<catalog id="-2046" value="com.jour.gameserver.model.countrycopy.packet.CM_Tech_Copy_Quit" />
+	<catalog id="-2047" value="com.jour.gameserver.model.countrycopy.packet.CM_TechCopy_Enter" />
+	<catalog id="-2048" value="com.jour.gameserver.model.countrycopy.packet.CM_Tech_Copy_Ranks" />
+
+	<catalog id="-2057" value="com.jour.gameserver.model.openactive.packet.CM_Query_OldCompeteStatus" />
+	<catalog id="-2058" value="com.jour.gameserver.model.openactive.packet.CM_Draw_OldCompeteReward" />
+	<catalog id="-2059" value="com.jour.gameserver.model.openactive.packet.CM_Old_SoulUpgrade_Draw_Reward" />
+
+	<catalog id="-2100" value="com.jour.gameserver.model.monsterriot.packet.CM_Query_MonsterRiot" />
+	<catalog id="-2101" value="com.jour.gameserver.model.collect.packet.CM_Reward_Collect" />
+
+	<catalog id="-2103" value="com.jour.gameserver.model.country.packet.CM_Flag_Quest_Info" />
+
+	<!-- 探宝 -->
+	<catalog id="-2105" value="com.jour.gameserver.model.item.packet.CM_Treasure_SeekTreasure" />
+	<catalog id="-2106" value="com.jour.gameserver.model.item.packet.CM_Treasure_Queery_All_Treasure_History" />
+	<catalog id="-2107" value="com.jour.gameserver.model.item.packet.CM_Treasure_Take" />
+	<catalog id="-2108" value="com.jour.gameserver.model.item.packet.CM_Treasure_TakeAll" />
+
+	<catalog id="-2109" value="com.jour.gameserver.model.operator.packet.CM_360Gift_Reward" />
+
+	<!-- 公测 -->
+	<catalog id="-2110" value="com.jour.gameserver.model.openactive.packet.CM_GroupPurchase_GetInfo" />
+	<catalog id="-2111" value="com.jour.gameserver.model.openactive.packet.CM_GroupPurchase_Reward" />
+	<catalog id="-2112" value="com.jour.gameserver.model.openactive.packet.CM_GroupPurchase_Two_GetInfo" />
+	<catalog id="-2113" value="com.jour.gameserver.model.openactive.packet.CM_GroupPurchase_Two_Reward" />
+	<!-- 国家科技 -->
+	<catalog id="-2115" value="com.jour.gameserver.model.country.packet.CM_CountryTechnology_Contribute_BuildItem" />
+	<catalog id="-2116" value="com.jour.gameserver.model.country.packet.CM_CountryTechnology_Place_ArmyFlag" />
+	<catalog id="-2117" value="com.jour.gameserver.model.country.packet.CM_CountryTechnology_QueryInfo" />
+	<catalog id="-2118" value="com.jour.gameserver.model.country.packet.CM_CountryTechnology_FlagCount_Refresh" />
+
+	<catalog id="-2119" value="com.jour.gameserver.model.operator.packet.CM_QiHu_Speed_BallReward_Reward" />
+
+	<catalog id="-2120" value="com.jour.gameserver.model.operator.packet.CM_Set_OperatorClientInfo" />
+
+	<catalog id="-2130" value="com.jour.gameserver.model.operator.packet.CM_Draw_QiHu360_Privilege_Reward" />
+
+	<catalog id="-2131" value="com.jour.gameserver.model.openactive.packet.CM_GroupPurchase_Three_GetInfo" />
+	<catalog id="-2132" value="com.jour.gameserver.model.openactive.packet.CM_GroupPurchase_Three_Reward" />
+	<catalog id="-2133" value="com.jour.gameserver.model.operator.model.QiHu360PrivilegeVO" />
+
+	<catalog id="-2134" value="com.jour.gameserver.model.openactive.packet.CM_Celebrate_Reward_Firework" />
+	<catalog id="-2135" value="com.jour.gameserver.model.openactive.packet.CM_Draw_CelebrateReward" />
+
+
+
+	<!-- 时装 -->
+	<catalog id="-2138" value="com.jour.gameserver.model.fashion.packet.CM_Fashion_Wear" />
+	<catalog id="-2139" value="com.jour.gameserver.model.fashion.packet.CM_Fashion_UnWear" />
+	<catalog id="-2140" value="com.jour.gameserver.model.fashion.packet.CM_Fashion_Upgrade" />
+	<catalog id="-2141" value="com.jour.gameserver.model.fashion.packet.CM_Fashion_Operate_Hide" />
+
+	<catalog id="-2142" value="com.jour.gameserver.model.operator.packet.CM_Draw_QiHu360_Speed_Privilege_Reward" />
+	<catalog id="-2143" value="com.jour.gameserver.model.operator.model.QiHu360SpeedPrivilegeVO" />
+	<catalog id="-2144" value="com.jour.gameserver.model.operator.model.QiHu360SpeedPrivilegePlayer" />
+
+	<!-- 黑市 -->
+	<catalog id="-2147" value="com.jour.gameserver.model.blackshop.packet.CM_BlackShop_Query" />
+	<catalog id="-2148" value="com.jour.gameserver.model.blackshop.packet.CM_BlackShop_Buy" />
+	<catalog id="-2149" value="com.jour.gameserver.model.blackshop.packet.CM_BlackShop_Custom_Refresh" />
+	<catalog id="-2150" value="com.jour.gameserver.model.blackshop.packet.CM_BlackShop_System_Refresh" />
+
+	<!-- 营救令 刺探令 -->
+	<catalog id="-2153" value="com.jour.gameserver.model.investigate.packet.CM_Investigate_UseItem" />
+	<catalog id="-2154" value="com.jour.gameserver.model.rescue.packet.CM_Rescue_Use_Item" />
+
+	<!-- 公共活动 -->
+	<catalog id="-2155" value="com.jour.gameserver.model.commonactivity.packet.CM_Common_Login_Gift_Reward" />
+	<catalog id="-2156" value="com.jour.gameserver.model.commonactivity.packet.CM_Common_Cheap_Gift_Bag_Reward" />
+
+	<!-- 通用活动 -->
+	<catalog id="-2157" value="com.jour.gameserver.model.commonactivity.packet.CM_Common_Consume_Draw_Reward" />
+	<catalog id="-2158" value="com.jour.gameserver.model.commonactivity.packet.CM_Common_Recharge_Draw_Reward" />
+	<catalog id="-2159" value="com.jour.gameserver.model.commonactivity.packet.CM_Get_Common_Consume" />
+	<catalog id="-2160" value="com.jour.gameserver.model.commonactivity.packet.CM_Common_Celebrate_Reward_Firework" />
+	<catalog id="-2161" value="com.jour.gameserver.model.commonactivity.packet.CM_Common_Identify_Treasure_Reward" />
+	<catalog id="-2162" value="com.jour.gameserver.model.commonactivity.packet.CM_Common_Identify_Treasure_Query" />
+	<catalog id="-2163" value="com.jour.gameserver.model.commonactivity.packet.CM_Common_First_Pay_Reward" />
+	<catalog id="-2164" value="com.jour.gameserver.model.commonactivity.packet.CM_Common_RedPackActive_Reward"/>
+	<catalog id="-2165" value="com.jour.gameserver.model.commonactivity.packet.CM_Common_TreasureActive_Reward"/>
+	<catalog id="-2166" value="com.jour.gameserver.model.commonactivity.packet.CM_Common_Collect_Word_Reward"/>
+
+	<!-- 暴击活动 -->
+	<catalog id="-2170" value="com.jour.gameserver.model.commonactivity.packet.CM_WeekCri_Buy" />
+
+	<!-- 开服活动修改 -->
+	<catalog id="-2171" value="com.jour.gameserver.model.commonactivity.packet.CM_CommonMarcoShop_Custom_Refresh" />
+	<catalog id="-2172" value="com.jour.gameserver.model.commonactivity.packet.CM_CommonMarcoShop_Buy" />
+	<catalog id="-2173" value="com.jour.gameserver.model.commonactivity.packet.CM_CommonMarcoShop_System_Refresh" />
+	<catalog id="-2174" value="com.jour.gameserver.model.commonactivity.packet.CM_CommonMarcoShop_Query" />
+
+	<catalog id="-2175" value="com.jour.gameserver.model.seal.packet.CM_Seal_Upgrade" />
+	
+	<!-- 美人 -->
+	<catalog id="-2180" value="com.jour.gameserver.model.beauty.packet.CM_Beauty_Active" />
+	<catalog id="-2181" value="com.jour.gameserver.model.beauty.packet.CM_Beauty_Fight" />
+	<catalog id="-2182" value="com.jour.gameserver.model.beauty.packet.CM_Beauty_UnFight" />
+	<catalog id="-2183" value="com.jour.gameserver.model.beauty.packet.CM_Beauty_Linger" />
+
+	<!-- 兵书 -->
+	<catalog id="-2184" value="com.jour.gameserver.model.warbook.packet.CM_Warbook_Upgrade" />
+
+	<!-- 护腕合成 -->
+	<catalog id="-2185" value="com.jour.gameserver.model.item.packet.CM_Combing_Ex" />
+
+	<catalog id="-2186" value="com.jour.gameserver.model.warbook.packet.CM_Warbook_OperateHide" />
+
+	<!-- 坐骑装备 -->
+	<catalog id="-2190" value="com.jour.gameserver.model.item.packet.CM_EnhanceEquip_Ex" />
+	<catalog id="-2191" value="com.jour.gameserver.model.item.packet.CM_ExtendsEquip_Horse" />
+	<catalog id="-2192" value="com.jour.gameserver.model.item.packet.CM_SmeltEquipment_Horse" />
+
+
+	<!-- 命格 -->
+	<catalog id="-2193" value="com.jour.gameserver.model.lifegrid.packet.CM_LifeGrid_Take" />
+	<catalog id="-2194" value="com.jour.gameserver.model.lifegrid.packet.CM_LifeGrid_Take_All" />
+	<catalog id="-2195" value="com.jour.gameserver.model.lifegrid.packet.CM_LifeGrid_OperateLock" />
+	<catalog id="-2196" value="com.jour.gameserver.model.lifegrid.packet.CM_LifeGrid_ExchangePack" />
+	<catalog id="-2197" value="com.jour.gameserver.model.lifegrid.packet.CM_LifeGrid_Equip" />
+	<catalog id="-2198" value="com.jour.gameserver.model.lifegrid.packet.CM_LifeGrid_UnEquip" />
+	<catalog id="-2199" value="com.jour.gameserver.model.lifegrid.packet.CM_LifeGrid_Devour" />
+	<catalog id="-2200" value="com.jour.gameserver.model.lifegrid.packet.CM_LifeGrid_DevourAll" />
+	<catalog id="-2201" value="com.jour.gameserver.model.lifegrid.packet.CM_LifeGrid_Drop" />
+	<catalog id="-2202" value="com.jour.gameserver.model.lifegrid.packet.CM_LifeGrid_Convert" />
+	
+	<!-- 转生 -->
+	<catalog id="-2205" value="com.jour.gameserver.model.suicide.packet.CM_Suicide_Common_Charge" />
+	<catalog id="-2206" value="com.jour.gameserver.model.suicide.packet.CM_Suicide_Quick_Charge" />
+	<catalog id="-2207" value="com.jour.gameserver.model.suicide.packet.CM_Suicide_Transfer" />
+	
+	<!-- 转生装备 -->
+	<catalog id="-2209" value="com.jour.gameserver.model.item.packet.CM_Attach_SuicideState" />
+	
+	<!-- 兵书副本扫荡 -->
+	<catalog id="-2215" value="com.jour.gameserver.model.copy.packet.CM_WarbookCopy_Reset" />
+		
+	<!-- 合服活动 -->
+	<catalog id="-3000" value="com.jour.gameserver.model.mergeactive.packet.CM_Merge_Cheap_Bag_Reward" />
+	<catalog id="-3001" value="com.jour.gameserver.model.mergeactive.packet.CM_Merge_Login_Reward" />
+
+	<!-- 平台活动 -->
+	<catalog id="-3100" value="com.jour.gameserver.model.operator.packet.CM_Browser_2345_Reward" />
+
+	<!-- 通用活动2 -->
+	<catalog id="-3200" value="com.jour.gameserver.model.commonactivity.packet.CM_Lucky_Draw_Draw" />
+	<catalog id="-3201" value="com.jour.gameserver.model.commonactivity.packet.CM_Lucky_Draw_Reward" />
+	<catalog id="-3202" value="com.jour.gameserver.model.commonactivity.packet.CM_Gold_Treasury_Query" />
+	<catalog id="-3203" value="com.jour.gameserver.model.commonactivity.packet.CM_Gold_Treasury_Reset" />
+	<catalog id="-3204" value="com.jour.gameserver.model.commonactivity.packet.CM_Gold_Treasury_Reward" />
+	<catalog id="-3205" value="com.jour.gameserver.model.commonactivity.packet.CM_Gold_Treasury_Query_Master" />
+	<catalog id="-3206" value="com.jour.gameserver.model.commonactivity.packet.CM_Consume_Gift_Reward" />
+	<!-- 副本 -->
+	<catalog id="-3301" value="com.jour.gameserver.model.copy.packet.CM_WarBook_Copy_Reward" />
+	<catalog id="-3302" value="com.jour.gameserver.model.copy.packet.CM_HorseEquip_Copy_Reset" />
+	<catalog id="-3303" value="com.jour.gameserver.model.copy.packet.CM_Copy_Show_Reward" />
+	<catalog id="-3304" value="com.jour.gameserver.model.copy.packet.CM_Clear_HorseEquip_Monster" />
+	<catalog id="-3305" value="com.jour.gameserver.model.military.packet.CM_Break_MilitaryStratege" />
+	
+	<!-- 从这里开始定义消息响应 -->
+	<catalog id="-21000" value="com.jour.gameserver.model.player.packet.SM_CheckExist" />
+	<catalog id="-21001" value="com.jour.gameserver.model.player.packet.SM_CreatePlayer" />
+	<catalog id="-21002" value="com.jour.gameserver.model.player.packet.SM_Login" />
+	<catalog id="-21003" value="com.jour.gameserver.model.player.packet.SM_PlayerInfo" />
+	<catalog id="-21004" value="com.jour.gameserver.model.player.packet.SM_MonsterInfo" />
+	<catalog id="-21005" value="com.jour.gameserver.model.player.packet.SM_DropObjectInfo" />
+	<catalog id="-21006" value="com.jour.gameserver.model.player.packet.SM_GatherableInfo" />
+	<catalog id="-21007" value="com.jour.gameserver.model.player.packet.SM_SummonInfo" />
+	<catalog id="-21008" value="com.jour.gameserver.model.player.packet.SM_LorryInfo" />
+	<catalog id="-21009" value="com.jour.gameserver.model.player.packet.SM_StatusNpcInfo" />
+	<catalog id="-21010" value="com.jour.gameserver.model.player.packet.SM_CountryNpcInfo" />
+	<catalog id="-21011" value="com.jour.gameserver.model.player.packet.SM_BossInfo" />
+	<catalog id="-21012" value="com.jour.gameserver.model.player.packet.SM_Player_Detail" />
+	<catalog id="-21013" value="com.jour.gameserver.model.player.packet.SM_SculptureInfo" />
+	<catalog id="-21014" value="com.jour.gameserver.model.player.packet.SM_Another_Login" />
+	<catalog id="-21015" value="com.jour.gameserver.model.player.packet.SM_BigBrotherInfo" />
+	<catalog id="-21016" value="com.jour.gameserver.model.player.packet.SM_IP_Forbiden" />
+
+
+	<catalog id="-21050" value="com.jour.gameserver.model.gameobjects.packet.SM_StatusNpc_Change" />
+
+	<catalog id="-21060" value="com.jour.gameserver.model.capturetown.packet.SM_Apply_Capture_Town" />
+	<catalog id="-21061" value="com.jour.gameserver.model.capturetown.packet.SM_Buy_Motion" />
+	<catalog id="-21062" value="com.jour.gameserver.model.capturetown.packet.SM_Clear_CD" />
+	<catalog id="-21063" value="com.jour.gameserver.model.capturetown.packet.SM_Get_Country_Fight_Info" />
+	<catalog id="-21064" value="com.jour.gameserver.model.capturetown.packet.SM_Get_My_Fight_Info" />
+	<catalog id="-21065" value="com.jour.gameserver.model.capturetown.packet.SM_Get_Specified_Town_Info" />
+	<catalog id="-21066" value="com.jour.gameserver.model.capturetown.packet.SM_Get_Towns_Info" />
+	<catalog id="-21067" value="com.jour.gameserver.model.capturetown.packet.SM_Recieved_Town_Reward" />
+	<catalog id="-21068" value="com.jour.gameserver.model.capturetown.packet.SM_Reset_PlayerTownInfo" />
+	<catalog id="-21069" value="com.jour.gameserver.model.capturetown.packet.SM_Leave_ChallengeTown" />
+	<catalog id="-21070" value="com.jour.gameserver.model.capturetown.packet.SM_Reward_Base_Feats" />
+	<catalog id="-21071" value="com.jour.gameserver.model.capturetown.packet.SM_Town_Copy_Finish" />
+	<catalog id="-21072" value="com.jour.gameserver.model.capturetown.packet.SM_ChallengeTown" />
+	<catalog id="-21073" value="com.jour.gameserver.model.capturetown.packet.SM_Refresh_Town" />
+	<catalog id="-21074" value="com.jour.gameserver.model.capturetown.packet.SM_Town_Acc_Feats" />
+	<catalog id="-21075" value="com.jour.gameserver.model.player.packet.SM_TownPlayerNpc" />
+
+	<catalog id="-21076" value="com.jour.gameserver.model.gascopy.packet.SM_Enter_GasCopy" />
+	<catalog id="-21077" value="com.jour.gameserver.model.gascopy.packet.SM_GasValue_Change" />
+
+	<catalog id="-21078" value="com.jour.gameserver.model.boss.packet.SM_Boss_Coins_Buy" />
+	<catalog id="-21079" value="com.jour.gameserver.model.boss.packet.SM_Boss_Coins_Upgrade" />
+
+
+	<catalog id="-21080" value="com.jour.gameserver.model.horse.packet.SM_Horse_Learn_Skill" />
+
+
+	<catalog id="-21099" value="com.jour.gameserver.model.skill.packet.SM_UseSkill" />
+	<catalog id="-21100" value="com.jour.gameserver.model.skill.packet.SM_UseSkill_Start" />
+	<catalog id="-21101" value="com.jour.gameserver.model.skill.packet.SM_UseSkill_End" />
+	<catalog id="-21102" value="com.jour.gameserver.model.controllers.packet.SM_Relive" />
+	<catalog id="-21110" value="com.jour.gameserver.model.item.packet.SM_Equips_Update" />
+	<catalog id="-21111" value="com.jour.gameserver.model.skill.packet.SM_Attack" />
+	<catalog id="-21112" value="com.jour.gameserver.model.controllers.packet.SM_ATTACK_STATUS" />
+	<catalog id="-21113" value="com.jour.gameserver.model.controllers.packet.SM_Die" />
+	<catalog id="-21114" value="com.jour.gameserver.model.controllers.packet.SM_STATUPDATE_HP" />
+	<catalog id="-21115" value="com.jour.gameserver.model.controllers.packet.SM_STATUPDATE_MP" />
+	<catalog id="-21116" value="com.jour.gameserver.model.controllers.packet.SM_ABNORMAL_EFFECT" />
+	<catalog id="-21117" value="com.jour.gameserver.model.player.packet.SM_Heartbeat" />
+	<catalog id="-21118" value="com.jour.gameserver.model.item.packet.SM_Drop" />
+	<catalog id="-21119" value="com.jour.gameserver.model.item.packet.SM_Equip" />
+	<catalog id="-21120" value="com.jour.gameserver.model.item.packet.SM_Equipment_Update" />
+	<catalog id="-21121" value="com.jour.gameserver.model.item.packet.SM_ExchagePack" />
+	<catalog id="-21122" value="com.jour.gameserver.model.item.packet.SM_Packet_Update" />
+	<catalog id="-21123" value="com.jour.gameserver.model.item.packet.SM_Store" />
+	<catalog id="-21124" value="com.jour.gameserver.model.item.packet.SM_Take" />
+	<catalog id="-21125" value="com.jour.gameserver.model.item.packet.SM_UnEquip" />
+	<catalog id="-21126" value="com.jour.gameserver.model.item.packet.SM_Equip_Change" />
+	<catalog id="-21127" value="com.jour.gameserver.model.item.packet.SM_UnEquip_Change" />
+	<catalog id="-21128" value="com.jour.gameserver.model.skill.packet.SM_PeriodicAction" />
+	<catalog id="-21129" value="com.jour.gameserver.model.item.packet.SM_AddPackSize" />
+	<catalog id="-21130" value="com.jour.gameserver.model.item.packet.SM_Merge" />
+	<catalog id="-21131" value="com.jour.gameserver.model.item.packet.SM_MovePack" />
+	<catalog id="-21132" value="com.jour.gameserver.model.item.packet.SM_UseItem" />
+	<catalog id="-21133" value="com.jour.gameserver.model.item.packet.SM_Split" />
+	<catalog id="-21134" value="com.jour.gameserver.model.item.packet.SM_Sell" />
+	<catalog id="-21135" value="com.jour.gameserver.model.player.packet.SM_LEVEL_UPDATE" />
+	<catalog id="-21136" value="com.jour.gameserver.model.player.packet.SM_PlayerExpUpdate" />
+	<catalog id="-21137" value="com.jour.gameserver.model.purse.packet.SM_Currency" />
+	<catalog id="-21138" value="com.jour.gameserver.model.gameobjects.packet.SM_PlayerGameStats" />
+	<catalog id="-21139" value="com.jour.gameserver.model.transport.packet.SM_Transport" />
+	<catalog id="-21140" value="com.jour.gameserver.model.world.packet.SM_PickUp" />
+	<catalog id="-21141" value="com.jour.gameserver.model.gameobjects.packet.SM_CreatureSpeedChange" />
+	<catalog id="-21142" value="com.jour.gameserver.model.quest.packet.QuestVO" />
+	<catalog id="-21143" value="com.jour.gameserver.model.quest.packet.QuestKeyVO" />
+	<catalog id="-21144" value="com.jour.gameserver.model.quest.packet.SM_QuestUpdateVO" />
+	<catalog id="-21145" value="com.jour.gameserver.model.quest.packet.SM_ClientQuest_Add" />
+	<catalog id="-21146" value="com.jour.gameserver.model.quest.packet.SM_ClientQuest_Remove" />
+
+	<catalog id="-21147" value="com.jour.gameserver.model.horse.packet.SM_HorseUpdate" />
+	<catalog id="-21148" value="com.jour.gameserver.model.horse.packet.SM_RideBroadcast" />
+	<catalog id="-21149" value="com.jour.gameserver.model.horse.packet.SM_UnRideBroadcast" />
+	<catalog id="-21150" value="com.jour.gameserver.model.transport.packet.SM_PlayerTransport" />
+	<catalog id="-21151" value="com.jour.gameserver.model.shop.packet.SM_ShopBuy" />
+	<catalog id="-21152" value="com.jour.gameserver.model.gang.packet.SM_Apply_Gang" />
+	<catalog id="-21153" value="com.jour.gameserver.model.gang.packet.SM_ApplyResult_Gang" />
+	<catalog id="-21154" value="com.jour.gameserver.model.gang.packet.SM_ChangePosition_Gang" />
+	<catalog id="-21155" value="com.jour.gameserver.model.gang.packet.SM_Create_Gang" />
+	<catalog id="-21156" value="com.jour.gameserver.model.gang.packet.SM_DealApply_Gang" />
+	<catalog id="-21157" value="com.jour.gameserver.model.gang.packet.SM_DealInvite_Gang" />
+	<catalog id="-21158" value="com.jour.gameserver.model.gang.packet.SM_Disband_Gang" />
+	<catalog id="-21159" value="com.jour.gameserver.model.gang.packet.SM_Expel_Gang" />
+	<catalog id="-21160" value="com.jour.gameserver.model.gang.packet.SM_GangInfo" />
+	<catalog id="-21161" value="com.jour.gameserver.model.gang.packet.SM_GangInvite" />
+	<catalog id="-21162" value="com.jour.gameserver.model.gang.packet.SM_Quit_Gang" />
+	<catalog id="-21163" value="com.jour.gameserver.model.gang.packet.SM_Gang_List" />
+	<catalog id="-21164" value="com.jour.gameserver.model.gang.packet.SM_PlayerApply_Gang" />
+	<catalog id="-21165" value="com.jour.gameserver.model.gang.packet.SM_Gang_Login" />
+	<catalog id="-21166" value="com.jour.gameserver.model.gang.packet.SM_Apply_List" />
+	<catalog id="-21167" value="com.jour.gameserver.model.group.packet.SM_APPLY_LIST_PLAYER" />
+	<catalog id="-21168" value="com.jour.gameserver.model.group.packet.SM_DISBAND_GROUP" />
+	<catalog id="-21169" value="com.jour.gameserver.model.group.packet.SM_GROUP_COMMON" />
+	<catalog id="-21170" value="com.jour.gameserver.model.group.packet.SM_GROUP_INFO" />
+	<catalog id="-21171" value="com.jour.gameserver.model.group.packet.SM_GROUP_LEAVE" />
+	<catalog id="-21172" value="com.jour.gameserver.model.group.packet.SM_GROUP_MEMBER_INFO" />
+	<catalog id="-21173" value="com.jour.gameserver.model.group.packet.SM_INVITE_PLAYER" />
+	<catalog id="-21174" value="com.jour.gameserver.model.group.packet.SM_LEADER_CHANGE" />
+	<catalog id="-21175" value="com.jour.gameserver.model.group.packet.SM_PARTY_HE_BECOME_OFFLINE" />
+	<catalog id="-21176" value="com.jour.gameserver.model.group.packet.SM_REJECT_GROUP_INVITE" />
+	<catalog id="-21177" value="com.jour.gameserver.model.group.packet.SM_REQUEST_GROUP_INVITE" />
+	<catalog id="-21178" value="com.jour.gameserver.model.group.packet.SM_STR_REQUEST_GROUP_INVITE" />
+	<catalog id="-21179" value="com.jour.gameserver.model.group.packet.SM_GROUP_LIST" />
+	<catalog id="-21180" value="com.jour.gameserver.model.item.packet.SM_BuyBack" />
+	<catalog id="-21181" value="com.jour.gameserver.model.group.packet.SM_NEW_APPLY" />
+	<catalog id="-21182" value="com.jour.gameserver.model.player.packet.SM_PlayerSimple_Map" />
+	<catalog id="-21183" value="com.jour.gameserver.model.player.packet.SM_Player_Common" />
+	<catalog id="-21184" value="com.jour.gameserver.model.group.packet.SM_PARTY_HE_BECOME_ONLINE" />
+	<catalog id="-21185" value="com.jour.gameserver.model.skill.packet.SM_Skill_Common" />
+	<catalog id="-21186" value="com.jour.gameserver.model.skill.packet.SM_SkillUpdate" />
+	<catalog id="-21187" value="com.jour.gameserver.model.skill.packet.SM_LearnNewSkill" />
+	<catalog id="-21188" value="com.jour.gameserver.model.gang.packet.SM_Set_AutoDeal" />
+	<catalog id="-21189" value="com.jour.gameserver.model.controllers.packet.SM_STATUPDATE_DP" />
+	<catalog id="-21190" value="com.jour.gameserver.model.quest.packet.SM_Quest_Complete" />
+	<catalog id="-21191" value="com.jour.gameserver.model.quest.packet.SM_Quest_Common" />
+	<catalog id="-21192" value="com.jour.gameserver.model.player.packet.SM_RP_Update" />
+	<catalog id="-21193" value="com.jour.gameserver.model.world.packet.SM_Update_Position" />
+	<catalog id="-21194" value="com.jour.gameserver.model.copy.packet.SM_Copy_Encourage" />
+	<catalog id="-21195" value="com.jour.gameserver.model.copy.packet.SM_Copy_EnterCount" />
+	<catalog id="-21196" value="com.jour.gameserver.model.copy.packet.SM_Copy_CompleteCount" />
+	<catalog id="-21197" value="com.jour.gameserver.model.copy.packet.SM_Reward_Complete" />
+	<catalog id="-21198" value="com.jour.gameserver.model.copy.packet.SM_Copy_BuyCount" />
+	<catalog id="-21199" value="com.jour.gameserver.model.copy.packet.SM_Copy_EnemyDie" />
+	<catalog id="-21200" value="com.jour.gameserver.model.player.packet.SM_Question_Request" />
+	<catalog id="-21201" value="com.jour.gameserver.model.country.packet.SM_Country_Appoint" />
+	<catalog id="-21202" value="com.jour.gameserver.model.country.packet.SM_Country_Common" />
+	<catalog id="-21203" value="com.jour.gameserver.model.country.packet.SM_Country_Depose" />
+	<catalog id="-21204" value="com.jour.gameserver.model.country.packet.SM_Country_Offical" />
+	<catalog id="-21205" value="com.jour.gameserver.model.country.packet.SM_Country_Reset" />
+	<catalog id="-21206" value="com.jour.gameserver.model.country.packet.SM_Country_Coppers" />
+	<catalog id="-21207" value="com.jour.gameserver.model.country.packet.SM_Country_UpgradeDoor" />
+	<catalog id="-21208" value="com.jour.gameserver.model.country.packet.SM_Country_UpgradeFactory" />
+	<catalog id="-21209" value="com.jour.gameserver.model.country.packet.SM_Country_UpgradeFlag" />
+	<catalog id="-21210" value="com.jour.gameserver.model.country.packet.SM_Country_Tank" />
+	<catalog id="-21211" value="com.jour.gameserver.model.country.packet.SM_Country_SetNotice" />
+	<catalog id="-21212" value="com.jour.gameserver.model.country.packet.SM_Country_Factory" />
+	<catalog id="-21213" value="com.jour.gameserver.model.country.packet.SM_Country_Door" />
+	<catalog id="-21214" value="com.jour.gameserver.model.country.packet.SM_Country_Storage" />
+	<catalog id="-21215" value="com.jour.gameserver.model.copy.packet.SM_Copy_ResetLadder" />
+	<catalog id="-21216" value="com.jour.gameserver.model.country.packet.SM_Country_Shop_Buy" />
+	<catalog id="-21217" value="com.jour.gameserver.model.copy.packet.SM_Copy_Batch" />
+	<catalog id="-21218" value="com.jour.gameserver.model.military.packet.SM_strategy_update" />
+	<catalog id="-21221" value="com.jour.gameserver.model.military.packet.SM_military_update" />
+	<catalog id="-21222" value="com.jour.gameserver.model.country.packet.SM_Country_CallTogether_Guard" />
+	<catalog id="-21223" value="com.jour.gameserver.model.country.packet.SM_Country_CallTogether" />
+	<catalog id="-21224" value="com.jour.gameserver.model.country.packet.SM_Country_Flag" />
+	<catalog id="-21225" value="com.jour.gameserver.model.country.packet.SM_Country_Contribution" />
+	<catalog id="-21226" value="com.jour.gameserver.model.country.packet.SM_Country_AutorityHistory" />
+	<catalog id="-21227" value="com.jour.gameserver.model.country.packet.SM_Country_OfficalContexts" />
+	<catalog id="-21228" value="com.jour.gameserver.model.country.packet.SM_Country_ForbidChat" />
+	<catalog id="-21229" value="com.jour.gameserver.model.country.packet.SM_Country_CallbackTank" />
+	<catalog id="-21230" value="com.jour.gameserver.model.country.packet.SM_Country_DistributeTank" />
+	<catalog id="-21231" value="com.jour.gameserver.model.country.packet.SM_Country_TogetherToken" />
+	<catalog id="-21232" value="com.jour.gameserver.model.copy.packet.SM_Copy_LadderReward" />
+	<catalog id="-21234" value="com.jour.gameserver.model.country.packet.SM_Country_Shop" />
+	<catalog id="-21235" value="com.jour.gameserver.model.skill.packet.SM_DashSkill" />
+	<catalog id="-21236" value="com.jour.gameserver.model.country.packet.SM_Country_Store" />
+	<catalog id="-21237" value="com.jour.gameserver.model.item.packet.SM_SmeltEquipment" />
+	<catalog id="-21238" value="com.jour.gameserver.model.item.packet.SM_EquipReElement" />
+	<catalog id="-21239" value="com.jour.gameserver.model.gameobjects.packet.SM_BattleScore_Update" />
+	<catalog id="-21240" value="com.jour.gameserver.model.clientdb.packet.SM_CLIENT_SETTINGS" />
+	<catalog id="-21241" value="com.jour.gameserver.model.controllers.packet.SM_PlayerDie" />
+	<catalog id="-21242" value="com.jour.gameserver.model.country.packet.SM_Player_Official_Change" />
+	<catalog id="-21243" value="com.jour.gameserver.model.military.packet.SM_Military_Change_BroadCast" />
+	<catalog id="-21244" value="com.jour.gameserver.model.group.packet.SM_Member_Level_Change" />
+	<catalog id="-21245" value="com.jour.gameserver.model.group.packet.SM_Group_Member_Position" />
+	<catalog id="-21246" value="com.jour.gameserver.model.copy.packet.SM_Copy_BossReward" />
+	<catalog id="-21247" value="com.jour.gameserver.model.quest.packet.SM_RandomQuest_CompleteTime" />
+	<catalog id="-21248" value="com.jour.gameserver.model.group.packet.SM_Member_EnhanceLevel_Change" />
+	<catalog id="-21249" value="com.jour.gameserver.model.collect.packet.SM_FamedGeneral_Update" />
+	<catalog id="-21250" value="com.jour.gameserver.model.express.packet.SM_Express_Fail" />
+	<catalog id="-21251" value="com.jour.gameserver.model.express.packet.SM_Express_Faraway_Open" />
+	<catalog id="-21252" value="com.jour.gameserver.model.express.packet.SM_Express_Faraway_Close" />
+	<catalog id="-21253" value="com.jour.gameserver.model.express.packet.SM_Express_Reward" />
+	<catalog id="-21254" value="com.jour.gameserver.model.express.packet.SM_Express_Rob" />
+	<catalog id="-21255" value="com.jour.gameserver.model.express.packet.SM_Express_Reset" />
+	<catalog id="-21256" value="com.jour.gameserver.model.express.packet.SM_Express_Start" />
+	<catalog id="-21257" value="com.jour.gameserver.model.express.packet.SM_Lorry_MapInfo" />
+	<catalog id="-21258" value="com.jour.gameserver.model.express.packet.SM_Lorry_AttackTime" />
+	<catalog id="-21259" value="com.jour.gameserver.model.express.packet.SM_My_Rob_Count" />
+	<catalog id="-21260" value="com.jour.gameserver.model.item.packet.SM_Compose" />
+	<catalog id="-21261" value="com.jour.gameserver.model.contact.packet.SM_Add_Contact" />
+	<catalog id="-21262" value="com.jour.gameserver.model.contact.packet.SM_DELETE_CONTACT" />
+	<catalog id="-21263" value="com.jour.gameserver.model.contact.packet.SM_GET_CONTACTINFO" />
+	<catalog id="-21264" value="com.jour.gameserver.model.contact.packet.SM_Player_Social_Data" />
+	<catalog id="-21265" value="com.jour.gameserver.model.contact.packet.SM_Player_Social_Login" />
+	<catalog id="-21266" value="com.jour.gameserver.model.contact.packet.SM_Query_Friends" />
+	<catalog id="-21267" value="com.jour.gameserver.model.contact.packet.SM_SET_MY_SETTINGS" />
+	<catalog id="-21268" value="com.jour.gameserver.model.contact.packet.SM_FANS_MESSAGE" />
+	<catalog id="-21269" value="com.jour.gameserver.model.contact.packet.SM_Update_Enemy" />
+	<catalog id="-21270" value="com.jour.gameserver.model.temple.packet.SM_Temple_BrickFail" />
+	<catalog id="-21271" value="com.jour.gameserver.model.temple.packet.SM_Temple_BrickSuccess" />
+	<catalog id="-21272" value="com.jour.gameserver.model.temple.packet.SM_Temple_Change_Brick" />
+	<catalog id="-21273" value="com.jour.gameserver.model.temple.packet.SM_Temple_Take_Brick" />
+	<catalog id="-21276" value="com.jour.gameserver.model.temple.packet.SM_Temple_AccpetQuest" />
+	<catalog id="-21277" value="com.jour.gameserver.model.temple.packet.SM_Temple_Put_Brick" />
+	<catalog id="-21278" value="com.jour.gameserver.model.temple.packet.SM_Temple_StartTake_Brick" />
+	<catalog id="-21280" value="com.jour.gameserver.model.item.packet.SM_EnhanceLevel_Change" />
+	<catalog id="-21281" value="com.jour.gameserver.model.collect.packet.SM_Reward_Collect" />
+	<catalog id="-21282" value="com.jour.gameserver.model.collect.packet.SM_CollectNew_Equip" />
+	<catalog id="-21283" value="com.jour.gameserver.model.openactive.packet.SM_SpecialBoss_Die" />
+	<catalog id="-21284" value="com.jour.gameserver.model.openactive.packet.SM_SpecialBoss_Refresh" />
+	<catalog id="-21285" value="com.jour.gameserver.model.controllers.packet.SM_STATUPDATE_BARRIER" />
+
+	<catalog id="-21290" value="com.jour.gameserver.model.investigate.packet.SM_Investigate_Accept" />
+	<catalog id="-21291" value="com.jour.gameserver.model.investigate.packet.SM_Investigate_TakeInfo" />
+	<catalog id="-21292" value="com.jour.gameserver.model.investigate.packet.SM_Investigate_Complete" />
+	<catalog id="-21293" value="com.jour.gameserver.model.military.packet.SM_Break_MilitaryStratege" />
+
+	<catalog id="-21300" value="com.jour.gameserver.model.exchange.packet.SM_Exchange_Add_Currency" />
+	<catalog id="-21301" value="com.jour.gameserver.model.exchange.packet.SM_Exchange_Add_Item" />
+	<catalog id="-21302" value="com.jour.gameserver.model.exchange.packet.SM_Exchange_Remove_Item" />
+	<catalog id="-21303" value="com.jour.gameserver.model.exchange.packet.SM_Exchange_Ex_Item" />
+	<catalog id="-21304" value="com.jour.gameserver.model.exchange.packet.SM_Exchange_Lock" />
+	<catalog id="-21305" value="com.jour.gameserver.model.exchange.packet.SM_Exchange_Cancel" />
+	<catalog id="-21306" value="com.jour.gameserver.model.exchange.packet.SM_Exchange_Confirm" />
+	<catalog id="-21307" value="com.jour.gameserver.model.exchange.packet.SM_Exchange_Request" />
+	<catalog id="-21308" value="com.jour.gameserver.model.exchange.packet.SM_Exchange_Update" />
+	<catalog id="-21309" value="com.jour.gameserver.model.exchange.packet.SM_Exchange_Success" />
+	<catalog id="-21310" value="com.jour.gameserver.model.exchange.packet.SM_Exchange_Start" />
+	<catalog id="-21311" value="com.jour.gameserver.model.exchange.packet.SM_Exchange_Stop" />
+	<catalog id="-21312" value="com.jour.gameserver.model.exchange.packet.SM_Exchange_RealLock" />
+	<catalog id="-21313" value="com.jour.gameserver.model.exchange.packet.SM_Exchange_RealConfirm" />
+	<catalog id="-21314" value="com.jour.gameserver.model.exchange.packet.SM_Exchange_RJ_Request" />
+
+	<catalog id="-21329" value="com.jour.gameserver.model.player.packet.SM_CheckNameExist" />
+	<catalog id="-21330" value="com.jour.gameserver.model.country.packet.SM_Country_QuestStatus" />
+
+	<catalog id="-21336" value="com.jour.gameserver.model.commonactivity.packet.SM_Can_Recollect_Count" />
+	<catalog id="-21337" value="com.jour.gameserver.model.commonactivity.packet.SM_Recollect_All" />
+	<catalog id="-21338" value="com.jour.gameserver.model.commonactivity.packet.SM_Get_Recollect" />
+	<catalog id="-21339" value="com.jour.gameserver.model.commonactivity.packet.SM_Draw_Recollect_Rewards" />
+	<catalog id="-21340" value="com.jour.gameserver.model.item.packet.SM_Super_Forge_Equip" />
+
+	<catalog id="-21347" value="com.jour.gameserver.model.item.packet.SM_Equip_Inset_Gem" />
+	<catalog id="-21348" value="com.jour.gameserver.model.item.packet.SM_Equip_Unset_Gem" />
+
+	<catalog id="-21350" value="com.jour.gameserver.model.boss.packet.SM_Boss_BossView" />
+	<catalog id="-21351" value="com.jour.gameserver.model.boss.packet.SM_Boss_DamageRank" />
+	<catalog id="-21352" value="com.jour.gameserver.model.boss.packet.SM_Boss_DropInfo" />
+	<catalog id="-21353" value="com.jour.gameserver.model.boss.packet.SM_Boss_Receive_FHReward" />
+
+	<catalog id="-21400" value="com.jour.gameserver.model.mail.packet.SM_ReadMail" />
+	<catalog id="-21401" value="com.jour.gameserver.model.mail.packet.SM_DeleteMail" />
+	<catalog id="-21402" value="com.jour.gameserver.model.mail.packet.SM_RewardMail" />
+	<catalog id="-21403" value="com.jour.gameserver.model.mail.packet.SM_MailUpdate" />
+
+	<catalog id="-21404" value="com.jour.gameserver.model.country.packet.SM_AttendFlag_Already" />
+	<catalog id="-21405" value="com.jour.gameserver.model.countrycopy.packet.SM_CountryCopy_Start" />
+	<catalog id="-21406" value="com.jour.gameserver.model.countrycopy.packet.SM_CountryCopy_End" />
+	<catalog id="-21407" value="com.jour.gameserver.model.countrycopy.packet.SM_Get_Encourage_Info" />
+	<catalog id="-21409" value="com.jour.gameserver.model.countrycopy.packet.SM_CountryCopy_Status" />
+	<catalog id="-21411" value="com.jour.gameserver.model.countrycopy.packet.SM_CountryCopy_Encourage" />
+	<catalog id="-21412" value="com.jour.gameserver.model.countrycopy.packet.SM_Get_Encourage_List" />
+	<catalog id="-21413" value="com.jour.gameserver.model.countrycopy.packet.SM_CountryCopy_Uneroll" />
+	<catalog id="-21414" value="com.jour.gameserver.model.countrycopy.packet.SM_Encourage_Change" />
+
+	<catalog id="-21420" value="com.jour.gameserver.model.copy.packet.SM_Get_Copy_Wipe_Reward" />
+
+	<catalog id="-21460" value="com.jour.gameserver.model.countrycopy.packet.SM_TechCopy_Status" />
+	<catalog id="-21461" value="com.jour.gameserver.model.countrycopy.packet.SM_TechCopy_End" />
+	<catalog id="-21462" value="com.jour.gameserver.model.countrycopy.packet.SM_TechCopy_Monster_Spawn" />
+	<catalog id="-21463" value="com.jour.gameserver.model.countrycopy.packet.SM_TechCopy_Start" />
+	<catalog id="-21464" value="com.jour.gameserver.model.countrycopy.packet.SM_Tech_Copy_Ranks" />
+	<catalog id="-21465" value="com.jour.gameserver.model.countrycopy.packet.SM_TechCopy_MonsterHunt" />
+
+	<catalog id="-21466" value="com.jour.gameserver.model.item.packet.SM_Attach_God" />
+	<catalog id="-21467" value="com.jour.gameserver.model.item.packet.SM_Change_Equipment_Suit" />
+	<catalog id="-21468" value="com.jour.gameserver.model.item.packet.SM_Upgrade_Soul" />
+	<catalog id="-21469" value="com.jour.gameserver.model.item.packet.SM_Call_Pet" />
+	<catalog id="-21470" value="com.jour.gameserver.model.item.packet.SM_CallBack_Pet" />
+	<catalog id="-21471" value="com.jour.gameserver.model.item.packet.SM_Change_Pet" />
+	<catalog id="-21472" value="com.jour.gameserver.model.item.packet.SM_Item_Deprecated" />
+	<catalog id="-21473" value="com.jour.gameserver.model.world.packet.SM_Pet_PickUp" />
+	<!-- <catalog id="-21408" value="com.jour.gameserver.model.countrycopy.packet.SM_CountryCopy_Enroll" /> <catalog id="-21410" 
+		value="com.jour.gameserver.model.countrycopy.packet.SM_CountryCopy_Unentroll" /> -->
+
+	<catalog id="-21499" value="com.jour.gameserver.model.kingofwar.packet.SM_KingOfWar_NotKingOfKing" />
+	<catalog id="-21500" value="com.jour.gameserver.model.kingofwar.packet.SM_KingOfWar_KingOfKing" />
+	<catalog id="-21501" value="com.jour.gameserver.model.kingofwar.packet.SM_KingOfWar_Info" />
+	<catalog id="-21502" value="com.jour.gameserver.model.kingofwar.packet.SM_KingOfWar_Rank" />
+	<catalog id="-21503" value="com.jour.gameserver.model.kingofwar.packet.SM_KingOfWar_EndList" />
+	<catalog id="-21504" value="com.jour.gameserver.model.kingofwar.packet.SM_KingOfWar_Status" />
+	<catalog id="-21505" value="com.jour.gameserver.model.kingofwar.packet.SM_KingOfWar_CommandPlayerList" />
+	<catalog id="-21506" value="com.jour.gameserver.model.kingofwar.packet.SM_KingOfWar_CommandCount" />
+	<catalog id="-21507" value="com.jour.gameserver.model.kingofwar.packet.SM_KingOfWar_Rank_All" />
+	<catalog id="-21508" value="com.jour.gameserver.model.kingofwar.packet.SM_KingOfWar_End" />
+
+
+	<catalog id="-21521" value="com.jour.gameserver.model.gangofwar.packet.SM_GangOfWar_Info" />
+	<catalog id="-21522" value="com.jour.gameserver.model.gangofwar.packet.SM_GangOfWar_EndList" />
+	<catalog id="-21523" value="com.jour.gameserver.model.gangofwar.packet.SM_GangOfWar_SealBossDamageRank" />
+	<catalog id="-21524" value="com.jour.gameserver.model.gangofwar.packet.SM_GangOfWar_Rank" />
+	<catalog id="-21525" value="com.jour.gameserver.model.gangofwar.packet.SM_GangOfWar_Status" />
+	<catalog id="-21526" value="com.jour.gameserver.model.gangofwar.packet.SM_GangOfWar_RankSimple" />
+
+	<catalog id="-21530" value="com.jour.gameserver.model.moduleopen.packet.SM_Module_Open" />
+	<catalog id="-21600" value="com.jour.gameserver.model.rank.packet.SM_Get_Rank" />
+	<catalog id="-21601" value="com.jour.gameserver.model.rank.packet.SM_Get_Hero_Reward" />
+	<catalog id="-21602" value="com.jour.gameserver.model.rank.packet.SM_World_Level" />
+	<catalog id="-21603" value="com.jour.gameserver.model.country.packet.SM_Flag_Quest_Info" />
+
+	<catalog id="-21700" value="com.jour.gameserver.model.world.packet.SM_ChangeChannel" />
+	<catalog id="-21701" value="com.jour.gameserver.model.world.packet.SM_Get_MapChannel" />
+
+	<catalog id="-21800" value="com.jour.gameserver.model.operator.packet.SM_Set_OperatorClientInfo" />
+
+	<catalog id="-21900" value="com.jour.gameserver.model.item.packet.SM_Equip_Create_Soul" />
+	<catalog id="-21901" value="com.jour.gameserver.model.item.packet.SM_Combining_CreateSoul" />
+	<catalog id="-21902" value="com.jour.gameserver.model.item.packet.SM_Decompose_Item" />
+	<catalog id="-21903" value="com.jour.gameserver.model.collect.packet.SM_Reward_FamedGeneral" />
+
+	<catalog id="-22000" value="com.jour.gameserver.model.world.packet.SM_Move" />
+	<catalog id="-22001" value="com.jour.gameserver.model.world.packet.SM_Remove" />
+	<catalog id="-22002" value="com.jour.gameserver.model.world.packet.SM_Heading" />
+
+	<catalog id="-22008" value="com.jour.gameserver.model.world.packet.SM_GatherStart" />
+	<catalog id="-22009" value="com.jour.gameserver.model.world.packet.SM_GatherEnd" />
+	<catalog id="-22010" value="com.jour.gameserver.model.world.packet.SM_StatusNpcStart" />
+	<catalog id="-22011" value="com.jour.gameserver.model.world.packet.SM_StatusNpcEnd" />
+	<catalog id="-22012" value="com.jour.gameserver.model.world.packet.SM_StatusNpc_Break" />
+
+
+	<catalog id="-22100" value="com.jour.gameserver.model.operator.packet.SM_MobilePhone_Confirmation" />
+	<catalog id="-22101" value="com.jour.gameserver.model.operator.packet.SM_SubInformation_Confirmation" />
+	<catalog id="-22102" value="com.jour.gameserver.model.operator.packet.SM_GM_Kick" />
+	<catalog id="-22103" value="com.jour.gameserver.model.operator.packet.SM_Server_Maintenance" />
+
+	<catalog id="-23000" value="com.jour.gameserver.model.world.packet.SM_PlayerChatSimple" />
+
+	<catalog id="-23001" value="com.jour.gameserver.model.welfare.packet.SM_Active_Value" />
+
+	<catalog id="-25000" value="com.jour.gameserver.model.system.packet.SM_System_Message" />
+	<catalog id="-25001" value="com.jour.gameserver.model.system.packet.SM_System_Sign" />
+	<catalog id="-25002" value="com.jour.gameserver.model.operator.packet.SM_QiHu360_Speed_Privilege_Change" />
+	<catalog id="-25003" value="com.jour.gameserver.model.operator.packet.SM_QiHu360_Speed_Privilege_Reward" />
+	<!-- 英魂 -->
+	<catalog id="-26002" value="com.jour.gameserver.model.soul.packet.SM_Soul_Notify" />
+	<catalog id="-26003" value="com.jour.gameserver.model.soul.packet.SM_Soul_Uplevel" />
+	<!-- 神兵 -->
+	<catalog id="-26004" value="com.jour.gameserver.model.artifact.packet.SM_Artifact_Notify" />
+	<catalog id="-26005" value="com.jour.gameserver.model.artifact.packet.SM_Artifact_Uplevel" />
+
+	<!-- 国家砍大臣 -->
+	<catalog id="-26006" value="com.jour.gameserver.model.country.packet.SM_Country_Open_Diplomacy" />
+	<catalog id="-26007" value="com.jour.gameserver.model.country.packet.SM_Country_Request_Send_Message" />
+	<!-- 砍国旗 -->
+	<catalog id="-26008" value="com.jour.gameserver.model.country.packet.SM_Country_Open_Flag" />
+	<catalog id="-26009" value="com.jour.gameserver.model.country.packet.SM_Country_Request_Send_Message_Flag" />
+
+	<!-- 神兵和英魂进阶通知其他玩家 -->
+	<catalog id="-26010" value="com.jour.gameserver.model.artifact.packet.SM_Artifact_Uplevel_Notify_Others" />
+	<catalog id="-26011" value="com.jour.gameserver.model.soul.packet.SM_Soul_Uplevel_Notify_Others" />
+
+	<!-- 国旗,大臣复活 -->
+	<catalog id="-26012" value="com.jour.gameserver.model.country.packet.SM_Country_Flag_Relive" />
+	<catalog id="-26013" value="com.jour.gameserver.model.country.packet.SM_Country_Diplomacy_Reilve" />
+	<catalog id="-26014" value="com.jour.gameserver.model.country.packet.SM_Country_Flag_Relive_Push" />
+	<catalog id="-26015" value="com.jour.gameserver.model.country.packet.SM_Country_Diplomacy_Reilve_Push" />
+	<catalog id="-26016" value="com.jour.gameserver.model.country.packet.SM_Country_Check_Activity_Status" />
+	<catalog id="-26017" value="com.jour.gameserver.model.player.packet.SM_Country_Npc_Hp_Push" />
+
+	<!-- 国家福利 -->
+	<catalog id="-26018" value="com.jour.gameserver.model.country.packet.SM_Country_Check_Salary_Status" />
+	<catalog id="-26019" value="com.jour.gameserver.model.country.packet.SM_Country_ReceivedCivilSalary" />
+	<catalog id="-26020" value="com.jour.gameserver.model.country.packet.SM_Country_ReceivedOfficialSalary" />
+
+	<catalog id="-26025" value="com.jour.gameserver.model.openactive.packet.SM_Old_SoulUpgrade_Draw_Reward" />
+	<catalog id="-26026" value="com.jour.gameserver.model.openactive.packet.SM_Draw_OldCompeteReward" />
+	<catalog id="-26027" value="com.jour.gameserver.model.openactive.packet.SM_OldSevenCompete_Count" />
+	<catalog id="-26028" value="com.jour.gameserver.model.openactive.packet.SM_OldSevenCompete_Push" />
+	<catalog id="-26029" value="com.jour.gameserver.model.openactive.packet.SM_Query_OldCompeteStatus" />
+
+	<!-- 开服活动 -->
+	<catalog id="-26030" value="com.jour.gameserver.model.openactive.packet.SM_SevenCompete_Count" />
+	<catalog id="-26031" value="com.jour.gameserver.model.openactive.packet.SM_Query_CompeteStatus" />
+	<catalog id="-26032" value="com.jour.gameserver.model.openactive.packet.SM_Draw_CompeteReward" />
+	<catalog id="-26033" value="com.jour.gameserver.model.openactive.packet.SM_EveryDay_Recharge_Draw_Out" />
+	<catalog id="-26037" value="com.jour.gameserver.model.openactive.packet.SM_TodayRecharge" />
+	<catalog id="-26038" value="com.jour.gameserver.model.openactive.packet.SM_OpenActive_Reward" />
+	<catalog id="-26039" value="com.jour.gameserver.model.openactive.packet.SM_EveryDayRecharge_Draw" />
+	<catalog id="-26040" value="com.jour.gameserver.model.openactive.packet.SM_Server_Limit_Reward" />
+	<catalog id="-26041" value="com.jour.gameserver.model.openactive.packet.SM_CountryFlag_Status" />
+	<catalog id="-26042" value="com.jour.gameserver.model.openactive.packet.SM_SevenCompete_Push" />
+	<catalog id="-26043" value="com.jour.gameserver.model.openactive.packet.SM_Public_Test_Gift_Reward" />
+
+
+	<!-- 投资理财 -->
+	<catalog id="-26050" value="com.jour.gameserver.model.invest.packet.SM_Invest_Buy" />
+	<catalog id="-26051" value="com.jour.gameserver.model.invest.packet.SM_Invest_Draw_Reward" />
+	<catalog id="-26052" value="com.jour.gameserver.model.invest.packet.SM_HistoryInfo" />
+
+	<!-- 礼金汇总 -->
+	<catalog id="-26055" value="com.jour.gameserver.model.welfare.packet.SM_GiftCollect_Open" />
+	<catalog id="-26056" value="com.jour.gameserver.model.welfare.packet.SM_GiftCollect_Finish" />
+
+	<!-- 储君系统 -->
+	<catalog id="-26059" value="com.jour.gameserver.model.country.packet.SM_ReserveKing_Task_Reward" />
+	<catalog id="-26060" value="com.jour.gameserver.model.country.packet.SM_ReserveKing_UseCallTogether" />
+	<catalog id="-26061" value="com.jour.gameserver.model.country.packet.SM_ReserveKing_CallTogether" />
+	<catalog id="-26062" value="com.jour.gameserver.model.country.packet.SM_ReserveKing_Finish_Task" />
+	<catalog id="-26063" value="com.jour.gameserver.model.country.packet.SM_ReserveKing_Become" />
+	<catalog id="-26064" value="com.jour.gameserver.model.country.packet.SM_ReserveKingVO" />
+
+	<catalog id="-26065" value="com.jour.gameserver.model.agateinvest.packet.SM_Agate_HistoryInfo" />
+	<catalog id="-26066" value="com.jour.gameserver.model.agateinvest.packet.SM_Agate_Invest_Buy" />
+	<catalog id="-26067" value="com.jour.gameserver.model.agateinvest.packet.SM_Agate_Invest_Draw_Reward" />
+	<!-- 神兵首充 -->
+	<catalog id="-26070" value="com.jour.gameserver.model.artifact.packet.SM_Artifact_Buff" />
+	<catalog id="-26071" value="com.jour.gameserver.model.artifact.packet.SM_Artifact_Buff_Deprect" />
+
+	<catalog id="-26100" value="com.jour.gameserver.model.monsterriot.packet.SM_MonsterRiot_Reward" />
+	<catalog id="-26101" value="com.jour.gameserver.model.monsterriot.packet.SM_MonsterRiot_MapInfo" />
+	<catalog id="-26102" value="com.jour.gameserver.model.monsterriot.packet.SM_MonsterRiot_Start" />
+	<catalog id="-26103" value="com.jour.gameserver.model.monsterriot.packet.SM_Riot_AddCount" />
+	<catalog id="-26104" value="com.jour.gameserver.model.monsterriot.packet.SM_Riot_Round_End" />
+
+	<!-- 众志成城buff -->
+	<catalog id="-26105" value="com.jour.gameserver.model.country.packet.SM_Get_Country_Unitiy_Buff_Floor" />
+
+	<!-- 探宝 -->
+	<catalog id="-26108" value="com.jour.gameserver.model.item.packet.SM_Treasure_Storage_Update" />
+	<catalog id="-26109" value="com.jour.gameserver.model.item.packet.SM_Treasure_All_History" />
+
+	<!-- 公测 -->
+	<catalog id="-26111" value="com.jour.gameserver.model.openactive.packet.SM_GroupPurchaseInfo" />
+	<catalog id="-26112" value="com.jour.gameserver.model.openactive.packet.SM_GroupPurchase_Reward" />
+	<catalog id="-26113" value="com.jour.gameserver.model.openactive.packet.SM_GroupPurchase_Attend_Satisfy" />
+	<catalog id="-26114" value="com.jour.gameserver.model.openactive.packet.SM_GroupPurchase_Gold_Change" />
+	<catalog id="-26115" value="com.jour.gameserver.model.openactive.packet.SM_Public_Test_Info" />
+	<catalog id="-26116" value="com.jour.gameserver.model.openactive.packet.SM_GroupPurchaseTwoInfo" />
+	<catalog id="-26117" value="com.jour.gameserver.model.openactive.packet.SM_GroupPurchase_Two_Reward" />
+	<!-- 国家科技 -->
+	<catalog id="-26118" value="com.jour.gameserver.model.country.packet.SM_CountryTechnology_BuildValue_Change" />
+	<catalog id="-26119" value="com.jour.gameserver.model.country.packet.SM_Country_Technology_PlaceFlag" />
+	<catalog id="-26120" value="com.jour.gameserver.model.country.packet.SM_Country_Technology_Flag_Change" />
+
+	<catalog id="-26121" value="com.jour.gameserver.model.operator.packet.SM_QiHu_Speed_Ball_Reward" />
+
+
+
+	<catalog id="-26126" value="com.jour.gameserver.model.openactive.packet.SM_GroupPurchase_Two_Attend_Satisfy" />
+	<catalog id="-26127" value="com.jour.gameserver.model.openactive.packet.SM_GroupPurchase_Two_Gold_Change" />
+	<catalog id="-26128" value="com.jour.gameserver.model.openactive.packet.SM_GroupPurchaseThreeInfo" />
+	<catalog id="-26129" value="com.jour.gameserver.model.openactive.packet.SM_GroupPurchase_Three_Reward" />
+	<catalog id="-26130" value="com.jour.gameserver.model.openactive.packet.SM_GroupPurchase_Three_Attend_Satisfy" />
+	<catalog id="-26131" value="com.jour.gameserver.model.openactive.packet.SM_GroupPurchase_Three_Gold_Change" />
+
+	<catalog id="-26132" value="com.jour.gameserver.model.horse.packet.SM_Horse_EnhanceCount_Change" />
+
+	<catalog id="-26133" value="com.jour.gameserver.model.openactive.packet.SM_Celebrate_Reward" />
+	<catalog id="-26134" value="com.jour.gameserver.model.openactive.packet.SM_Celebrate_Activity_Change" />
+	<catalog id="-26135" value="com.jour.gameserver.model.openactive.packet.SM_Draw_CelebrateReward" />
+	<catalog id="-26136" value="com.jour.gameserver.model.openactive.packet.SM_Can_CelebrateReward" />
+	<catalog id="-26137" value="com.jour.gameserver.model.artifact.packet.SM_Artifact_EnhanceCount_Change" />
+	<catalog id="-26138" value="com.jour.gameserver.model.soul.packet.SM_Soul_EnhanceCount_Change" />
+
+
+	<!-- 时装 -->
+	<catalog id="-26140" value="com.jour.gameserver.model.fashion.packet.SM_Fashion_Wear" />
+	<catalog id="-26141" value="com.jour.gameserver.model.fashion.packet.SM_Fashion_UnWear" />
+	<catalog id="-26142" value="com.jour.gameserver.model.fashion.packet.SM_Fashion_Upgrade" />
+	<catalog id="-26143" value="com.jour.gameserver.model.fashion.packet.SM_Fashion_Operate_Hide" />
+	<catalog id="-26144" value="com.jour.gameserver.model.fashion.packet.SM_Fashion_Exp_Change" />
+	<catalog id="-26145" value="com.jour.gameserver.model.fashion.packet.SM_Fashion_OwnFashion_Change" />
+	<catalog id="-26146" value="com.jour.gameserver.model.fashion.packet.SM_FashionBroadcast" />
+
+
+	<!-- 黑市 -->
+	<catalog id="-26148" value="com.jour.gameserver.model.blackshop.packet.SM_BlackShop_Activity_Change" />
+	<catalog id="-26149" value="com.jour.gameserver.model.blackshop.packet.SM_BlackShop_Buy" />
+	<catalog id="-26150" value="com.jour.gameserver.model.blackshop.packet.SM_BlackShop_Query_Info" />
+	<catalog id="-26151" value="com.jour.gameserver.model.blackshop.packet.SM_BlackShop_Refresh" />
+
+	<!-- 公共活动 -->
+	<catalog id="-26154" value="com.jour.gameserver.model.commonactivity.packet.SM_CommonTreasureActive_Count_Change"/>
+	<catalog id="-26155" value="com.jour.gameserver.model.commonactivity.packet.SM_Common_RedPackActive_Reward"/>
+	<catalog id="-26156" value="com.jour.gameserver.model.commonactivity.packet.SM_Common_TreasureActive_Reward"/>
+	<catalog id="-26157" value="com.jour.gameserver.model.commonactivity.packet.SM_Common_Cheap_Gift_Bag_Reward" />
+	<catalog id="-26158" value="com.jour.gameserver.model.commonactivity.packet.SM_Common_Login_Gift_Reward" />
+	<catalog id="-26159" value="com.jour.gameserver.model.commonactivity.packet.SM_Common_Can_CelebrateReward" />
+	<catalog id="-26160" value="com.jour.gameserver.model.commonactivity.packet.SM_Common_Consume_Draw_Reward" />
+	<catalog id="-26161" value="com.jour.gameserver.model.commonactivity.packet.SM_Common_Consume_Push" />
+	<catalog id="-26162" value="com.jour.gameserver.model.commonactivity.packet.SM_Common_Recharge_Draw" />
+	<catalog id="-26163" value="com.jour.gameserver.model.commonactivity.packet.SM_Common_SpecialBoss_Die" />
+	<catalog id="-26164" value="com.jour.gameserver.model.commonactivity.packet.SM_Common_SpecialBoss_Refresh" />
+	<catalog id="-26165" value="com.jour.gameserver.model.commonactivity.packet.SM_Get_Common_Consume" />
+	<catalog id="-26166" value="com.jour.gameserver.model.commonactivity.packet.SM_Common_Celebrate_Reward" />
+
+	<!-- 副本 -->
+	<catalog id="-26167" value="com.jour.gameserver.model.copy.packet.SM_Ladder_ResetCount_Change" />
+	<catalog id="-26168" value="com.jour.gameserver.model.copy.packet.SM_Lader_Target_Lay_Reset_Count_Change" />
+	<catalog id="-26169" value="com.jour.gameserver.model.commonactivity.packet.SM_Common_Identify_Treasure_Change" />
+	<catalog id="-26170" value="com.jour.gameserver.model.commonactivity.packet.SM_Common_Identify_Treasure_Query" />
+	<catalog id="-26171" value="com.jour.gameserver.model.commonactivity.model.IdentifyTreasureLog" />
+	<catalog id="-26172" value="com.jour.gameserver.model.commonactivity.packet.SM_Common_Identify_Treasure_Reward" />
+	<catalog id="-26173" value="com.jour.gameserver.model.copy.packet.SM_MingJiangBoss_Reset" />
+
+	<!-- 暴击活动 -->
+	<catalog id="-26175" value="com.jour.gameserver.model.commonactivity.packet.SM_WeekCri_buy" />
+	<catalog id="-26176" value="com.jour.gameserver.model.commonactivity.packet.SM_WeekCri_Count_Change" />
+	<!-- 首充活动 -->
+	<catalog id="-26177" value="com.jour.gameserver.model.commonactivity.packet.SM_Common_First_Pay_Reward" />
+
+	<!-- 开服活动修改 -->
+	<catalog id="-26178" value="com.jour.gameserver.model.commonactivity.packet.SM_CommonMarcoShop_Query_Info" />
+	<catalog id="-26179" value="com.jour.gameserver.model.commonactivity.packet.SM_CommonMarcoShop_Buy" />
+	<catalog id="-26180" value="com.jour.gameserver.model.commonactivity.packet.SM_CommonMarcoShop_Refresh" />
+
+	<catalog id="-26181" value="com.jour.gameserver.model.commonactivity.packet.SM_CommonFirstPay_Send" />
+	<catalog id="-26182" value="com.jour.gameserver.model.commonactivity.packet.SM_Common_Collect_Word_Reward" />
+
+	<!-- 美人 -->
+	<catalog id="-26184" value="com.jour.gameserver.model.beauty.packet.SM_Beauty_Item_Change" />
+	<catalog id="-26185" value="com.jour.gameserver.model.beauty.packet.SM_Beauty_Active" />
+	<catalog id="-26186" value="com.jour.gameserver.model.beauty.packet.SM_Beauty_Fight" />
+	<catalog id="-26187" value="com.jour.gameserver.model.beauty.packet.SM_Beauty_UnFight" />
+	<catalog id="-26188" value="com.jour.gameserver.model.beauty.packet.SM_Beauty_Linger" />
+	<catalog id="-26189" value="com.jour.gameserver.model.beauty.packet.SM_Beauty_Learn_Skill" />
+
+
+
+
+	<!-- -26190 -26500 都是腾讯用的 你们往后加 好么！！！！！ -->
+
+	<!-- 兵书 -->
+	<catalog id="-26501" value="com.jour.gameserver.model.warbook.packet.SM_Warbook_Upgrade" />
+	<catalog id="-26502" value="com.jour.gameserver.model.warbook.packet.SM_Warbook_Item_Change" />
+	<catalog id="-26503" value="com.jour.gameserver.model.warbook.packet.SM_Warbook_Learn_Skill" />
+	<catalog id="-26504" value="com.jour.gameserver.model.warbook.packet.SM_Warbook_Broadcast" />
+	<catalog id="-26505" value="com.jour.gameserver.model.warbook.packet.SM_Warbook_OperateHide" />
+
+	<!-- 护腕合成 -->
+	<catalog id="-26506" value="com.jour.gameserver.model.item.packet.SM_Combing_Ex" />
+	<catalog id="-26507" value="com.jour.gameserver.model.copy.packet.SM_HorseEquip_Reset" />
+
+	<catalog id="-26508" value="com.jour.gameserver.model.seal.packet.SM_Seal_Upgrade" />
+	<catalog id="-26509" value="com.jour.gameserver.model.seal.packet.SM_Seal_Item_Change" />
+
+	<!-- 坐骑装备 -->
+	<catalog id="-26510" value="com.jour.gameserver.model.item.packet.SM_Equipment_Update_Ex" />
+	<catalog id="-26511" value="com.jour.gameserver.model.item.packet.SM_Equips_Update_Horse" />
+	<catalog id="-26512" value="com.jour.gameserver.model.item.packet.SM_SmeltEquipment_Horse" />
+
+	<catalog id="-26209" value="com.jour.gameserver.model.assassin.packet.SM_Assassination_Square" />
+	<catalog id="-26210" value="com.jour.gameserver.model.assassin.packet.SM_Assassin_Random_Reward" />
+	<catalog id="-26211" value="com.jour.gameserver.model.assassin.packet.SM_Assassin_Ranks" />
+	<catalog id="-26212" value="com.jour.gameserver.model.assassin.packet.SM_Assassination_Status" />
+	<catalog id="-26213" value="com.jour.gameserver.model.assassin.packet.SM_Before_Stun" />
+	<catalog id="-26214" value="com.jour.gameserver.model.assassin.packet.SM_Enter_Assassin" />
+	<catalog id="-26215" value="com.jour.gameserver.model.assassin.packet.SM_Leave_Assassin" />
+	<catalog id="-26216" value="com.jour.gameserver.model.assassin.packet.SM_Assassin_Random" />
+	<catalog id="-26217" value="com.jour.gameserver.model.assassin.packet.SM_Assassination_Start" />
+	<catalog id="-26218" value="com.jour.gameserver.model.assassin.packet.SM_Assassin_Dice" />
+	<catalog id="-26219" value="com.jour.gameserver.model.assassin.packet.SM_Assassination_End" />
+	
+	<catalog id="-26220" value="com.jour.gameserver.model.ministerfete.packet.SM_Minister_Square" />
+	<catalog id="-26221" value="com.jour.gameserver.model.ministerfete.packet.SM_Minister_Random_Reward" />
+	<catalog id="-26222" value="com.jour.gameserver.model.ministerfete.packet.SM_Minister_Ranks" />
+	<catalog id="-26223" value="com.jour.gameserver.model.ministerfete.packet.SM_Minister_Status" />
+	<catalog id="-26224" value="com.jour.gameserver.model.ministerfete.packet.SM_Minister_Before_Stun" />
+	<catalog id="-26225" value="com.jour.gameserver.model.ministerfete.packet.SM_Enter_Minister" />
+	<catalog id="-26226" value="com.jour.gameserver.model.ministerfete.packet.SM_Leave_Minister" />
+	<catalog id="-26227" value="com.jour.gameserver.model.ministerfete.packet.SM_Minister_Random" />
+	<catalog id="-26228" value="com.jour.gameserver.model.ministerfete.packet.SM_Minister_Start" />
+	<catalog id="-26229" value="com.jour.gameserver.model.ministerfete.packet.SM_Minister_Dice" />
+	<catalog id="-26230" value="com.jour.gameserver.model.ministerfete.packet.SM_Minister_End" />
+	<!-- 命格  -->
+	<catalog id="-26517" value="com.jour.gameserver.model.lifegrid.packet.SM_LifeGrid_Take" />
+	<catalog id="-26518" value="com.jour.gameserver.model.lifegrid.packet.SM_LifeGrid_Take_All" />
+	<catalog id="-26519" value="com.jour.gameserver.model.lifegrid.packet.SM_LifeGrid_OperateLock" />
+	<catalog id="-26520" value="com.jour.gameserver.model.lifegrid.packet.SM_LifeGrid_ExchangePack" />
+	<catalog id="-26521" value="com.jour.gameserver.model.lifegrid.packet.SM_LifeGrid_Equip" />
+	<catalog id="-26522" value="com.jour.gameserver.model.lifegrid.packet.SM_LifeGrid_UnEquip" />
+	<catalog id="-26523" value="com.jour.gameserver.model.lifegrid.packet.SM_LifeGrid_Devour" />
+	<catalog id="-26524" value="com.jour.gameserver.model.lifegrid.packet.SM_LifeGrid_DevourAll" />
+	<catalog id="-26525" value="com.jour.gameserver.model.lifegrid.packet.SM_LifeGrid_AddEquipStorageSize" />
+	<catalog id="-26526" value="com.jour.gameserver.model.lifegrid.packet.SM_LifeGrid_Point_Change" />
+	<catalog id="-26527" value="com.jour.gameserver.model.lifegrid.packet.SM_LifeGrid_Storage_Update" />
+	<catalog id="-26528" value="com.jour.gameserver.model.lifegrid.packet.SM_LifeGrid_Drop" />
+	<catalog id="-26529" value="com.jour.gameserver.model.lifegrid.packet.SM_LifeGrid_Convert" />
+
+	<!-- 转生 -->
+	<catalog id="-26535" value="com.jour.gameserver.model.suicide.packet.SM_Suicide_Common_Charge" />
+	<catalog id="-26536" value="com.jour.gameserver.model.suicide.packet.SM_Suicide_Quick_Charge" />
+	<catalog id="-26537" value="com.jour.gameserver.model.suicide.packet.SM_Suicide_Turn" />
+
+	
+	<!-- 转生装备 -->
+	<catalog id="-26540" value="com.jour.gameserver.model.item.packet.SM_Attach_SuicideState" />
+
+	<!-- 福利大厅 -->
+	<!-- 签到 -->
+	<catalog id="-27000" value="com.jour.gameserver.model.welfare.packet.SM_Welfare_Sign_Open_Panel" />
+	<catalog id="-27001" value="com.jour.gameserver.model.welfare.packet.SM_Welfare_Sign_Ing" />
+	<catalog id="-27002" value="com.jour.gameserver.model.welfare.packet.SM_Welfare_Sign_Fill_Sign" />
+	<catalog id="-27003" value="com.jour.gameserver.model.welfare.packet.SM_Welfare_Sign_Reward" />
+	<!-- 离线经验 -->
+	<catalog id="-27004" value="com.jour.gameserver.model.welfare.packet.SM_Welfare_Offline_OpenPanel" />
+	<catalog id="-27005" value="com.jour.gameserver.model.welfare.packet.SM_Welfare_Offline_Reward" />
+	<!-- 活跃值 -->
+	<catalog id="-27006" value="com.jour.gameserver.model.welfare.packet.SM_Welfare_Active_Open_Panel" />
+	<catalog id="-27007" value="com.jour.gameserver.model.welfare.packet.SM_Welfare_Active_Reward" />
+	<catalog id="-27008" value="com.jour.gameserver.model.welfare.packet.SM_Welfare_Push_Light_Reward" />
+	<!-- 在线奖励 -->
+	<catalog id="-27009" value="com.jour.gameserver.model.welfare.packet.SM_Welfare_Online_Open" />
+	<catalog id="-27010" value="com.jour.gameserver.model.welfare.packet.SM_Welfare_Online_Reward" />
+
+	<!-- 收益追回 -->
+	<catalog id="-27011" value="com.jour.gameserver.model.welfare.packet.SM_Welfare_Clawback_Open" />
+	<catalog id="-27012" value="com.jour.gameserver.model.welfare.packet.SM_Welfare_Clawback_Reward" />
+	<catalog id="-27013" value="com.jour.gameserver.model.welfare.packet.SM_Welfare_Clawback_Reward_Auto" />
+	<catalog id="-27014" value="com.jour.gameserver.model.welfare.packet.SM_Welfare_Clawback_Reward_Superme" />
+	<catalog id="-27015" value="com.jour.gameserver.model.welfare.packet.SM_Welfare_Clawback_Push_Back" />
+
+	<!-- 7天登陆奖励 -->
+	<catalog id="-27018" value="com.jour.gameserver.model.welfare.packet.SM_Draw_SevenDay_Reward_Result" />
+	<!-- vip首充记录 -->
+	<catalog id="-27020" value="com.jour.gameserver.model.welfare.packet.SM_Welfare_FirstPay" />
+	<catalog id="-27021" value="com.jour.gameserver.model.welfare.packet.SM_Welfare_Finish_First_Pay" />
+
+	<catalog id="-27025" value="com.jour.gameserver.model.operator.packet.SM_360Gift_Reward" />
+
+	<!-- 国家操作日志 -->
+	<catalog id="-27499" value="com.jour.gameserver.model.country.packet.SM_Country_Fete" />
+	<catalog id="-27500" value="com.jour.gameserver.model.country.packet.SM_Country_Action_Push_Now_Log" />
+	<catalog id="-27501" value="com.jour.gameserver.model.country.packet.SM_Country_Action_See_All_Log" />
+	<catalog id="-27502" value="com.jour.gameserver.model.country.packet.SM_Country_Fete_Log" />
+
+	<catalog id="-27503" value="com.jour.gameserver.model.combatspirit.packet.SM_Query_CombatSpirit" />
+	<catalog id="-27504" value="com.jour.gameserver.model.nickname.packet.SM_Nickname_Active" />
+
+	<catalog id="-27600" value="com.jour.gameserver.model.exercise.packet.SM_Exercise_Start" />
+	<catalog id="-27601" value="com.jour.gameserver.model.country.packet.SM_Country_QuestOpen" />
+	<catalog id="-27602" value="com.jour.gameserver.model.country.packet.SM_All_CountryStatus" />
+	<catalog id="-27603" value="com.jour.gameserver.model.country.packet.SM_Country_Relieve_Traitor" />
+	<catalog id="-27604" value="com.jour.gameserver.model.country.packet.SM_Country_Traitor_Num" />
+	<catalog id="-27605" value="com.jour.gameserver.model.country.packet.SM_Country_Traitor_Rank" />
+	<catalog id="-27606" value="com.jour.gameserver.model.country.packet.SM_Country_Level" />
+	<catalog id="-27607" value="com.jour.gameserver.model.rank.packet.SM_World_Military_Level" />
+
+
+	<catalog id="-27701" value="com.jour.gameserver.model.footprint.packet.SM_Add_Footprint" />
+	<catalog id="-27702" value="com.jour.gameserver.model.footprint.packet.SM_Change_Footprint" />
+
+	<catalog id="-27800" value="com.jour.gameserver.model.operator.packet.SM_QiHu360_Privilege_Reward" />
+	<catalog id="-27801" value="com.jour.gameserver.model.operator.packet.SM_QiHu360_Privilege_Change" />
+	<!-- 坐骑开启推送消息 -->
+	<catalog id="-27901" value="com.jour.gameserver.model.horse.packet.SM_Horse_Notify" />
+	<catalog id="-27902" value="com.jour.gameserver.model.world.packet.SM_PlayerSimple_All" />
+	<catalog id="-27903" value="com.jour.gameserver.model.gang.packet.SM_Gang_Ask_Help" />
+	<catalog id="-27904" value="com.jour.gameserver.model.country.packet.SM_Country_Close_Event" />
+	<catalog id="-27905" value="com.jour.gameserver.model.welfare.packet.SM_Tag_Light" />
+	<catalog id="-27906" value="com.jour.gameserver.model.country.packet.SM_Country_Flag_Debuff_Endtime" />
+	<catalog id="-27907" value="com.jour.gameserver.model.country.packet.SM_Country_War_Reward" />
+	<catalog id="-27908" value="com.jour.gameserver.model.country.packet.SM_Country_War_Event" />
+	<catalog id="-27909" value="com.jour.gameserver.model.country.packet.SM_Hidden_Mission_Info" />
+	<catalog id="-27910" value="com.jour.gameserver.model.gang.packet.SM_IMPEACH_GANG" />
+	<catalog id="-27911" value="com.jour.gameserver.model.item.packet.SM_Combining" />
+	<catalog id="-27912" value="com.jour.gameserver.model.welfare.packet.SM_One_Off_Gift" />
+	<catalog id="-27913" value="com.jour.gameserver.model.chat.packet.SM_Big_Face" />
+	<catalog id="-27914" value="com.jour.gameserver.model.combatspirit.packet.SM_Upgrade_CombatSpirit" />
+	<catalog id="-27915" value="com.jour.gameserver.model.military.packet.SM_Military_Star_Change" />
+
+	<catalog id="-27916" value="com.jour.gameserver.model.express.packet.SM_Get_Current_Express" />
+	<catalog id="-27917" value="com.jour.gameserver.model.investigate.packet.SM_Query_Investigate_Status" />
+	<catalog id="-27918" value="com.jour.gameserver.model.temple.packet.SM_Query_Temple_Status" />
+	<catalog id="-27919" value="com.jour.gameserver.model.country.packet.SM_Official_Mobilization" />
+
+	<catalog id="-27920" value="com.jour.gameserver.model.vip.packet.SM_Vip_Update" />
+	<catalog id="-27921" value="com.jour.gameserver.model.vip.packet.SM_Vip_WeekReward" />
+	<catalog id="-27922" value="com.jour.gameserver.model.player.packet.SM_Complex_Settings_Change" />
+	<catalog id="-27923" value="com.jour.gameserver.model.vip.packet.SM_Vip_Add_Temp" />
+
+	<catalog id="-27925" value="com.jour.gameserver.model.mergeactive.packet.SM_Draw_Merge_Consume" />
+	<catalog id="-27926" value="com.jour.gameserver.model.mergeactive.packet.SM_Merge_Consume_Push" />
+	<catalog id="-27927" value="com.jour.gameserver.model.mergeactive.packet.SM_Get_Merge_Consume" />
+
+	<catalog id="-27930" value="com.jour.gameserver.model.warship.packet.SM_Warship_king" />
+	<catalog id="-27931" value="com.jour.gameserver.model.warship.packet.SM_Warship_Refresh" />
+	<catalog id="-27932" value="com.jour.gameserver.model.warship.packet.SM_Warship_Status" />
+	<catalog id="-27933" value="com.jour.gameserver.model.warship.packet.SM_Warhip_End" />
+	<catalog id="-27934" value="com.jour.gameserver.model.warship.packet.SM_Warship_Add_Exp" />
+	<catalog id="-27935" value="com.jour.gameserver.model.copy.packet.SM_Copy_First_Finish" />
+	<catalog id="-27936" value="com.jour.gameserver.model.rescue.packet.SM_Rescue_AnotherDay" />
+	<catalog id="-27937" value="com.jour.gameserver.model.rescue.packet.SM_Rescue_Reward" />
+
+	<catalog id="-27940" value="com.jour.gameserver.model.world.packet.SM_BackHome_Start" />
+	<catalog id="-27941" value="com.jour.gameserver.model.world.packet.SM_BackHome_End" />
+	<catalog id="-27942" value="com.jour.gameserver.model.world.packet.SM_BackHome_Break" />
+
+	<catalog id="-27945" value="com.jour.gameserver.model.operator.packet.SM_WeChat_Reward" />
+
+	<catalog id="-27946" value="com.jour.gameserver.model.country.packet.SM_CountryFlag_Start" />
+	<catalog id="-27947" value="com.jour.gameserver.model.country.packet.SM_CountryFlag_End" />
+	<catalog id="-27948" value="com.jour.gameserver.model.country.packet.SM_Attend_Reward" />
+
+	<catalog id="-27950" value="com.jour.gameserver.model.combatspirit.packet.SM_CombatSpirit_Up" />
+	<catalog id="-27951" value="com.jour.gameserver.model.vip.packet.SM_Vip_Avaliable_Smelt" />
+	<catalog id="-27952" value="com.jour.gameserver.model.gang.packet.SM_Self_Gang_Change" />
+	<catalog id="-27953" value="com.jour.gameserver.model.country.packet.SM_Query_Mobilization" />
+	<catalog id="-27954" value="com.jour.gameserver.model.welfare.packet.SM_ReduceClawback" />
+	<catalog id="-27955" value="com.jour.gameserver.model.world.packet.SM_Query_Map_Players" />
+	<catalog id="-27956" value="com.jour.gameserver.model.trigger.packet.SM_Red_Gift" />
+	<catalog id="-27957" value="com.jour.gameserver.model.welfare.packet.SM_Recieve_Gift" />
+	<catalog id="-27958" value="com.jour.gameserver.model.welfare.packet.SM_Query_Gift" />
+	<catalog id="-27959" value="com.jour.gameserver.model.player.packet.SM_Server_Open" />
+	<catalog id="-27960" value="com.jour.gameserver.model.rank.packet.SM_Country_Power_Player" />
+	<catalog id="-27961" value="com.jour.gameserver.model.skill.packet.SM_Buff_Accumulate" />
+	<catalog id="-27962" value="com.jour.gameserver.model.promote.packet.SM_Promotion" />
+	<catalog id="-27963" value="com.jour.gameserver.model.skill.packet.SM_Exercise_Status" />
+	<catalog id="-27964" value="com.jour.gameserver.model.drop.packet.SM_Boss_First_Blood" />
+	<catalog id="-27965" value="com.jour.gameserver.model.combatspirit.packet.SM_CombatSpirit_Reward" />
+	<catalog id="-27966" value="com.jour.gameserver.model.country.packet.SM_Country_Contribute_Shop" />
+	<catalog id="-27967" value="com.jour.gameserver.model.country.packet.SM_Country_UpgradeShop" />
+	<catalog id="-27968" value="com.jour.gameserver.model.country.packet.SM_CountryNpc_Fight_Rank" />
+	<catalog id="-27969" value="com.jour.gameserver.model.welfare.packet.SM_Active_Num" />
+
+	<catalog id="-27970" value="com.jour.gameserver.model.player.packet.SM_CountryPlayerInfo" />
+	<catalog id="-27972" value="com.jour.gameserver.model.country.packet.SM_CountryNpc_Rank_Sign" />
+	<catalog id="-27973" value="com.jour.gameserver.model.country.packet.SM_CountryFlag_Damage_Rank" />
+	<catalog id="-27974" value="com.jour.gameserver.model.country.packet.SM_Diplomacy_Damage_Rank" />
+	<catalog id="-27975" value="com.jour.gameserver.model.combatspirit.packet.SM_Combatspirit_DayInital" />
+	<catalog id="-27976" value="com.jour.gameserver.model.rank.packet.SM_Weak_Country" />
+	<catalog id="-27977" value="com.jour.gameserver.model.welfare.packet.SM_RedGift_Deprecate" />
+	<catalog id="-27978" value="com.jour.gameserver.model.operator.packet.SM_MobilePhone_Reward" />
+	<catalog id="-27979" value="com.jour.gameserver.model.operator.packet.SM_Operator_Ban" />
+	<catalog id="-27980" value="com.jour.gameserver.model.operator.packet.SM_Operator_ForbidChat" />
+	<catalog id="-27981" value="com.jour.gameserver.model.operator.packet.SM_Operator_Hide" />
+	<catalog id="-27982" value="com.jour.gameserver.model.operator.packet.SM_Operator_Kick" />
+	<catalog id="-27983" value="com.jour.gameserver.model.operator.packet.SM_Operator_ShowGMNickname" />
+	<catalog id="-27984" value="com.jour.gameserver.model.operator.packet.SM_Operator_UnBan" />
+	<catalog id="-27985" value="com.jour.gameserver.model.operator.packet.SM_Operator_UnForbidChat" />
+	<catalog id="-27986" value="com.jour.gameserver.model.operator.packet.SM_Operator_UnHide" />
+	<catalog id="-27987" value="com.jour.gameserver.model.operator.packet.SM_Operator_UnShowGMNickname" />
+	<catalog id="-27988" value="com.jour.gameserver.model.operator.packet.SM_OpVip_Reward" />
+	<catalog id="-27989" value="com.jour.gameserver.model.operator.packet.SM_SubInformation_Reward" />
+
+
+	<!-- 坐骑幻化 -->
+	<catalog id="-27990" value="com.jour.gameserver.model.horse.packet.SM_Illution_Active" />
+	<catalog id="-27992" value="com.jour.gameserver.model.horse.packet.SM_Cancel_Illution" />
+	<catalog id="-27993" value="com.jour.gameserver.model.horse.packet.SM_Illution_Use" />
+	<catalog id="-27994" value="com.jour.gameserver.model.horse.packet.SM_Not_Finish_Acitve" />
+	<catalog id="-27995" value="com.jour.gameserver.model.operator.packet.SM_Operator_Trace" />
+
+	<!-- 控制台返回 -->
+
+	<catalog id="-27996" value="com.jour.gameserver.model.nickname.packet.SM_Nickname_Remove" />
+	<catalog id="-27997" value="com.jour.gameserver.model.nickname.packet.SM_Nickname_Waited_Active" />
+	<catalog id="-27998" value="com.jour.gameserver.model.console.packet.SM_Get_Server_Version_MD5" />
+	<catalog id="-27999" value="com.jour.gameserver.model.nickname.packet.SM_Nickname_Change" />
+
+
+	<!-- 合服活动 -->
+	<catalog id="-30000" value="com.jour.gameserver.model.mergeactive.packet.SM_Merge_Cheap_Bag_Reward" />
+	<catalog id="-30001" value="com.jour.gameserver.model.mergeactive.packet.SM_Merge_Login_Reward" />
+	<catalog id="-30002" value="com.jour.gameserver.model.mergeactive.packet.SM_Express_Next_Opentime" />
+	<catalog id="-30003" value="com.jour.gameserver.model.mergeactive.packet.SM_Temple_Next_Opentime" />
+
+	<!-- 平台活动 -->
+	<catalog id="-30050" value="com.jour.gameserver.model.operator.packet.SM_Browser_2345_Reward" />
+	<catalog id="-30051" value="com.jour.gameserver.model.operator.packet.SM_OpVip_Reward2" />
+	<!-- 通用活动2 -->
+	<catalog id="-30100" value="com.jour.gameserver.model.commonactivity.packet.SM_Lucky_Draw_Draw" />
+	<catalog id="-30101" value="com.jour.gameserver.model.commonactivity.packet.SM_Lucky_Draw_Reward" />
+	<catalog id="-30102" value="com.jour.gameserver.model.commonactivity.packet.SM_Lucky_Draw_Recharge" />
+	<catalog id="-30103" value="com.jour.gameserver.model.commonactivity.packet.SM_Gold_Treasury_Query" />
+	<catalog id="-30104" value="com.jour.gameserver.model.commonactivity.packet.SM_Gold_Treasury_Reset" />
+	<catalog id="-30105" value="com.jour.gameserver.model.commonactivity.packet.SM_Gold_Treasury_Reward" />
+	<catalog id="-30106" value="com.jour.gameserver.model.commonactivity.packet.SM_Gold_Treasury_BroadCast" />
+	<catalog id="-30107" value="com.jour.gameserver.model.commonactivity.packet.SM_Common_Consume_Gift_Push" />
+	<catalog id="-30108" value="com.jour.gameserver.model.commonactivity.packet.SM_Consume_Gift_Reward" />
+	<!-- 副本 -->
+	<catalog id="-30201" value="com.jour.gameserver.model.copy.packet.SM_WarBook_Copy_Reward" />
+
+
+	<catalog id="-30202" value="com.jour.gameserver.model.copy.packet.SM_WarbookCopy_Reset" />
+	
+	
+	<catalog id="-30205" value="com.jour.gameserver.model.horse.packet.SM_Horse_Grow_Item_Change" />
+	<catalog id="-30206" value="com.jour.gameserver.model.artifact.packet.SM_Artifact_Grow_Item_Change" />
+	<catalog id="-30207" value="com.jour.gameserver.model.soul.packet.SM_Soul_Grow_Item_Change" />
+
+	<!-- 从这里开始定义业务专属的对象 -->
+	<catalog id="-10000" value="com.jour.gameserver.model.player.entity.PlayerVO" />
+	<catalog id="-10001" value="com.jour.gameserver.model.skill.model.EffectVO" />
+	<catalog id="-10002" value="com.jour.gameserver.model.controllers.packet.AbnormalEffect" />
+	<catalog id="-10003" value="com.jour.gameserver.model.item.storage.ItemStorage" />
+	<catalog id="-10004" value="com.jour.gameserver.model.item.storage.EquipmentStorage" />
+	<catalog id="-10005" value="com.jour.gameserver.model.item.Equipment" />
+	<catalog id="-10006" value="com.jour.gameserver.model.item.UseableItem" />
+	<catalog id="-10007" value="com.jour.gameserver.model.item.Gem" />
+	<catalog id="-10008" value="com.jour.gameserver.model.item.SmallItem" />
+	<catalog id="-10009" value="com.jour.gameserver.model.item.NullItem" />
+	<catalog id="-10010" value="com.jour.gameserver.model.item.AbstractItem" />
+	<catalog id="-10011" value="com.jour.gameserver.model.gameobjects.stats.PlayerGameStatsVO" />
+	<catalog id="-10012" value="com.jour.gameserver.model.purse.model.PurseVO" />
+	<catalog id="-10013" value="com.jour.gameserver.model.exchange.core.ExchangeItem" />
+	<catalog id="-10014" value="com.jour.gameserver.model.gang.model.GangUpdateVO" />
+	<catalog id="-10015" value="com.jour.gameserver.model.gang.model.GangVO" />
+	<catalog id="-10016" value="com.jour.gameserver.model.gang.model.MemberVO" />
+	<catalog id="-10017" value="com.jour.gameserver.model.gang.model.PlayerApplyVO" />
+	<catalog id="-10018" value="com.jour.gameserver.model.gang.model.PlayerInviteVO" />
+	<catalog id="-10019" value="com.jour.gameserver.model.gang.model.PlayerGangVO" />
+	<catalog id="-10020" value="com.jour.gameserver.model.gang.model.GangSimpleVO" />
+	<catalog id="-10021" value="com.jour.gameserver.model.gang.model.ApplyVO" />
+	<catalog id="-10022" value="com.jour.gameserver.model.group.model.GroupApplyVO" />
+	<catalog id="-10023" value="com.jour.gameserver.model.group.model.MemberVO" />
+	<catalog id="-10024" value="com.jour.gameserver.model.group.model.GroupSimpleVO" />
+	<catalog id="-10025" value="com.jour.gameserver.model.player.model.PlayerSimpleInfo" />
+	<catalog id="-10026" value="com.jour.gameserver.model.skill.model.SkillListVO" />
+	<catalog id="-10027" value="com.jour.gameserver.model.skill.model.SkillEntryVO" />
+	<catalog id="-10028" value="com.jour.gameserver.model.mail.model.Mail" />
+	<catalog id="-10029" value="com.jour.gameserver.model.mail.model.MailBox" />
+	<catalog id="-10030" value="com.jour.gameserver.model.gang.model.log.GangLog" />
+	<catalog id="-10031" value="com.jour.gameserver.model.reward.model.Reward" />
+	<catalog id="-10032" value="com.jour.gameserver.model.reward.model.RewardItem" />
+	<catalog id="-10033" value="com.jour.gameserver.model.chat.model.Sender" />
+	<catalog id="-10034" value="com.jour.gameserver.model.chat.model.RequestShow" />
+	<catalog id="-10035" value="com.jour.gameserver.model.chat.model.show.object.ItemShow" />
+	<catalog id="-10036" value="com.jour.gameserver.model.chat.model.Message" />
+	<catalog id="-10037" value="com.jour.gameserver.model.copy.model.CopyHistoryVO" />
+	<catalog id="-10038" value="com.jour.gameserver.model.country.model.vo.CourtVO" />
+	<catalog id="-10039" value="com.jour.gameserver.model.country.model.vo.OfficialVO" />
+	<catalog id="-10040" value="com.jour.gameserver.model.country.model.vo.CoppersVO" />
+	<catalog id="-10041" value="com.jour.gameserver.model.country.model.vo.TankVO" />
+	<catalog id="-10042" value="com.jour.gameserver.model.country.model.vo.KingGuradVO" />
+	<catalog id="-10043" value="com.jour.gameserver.model.item.storage.PlayerItemStorage" />
+	<catalog id="-10044" value="com.jour.gameserver.model.military.model.MilitaryVO" />
+	<catalog id="-10045" value="com.jour.gameserver.model.country.model.vo.ArmsFactoryVO" />
+	<catalog id="-10046" value="com.jour.gameserver.model.item.model.EquipmentStat" />
+	<catalog id="-10047" value="com.jour.gameserver.model.express.model.ExpressVO" />
+	<catalog id="-10048" value="com.jour.gameserver.model.express.model.LorryVO" />
+	<catalog id="-10049" value="com.jour.gameserver.model.temple.model.TempleVO" />
+	<catalog id="-10050" value="com.jour.gameserver.model.investigate.packet.vo.InvestigateVO" />
+	<catalog id="-10051" value="com.jour.gameserver.model.soul.model.SoulVO" />
+	<catalog id="-10052" value="com.jour.gameserver.model.artifact.model.ArtifactVO" />
+	<catalog id="-10053" value="com.jour.gameserver.model.skill.model.AbnormalVO" />
+	<catalog id="-10054" value="com.jour.gameserver.model.i18n.manager.I18nUtils" />
+	<catalog id="-10055" value="com.jour.gameserver.model.boss.model.BossView" />
+	<catalog id="-10056" value="com.jour.gameserver.model.boss.vo.BossDamageVO" />
+	<catalog id="-10057" value="com.jour.gameserver.model.contact.model.SocialNetData" />
+	<catalog id="-10058" value="com.jour.gameserver.model.contact.model.EnemyVO" />
+	<catalog id="-10059" value="com.jour.gameserver.model.player.entity.PlayerDetailVO" />
+	<catalog id="-10060" value="com.jour.gameserver.model.gang.model.GangInfo" />
+	<catalog id="-10061" value="com.jour.gameserver.model.skill.model.SpecialEffect" />
+	<catalog id="-10062" value="com.jour.gameserver.model.group.model.GroupInviterVO" />
+
+	<catalog id="-10063" value="com.jour.gameserver.model.kingofwar.packet.vo.KingCommandVO" />
+	<catalog id="-10064" value="com.jour.gameserver.model.kingofwar.packet.vo.CommandPlayerVO" />
+	<catalog id="-10065" value="com.jour.gameserver.model.chat.model.show.object.PositionShow" />
+	<catalog id="-10066" value="com.jour.gameserver.model.kingofwar.packet.vo.ReliveStatusVO" />
+	<catalog id="-10067" value="com.jour.gameserver.model.kingofwar.packet.vo.BossHpVO" />
+	<catalog id="-10068" value="com.jour.gameserver.model.kingofwar.packet.vo.PlayerRankInfoVO" />
+	<catalog id="-10069" value="com.jour.gameserver.model.kingofwar.packet.vo.PlayerWarInfoVO" />
+	<catalog id="-10070" value="com.jour.gameserver.model.boss.model.BossDropInfo" />
+	<catalog id="-10071" value="com.jour.gameserver.model.country.model.vo.CountryFlagInfoVO" />
+	<catalog id="-10072" value="com.jour.gameserver.model.country.model.vo.DiplomacyInfoVO" />
+	<catalog id="-10073" value="com.jour.gameserver.model.country.model.vo.ActivityVO" />
+	<catalog id="-10074" value="com.jour.gameserver.model.item.SmeltVO" />
+	<catalog id="-10075" value="com.jour.gameserver.model.copy.model.CopyInfo" />
+	<catalog id="-10076" value="com.jour.gameserver.model.skill.model.HealEffect" />
+	<catalog id="-10077" value="com.jour.gameserver.model.item.PetItem" />
+	<catalog id="-10078" value="com.jour.gameserver.model.commonactivity.model.vo.CommonGoldTreasuryVo" />
+	<catalog id="-10079" value="com.jour.gameserver.model.commonactivity.model.GoldTreasuryLog" />
+	<catalog id="-10080" value="com.jour.gameserver.model.gangofwar.packet.vo.PlayerGangWarInfoVO" />
+	<catalog id="-10081" value="com.jour.gameserver.model.gangofwar.packet.vo.BossHpVO" />
+	<catalog id="-10082" value="com.jour.gameserver.model.gangofwar.packet.vo.BossStatus" />
+	<catalog id="-10083" value="com.jour.gameserver.model.gangofwar.packet.vo.DefendGang" />
+	<catalog id="-10084" value="com.jour.gameserver.model.gangofwar.packet.vo.GangOfWarRankItem" />
+	<catalog id="-10085" value="com.jour.gameserver.model.gangofwar.packet.vo.GangOfWarBossDamageVO" />
+	<catalog id="-10086" value="com.jour.gameserver.model.country.packet.vo.SalaryStatusVO" />
+	<catalog id="-10087" value="com.jour.gameserver.model.welfare.packet.vo.ClawbackVO" />
+	<catalog id="-10088" value="com.jour.gameserver.model.welfare.packet.vo.PushNumVO" />
+	<catalog id="-10089" value="com.jour.gameserver.model.welfare.packet.vo.PushNumListVO" />
+	<catalog id="-10090" value="com.jour.gameserver.model.welfare.packet.vo.OnlineRewardVO" />
+	<catalog id="-10091" value="com.jour.gameserver.model.country.model.vo.CountryLoggerVO" />
+	<catalog id="-10092" value="com.jour.gameserver.model.country.model.vo.CountryLogValueVO" />
+	<catalog id="-10093" value="com.jour.gameserver.model.country.model.log.FeteLogValue" />
+	<catalog id="-10094" value="com.jour.gameserver.model.express.model.LorryNavigatorVO" />
+	<catalog id="-10095" value="com.jour.gameserver.model.welfare.packet.vo.BossGiftVO" />
+	<catalog id="-10096" value="com.jour.gameserver.model.chat.model.show.object.FootprintShow" />
+	<catalog id="-10097" value="com.jour.gameserver.model.chat.model.show.object.FlyPositionShow" />
+	<catalog id="-10098" value="com.jour.gameserver.model.chat.model.show.object.HeroMailShow" />
+	<catalog id="-10099" value="com.jour.gameserver.model.commonactivity.model.ServerGoldTreasuryLog"/>
+	<catalog id="-11000" value="com.jour.gameserver.model.i18n.model.I18nPack" />
+
+	<catalog id="-11005" value="com.jour.gameserver.model.openactive.model.vo.PublicTestVO" />
+
+	<catalog id="-11010" value="com.jour.gameserver.model.rescue.model.Rescue" />
+	<catalog id="-11011" value="com.jour.gameserver.model.rescue.model.RescueItem" />
+
+	<catalog id="-11020" value="com.jour.gameserver.model.footprint.model.Footprint" />
+	<catalog id="-11021" value="com.jour.gameserver.model.footprint.model.FootprintPool" />
+	
+	<catalog id="-11032" value="com.jour.gameserver.model.rank.model.rankelement.SealRankElement" />
+	<catalog id="-11033" value="com.jour.gameserver.model.rank.model.rankelement.WarbookRankElement" />
+	<catalog id="-11034" value="com.jour.gameserver.model.rank.model.rankelement.RomaticConsumeRankElement" />
+	<catalog id="-11035" value="com.jour.gameserver.model.rank.model.rankelement.ZhanGuoRankElement" />
+	<catalog id="-11036" value="com.jour.gameserver.model.rank.model.rankelement.TreeConsumeElement" />
+	<catalog id="-11037" value="com.jour.gameserver.model.rank.model.rankelement.ThousandConsumeRankElement" />
+	<catalog id="-11038" value="com.jour.gameserver.model.commonactivity.packet.vo.RecollectVO" />
+	<catalog id="-11039" value="com.jour.gameserver.model.rank.model.rankelement.CelebrateConsumeElement" />
+	<catalog id="-11040" value="com.jour.gameserver.model.boss.model.PlayerBossData" />
+	<catalog id="-11041" value="com.jour.gameserver.model.rank.model.rankelement.ActivityHeroRankElement" />
+	<catalog id="-11042" value="com.jour.gameserver.model.rank.model.rankelement.ChristmasConsumeElement" />
+	<catalog id="-11043" value="com.jour.gameserver.model.rank.model.rankelement.MergeConsumeElement" />
+	<catalog id="-11044" value="com.jour.gameserver.model.rank.model.rankelement.EnhanceRankElement" />
+	<catalog id="-11045" value="com.jour.gameserver.model.rank.model.rankelement.ConsumeRankElement" />
+	<catalog id="-11046" value="com.jour.gameserver.model.controllers.stats.PlayerDeadStatsVO" />
+	<catalog id="-11047" value="com.jour.gameserver.model.rank.model.rankelement.ProtectureElement" />
+	<catalog id="-11048" value="com.jour.gameserver.model.rank.model.rankelement.MedalElement" />
+	<catalog id="-11049" value="com.jour.gameserver.model.rank.model.rankelement.TreasureElement" />
+	<catalog id="-11050" value="com.jour.gameserver.model.rank.model.RankRow" />
+	<catalog id="-11051" value="com.jour.gameserver.model.rank.model.rankelement.ArtifactLevelElement" />
+	<catalog id="-11052" value="com.jour.gameserver.model.rank.model.rankelement.BattleScoreElement" />
+	<catalog id="-11053" value="com.jour.gameserver.model.rank.model.rankelement.HorseGradeElement" />
+	<catalog id="-11054" value="com.jour.gameserver.model.rank.model.rankelement.MilitaryRankElement" />
+	<catalog id="-11055" value="com.jour.gameserver.model.rank.model.rankelement.PlayerLevelRankElement" />
+	<catalog id="-11056" value="com.jour.gameserver.model.rank.model.rankelement.SoulRankElement" />
+	<catalog id="-11057" value="com.jour.gameserver.model.rank.model.rankelement.HeroRankElement" />
+	<catalog id="-11058" value="com.jour.gameserver.model.rank.model.rankelement.LadderRankElement" />
+	<catalog id="-11059" value="com.jour.gameserver.model.rank.model.rankelement.CountryRankElement" />
+
+
+	<catalog id="-11060" value="com.jour.gameserver.model.combatspirit.model.CombatSpiritStorage" />
+	<catalog id="-11061" value="com.jour.gameserver.model.combatspirit.CombatSpirit" />
+	<catalog id="-11062" value="com.jour.gameserver.model.welfare.model.BossGift" />
+	<catalog id="-11063" value="com.jour.gameserver.model.promote.model.PromotionVO" />
+	<catalog id="-11064" value="com.jour.gameserver.model.country.packet.vo.CountryNpcDamageVO" />
+	<catalog id="-11065" value="com.jour.gameserver.model.nickname.model.vo.NickNamePoolVO" />
+	<catalog id="-11066" value="com.jour.gameserver.model.nickname.model.Nickname" />
+
+	<catalog id="-11068" value="com.jour.gameserver.model.collect.model.Collect" />
+	<catalog id="-11069" value="com.jour.gameserver.model.collect.model.FamedGeneral" />
+
+	<catalog id="-11070" value="com.jour.gameserver.model.country.model.vo.TraitorVO" />
+
+	<catalog id="-11100" value="com.jour.gameserver.model.vip.model.Vip" />
+
+	<catalog id="-11110" value="com.jour.gameserver.model.item.storage.ItemUseVO" />
+	<catalog id="-11111" value="com.jour.gameserver.model.openactive.model.MilitaryActive" />
+	<catalog id="-11112" value="com.jour.gameserver.model.openactive.model.ConsumeActive" />
+	<catalog id="-11113" value="com.jour.gameserver.model.openactive.model.LevelActive" />
+	<catalog id="-11114" value="com.jour.gameserver.model.openactive.model.ArtifactActive" />
+	<catalog id="-11115" value="com.jour.gameserver.model.openactive.model.vo.CompeteVO" />
+	<catalog id="-11116" value="com.jour.gameserver.model.openactive.model.EnhancePowerActive" />
+	<catalog id="-11117" value="com.jour.gameserver.model.openactive.model.SoulActive" />
+	<catalog id="-11118" value="com.jour.gameserver.model.openactive.model.vo.OldCompeteVO" />
+	<catalog id="-11119" value="com.jour.gameserver.model.openactive.model.OldSoulActive" />
+	<catalog id="-11120" value="com.jour.gameserver.model.openactive.model.vo.OldSevenCompeteVO" />
+	<catalog id="-11121" value="com.jour.gameserver.model.openactive.model.CountryHeroActive" />
+
+	<catalog id="-11150" value="com.jour.gameserver.model.player.model.PlayerChatSimple" />
+
+	<catalog id="-11170" value="com.jour.gameserver.model.addication.packet.AddicationVO" />
+
+	<catalog id="-11180" value="com.jour.gameserver.model.welfare.packet.vo.SevenDayRewardVo" />
+
+	<catalog id="-11181" value="com.jour.gameserver.model.operator.model.OperatorPool" />
+	<catalog id="-11182" value="com.jour.gameserver.model.operator.model.SubInformation" />
+
+	<catalog id="-11183" value="com.jour.gameserver.model.operator.model.SuperVip" />
+	<catalog id="-11184" value="com.jour.gameserver.model.operator.model.SuperVipVO" />
+
+	<!-- 开服活动 -->
+	<catalog id="-11185" value="com.jour.gameserver.model.openactive.model.vo.OpenActiveVo" />
+	<catalog id="-11186" value="com.jour.gameserver.model.openactive.model.ExpActive" />
+	<catalog id="-11187" value="com.jour.gameserver.model.openactive.model.EquipActive" />
+	<catalog id="-11188" value="com.jour.gameserver.model.openactive.model.EquipEnhanceActive" />
+	<catalog id="-11189" value="com.jour.gameserver.model.openactive.model.HorseUpgradeActive" />
+	<catalog id="-11190" value="com.jour.gameserver.model.openactive.model.EveryDayRecharge" />
+	<catalog id="-11191" value="com.jour.gameserver.model.openactive.model.vo.SevenCompeteVO" />
+
+	<catalog id="-11200" value="com.jour.gameserver.model.core.action.CoreActions" />
+	<catalog id="-11201" value="com.jour.gameserver.model.core.action.ItemAction" />
+	<catalog id="-11202" value="com.jour.gameserver.model.core.action.CurrencyAction" />
+	<catalog id="-11209" value="com.jour.gameserver.model.horse.model.HorseAppearance" />
+
+	<catalog id="-11210" value="com.jour.gameserver.model.operator.model.BanPlayer" />
+	<catalog id="-11211" value="com.jour.gameserver.model.operator.model.ForbidChatList" />
+	<catalog id="-11212" value="com.jour.gameserver.model.operator.model.LoginBanList" />
+	<catalog id="-11213" value="com.jour.gameserver.model.operator.model.MobilePhone" />
+	<catalog id="-11214" value="com.jour.gameserver.model.operator.model.OperatorVip" />
+	<catalog id="-11215" value="com.jour.gameserver.model.operator.model.OpForbidChat" />
+	<catalog id="-11216" value="com.jour.gameserver.model.operator.model.GmPrivilege" />
+	<catalog id="-11217" value="com.jour.gameserver.model.openactive.model.GiftActive" />
+	<catalog id="-11218" value="com.jour.gameserver.model.openactive.model.vo.CelebrateActivityVo" />
+	<catalog id="-11219" value="com.jour.gameserver.model.openactive.model.ActivityInfo" />
+	<catalog id="-11220" value="com.jour.gameserver.model.openactive.model.RechargeCelebrate" />
+	<catalog id="-11221" value="com.jour.gameserver.model.capturetown.model.PlayerCaptureTownInfo" />
+	<catalog id="-11222" value="com.jour.gameserver.model.capturetown.model.SelfCaptureInfo" />
+	<catalog id="-11223" value="com.jour.gameserver.model.capturetown.model.CountryCaptureInfo" />
+
+	<catalog id="-11224" value="com.jour.gameserver.model.gascopy.model.vo.PlayerGasCopyVO" />
+
+	<!-- 投资理财 -->
+	<catalog id="-11230" value="com.jour.gameserver.model.invest.model.vo.InvestPoolVo" />
+	<catalog id="-11231" value="com.jour.gameserver.model.invest.model.Invest" />
+	<catalog id="-11232" value="com.jour.gameserver.model.invest.model.InvestInfo" />
+
+	<catalog id="-11233" value="com.jour.gameserver.model.monsterriot.packet.vo.MonsterRiotRankVO" />
+	<catalog id="-11235" value="com.jour.gameserver.model.country.model.vo.CountryFlagQuestVO" />
+	<catalog id="-11236" value="com.jour.gameserver.model.countrycopy.packet.vo.CountryCopyVO" />
+	<catalog id="-11237" value="com.jour.gameserver.model.countrycopy.packet.vo.FirstEncourageVO" />
+	<catalog id="-11238" value="com.jour.gameserver.model.shop.packet.vo.ShoppingHistoryVO" />
+	<catalog id="-11239" value="com.jour.gameserver.model.mergeactive.model.ConsumeCompete" />
+
+
+	<!-- 储君系统 -->
+	<catalog id="-11240" value="com.jour.gameserver.model.country.model.vo.ReserveTaskVO" />
+
+	<catalog id="-11242" value="com.jour.gameserver.model.countrycopy.model.vo.TechCopyRankVO" />
+
+	<!-- 探宝 -->
+	<catalog id="-11243" value="com.jour.gameserver.model.item.storage.TreasureItemStorage" />
+	<catalog id="-11244" value="com.jour.gameserver.model.item.model.PlayerTreasureInfo" />
+
+	<!-- 国家科技 -->
+	<catalog id="-11250" value="com.jour.gameserver.model.country.packet.vo.CountryTechnologyVo" />
+
+	<catalog id="-11251" value="com.jour.gameserver.model.agateinvest.model.vo.InvestAgatePoolVo" />
+	<catalog id="-11252" value="com.jour.gameserver.model.agateinvest.model.InvestAgate" />
+	<catalog id="-11253" value="com.jour.gameserver.model.agateinvest.model.InvestAgateInfo" />
+
+	<catalog id="-11260" value="com.jour.gameserver.model.moduleopen.packet.vo.ModuleOpenVO" />
+
+	<catalog id="-11261" value="com.jour.gameserver.model.operator.model.QiHu360PrivilegePlayer" />
+	<catalog id="-11262" value="com.jour.gameserver.model.operator.model.QiHu360PrivilegeLog" />
+
+
+	<!-- 时装 -->
+	<catalog id="-11271" value="com.jour.gameserver.model.fashion.packet.vo.FashionPoolVo" />
+
+	<catalog id="-11275" value="com.jour.gameserver.model.horse.packet.vo.HorseSimpleVo" />
+	<catalog id="-11276" value="com.jour.gameserver.model.soul.packet.vo.SoulSimpleVo" />
+	<catalog id="-11277" value="com.jour.gameserver.model.artifact.packet.vo.ArtifactSimpleVo" />
+
+
+	<!-- 黑市 -->
+	<catalog id="-11278" value="com.jour.gameserver.model.blackshop.packet.vo.BlackShopActivityVo" />
+	<catalog id="-11279" value="com.jour.gameserver.model.blackshop.model.BlackShopGood" />
+
+	<!-- 开服活动修改 -->
+	<catalog id="-11280" value="com.jour.gameserver.model.commonactivity.model.CommonMarcoShopGood" />
+
+	<!-- 公共活动 -->
+	<catalog id="-11300" value="com.jour.gameserver.model.commonactivity.model.vo.CommonActivityPoolVo" />
+	<catalog id="-11301" value="com.jour.gameserver.model.commonactivity.model.vo.CommonCheapGiftBagVo" />
+	<catalog id="-11302" value="com.jour.gameserver.model.commonactivity.model.vo.CommonLoginGiftVo" />
+	<catalog id="-11304" value="com.jour.gameserver.model.commonactivity.model.vo.CommonRechargeVo" />
+	<catalog id="-11305" value="com.jour.gameserver.model.commonactivity.model.vo.CommonConsumeActiveVo" />
+	<catalog id="-11306" value="com.jour.gameserver.model.commonactivity.model.vo.CommonIdentifyTreasureVo" />
+	<catalog id="-11307" value="com.jour.gameserver.model.commonactivity.model.vo.CommonFirstPayVo" />
+	<catalog id="-11308" value="com.jour.gameserver.model.commonactivity.model.vo.CommonRedPackVo" />
+	<catalog id="-11309" value="com.jour.gameserver.model.commonactivity.model.vo.CommonTreasureActiveVo" />
+	<catalog id="-11310" value="com.jour.gameserver.model.commonactivity.model.vo.LuckyDrawVo" />
+	<catalog id="-11311" value="com.jour.gameserver.model.commonactivity.model.vo.CommonConsumeGiftVo" />
+
+	<!-- 美人 -->
+	<catalog id="-11320" value="com.jour.gameserver.model.beauty.packet.vo.BeautyGirlPoolVo" />
+	<catalog id="-11321" value="com.jour.gameserver.model.beauty.model.BeautyGirl" />
+
+	<!-- 兵书 -->
+	<catalog id="-11330" value="com.jour.gameserver.model.warbook.packet.vo.WarbookVo" />
+	<catalog id="-11331" value="com.jour.gameserver.model.warbook.packet.vo.WarbookSimpleVo" />
+	<catalog id="-11332" value="com.jour.gameserver.model.seal.model.Seal" />
+	
+
+	<!-- 命格 -->
+	<catalog id="-11340" value="com.jour.gameserver.model.lifegrid.packet.vo.LifeGridPoolVo" />
+	<catalog id="-11341" value="com.jour.gameserver.model.lifegrid.model.LifeGridStorage" />
+	<catalog id="-11342" value="com.jour.gameserver.model.item.LifeGridItem" />
+	
+	<!-- 转生 -->
+	<catalog id="-11345" value="com.jour.gameserver.model.suicide.packet.vo.SuicideVo" />
+	
+	<!-- 合服活动 -->
+	<catalog id="-12000" value="com.jour.gameserver.model.mergeactive.model.vo.MergeActiveVo" />
+
+	<catalog id="-12011" value="com.jour.gameserver.model.assassin.model.AssassinRandVO" />
+	<catalog id="-12012" value="com.jour.gameserver.model.ministerfete.model.MinisterRandVO" />
+
+	<!-- 从这里开始定义GM平台专属的消息请求 -->
+	<catalog id="-8000" value="com.jour.gameserver.admin.packet.GM_Allow" gm="true" />
+	<catalog id="-8001" value="com.jour.gameserver.admin.packet.GM_Block" gm="true" />
+	<catalog id="-8002" value="com.jour.gameserver.admin.packet.GM_Count" gm="true" />
+	<catalog id="-8003" value="com.jour.gameserver.admin.packet.GM_GetBlockList" gm="true" />
+	<catalog id="-8004" value="com.jour.gameserver.admin.packet.GM_Kick" gm="true" />
+	<catalog id="-8005" value="com.jour.gameserver.admin.packet.GM_Post" gm="true" />
+	<catalog id="-8006" value="com.jour.gameserver.admin.packet.GM_Reload" gm="true" />
+	<catalog id="-8007" value="com.jour.gameserver.admin.packet.GM_Stop" gm="true" />
+	<catalog id="-8008" value="com.jour.gameserver.admin.packet.GM_UnBlock" gm="true" />
+	<catalog id="-8009" value="com.jour.gameserver.admin.packet.GM_UnBlockIP" gm="true" />
+	<catalog id="-8010" value="com.jour.gameserver.admin.packet.GM_Online" gm="true" />
+	<catalog id="-8011" value="com.jour.gameserver.admin.packet.GM_SendMail" gm="true" />
+	<catalog id="-8012" value="com.jour.gameserver.admin.packet.GM_SendMailGroup" gm="true" />
+	<catalog id="-8013" value="com.jour.gameserver.admin.packet.GM_BlockIP" gm="true" />
+	<catalog id="-8014" value="com.jour.gameserver.admin.packet.GM_GetIpGroup" gm="true" />
+	<catalog id="-8015" value="com.jour.gameserver.admin.packet.GM_BlockById" gm="true" />
+	<catalog id="-8016" value="com.jour.gameserver.admin.packet.GM_UnBlockById" gm="true" />
+	<catalog id="-8017" value="com.jour.gameserver.admin.packet.GM_GetPlayerInfo" gm="true" />
+	<catalog id="-8018" value="com.jour.gameserver.admin.packet.GM_GetServerInfo" gm="true" />
+	<catalog id="-8019" value="com.jour.gameserver.admin.packet.GM_AddWhiteIp" gm="true" />
+	<catalog id="-8020" value="com.jour.gameserver.admin.packet.GM_MobilePhoneGift" gm="true" />
+	<catalog id="-8021" value="com.jour.gameserver.admin.packet.GM_ForbidChatById" gm="true" />
+	<catalog id="-8022" value="com.jour.gameserver.admin.packet.GM_GetForbidChatList" gm="true" />
+	<catalog id="-8023" value="com.jour.gameserver.admin.packet.GM_GetLoginBanList" gm="true" />
+	<catalog id="-8024" value="com.jour.gameserver.admin.packet.GM_UnForbidChatById" gm="true" />
+	<catalog id="-8025" value="com.jour.gameserver.admin.packet.GM_UnForbidChatByAccount" gm="true" />
+	<catalog id="-8026" value="com.jour.gameserver.admin.packet.GM_ForbidChatByAccount" gm="true" />
+	<catalog id="-8027" value="com.jour.gameserver.admin.packet.GM_BlockByAccount" gm="true" />
+	<catalog id="-8028" value="com.jour.gameserver.admin.packet.GM_UnBlockByAccount" gm="true" />
+	<catalog id="-8029" value="com.jour.gameserver.admin.packet.GM_SetGmPrivilege" gm="true" />
+	<catalog id="-8030" value="com.jour.gameserver.admin.packet.GM_GetSimplePlayerInfoByName" gm="true" />
+	<catalog id="-8031" value="com.jour.gameserver.admin.packet.GM_Wechat" gm="true" />
+	<catalog id="-8032" value="com.jour.gameserver.admin.packet.GM_GetSimplePlayerInfoByAccount" gm="true" />
+	<catalog id="-8033" value="com.jour.gameserver.admin.packet.GM_GetGmList" gm="true" />
+	<catalog id="-8034" value="com.jour.gameserver.admin.packet.GM_Recharge" gm="true" />
+	<catalog id="-8035" value="com.jour.gameserver.admin.packet.GM_SuperVip" gm="true" />
+	<catalog id="-8036" value="com.jour.gameserver.admin.packet.GM_SubInformation" gm="true" />
+	<catalog id="-8037" value="com.jour.gameserver.admin.packet.GM_Set_AntiAddiction" gm="true" />
+	<catalog id="-8038" value="com.jour.gameserver.admin.packet.GM_Gang_ChangePosition" gm="true" />
+	<catalog id="-8039" value="com.jour.gameserver.admin.packet.GM_Gang_DetailInfo" gm="true" />
+	<catalog id="-8040" value="com.jour.gameserver.admin.packet.GM_Gang_Disband" gm="true" />
+	<catalog id="-8041" value="com.jour.gameserver.admin.packet.GM_Gang_Expel" gm="true" />
+	<catalog id="-8042" value="com.jour.gameserver.admin.packet.GM_Gang_List" gm="true" />
+	<catalog id="-8043" value="com.jour.gameserver.admin.packet.GM_Gang_SetInfo" gm="true" />
+	<catalog id="-8044" value="com.jour.gameserver.admin.packet.GM_Dynmic" gm="true" />
+	<catalog id="-8045" value="com.jour.gameserver.admin.packet.GM_QiHu360Open" gm="true" />
+	<catalog id="-8046" value="com.jour.gameserver.admin.packet.GM_Get_QiHu360Open" gm="true" />
+	<catalog id="-8047" value="com.jour.gameserver.admin.packet.GM_BlockIP_And_BlockAccount" gm="true" />
+	<catalog id="-8048" value="com.jour.gameserver.admin.packet.GM_Celebrate_Set_ActivityOpen" gm="true" />
+	<catalog id="-8049" value="com.jour.gameserver.admin.packet.GM_Celebrate_Query_ActivityStates" gm="true" />
+	<catalog id="-8050" value="com.jour.gameserver.admin.packet.GM_Get_QiHu360SpeedOpen" gm="true" />
+	<catalog id="-8051" value="com.jour.gameserver.admin.packet.GM_QiHu360_Privilege_Open" gm="true" />
+	<catalog id="-8052" value="com.jour.gameserver.admin.packet.GM_GetSimplePlayerInfoByAccountJson" gm="true" />
+	<catalog id="-8053" value="com.jour.gameserver.admin.packet.GM_BlackShop_Set_Open" gm="true" />
+	<catalog id="-8054" value="com.jour.gameserver.admin.packet.GM_BlackShop_Close" gm="true" />
+	<catalog id="-8055" value="com.jour.gameserver.admin.packet.GM_BlackShop_Query" gm="true" />
+	<catalog id="-8056" value="com.jour.gameserver.admin.packet.GM_Identify_Treasure_Open" gm="true" />
+	<catalog id="-8057" value="com.jour.gameserver.admin.packet.GM_Identify_Treasure_Close" gm="true" />
+	<catalog id="-8058" value="com.jour.gameserver.admin.packet.GM_Identify_Treasure_Query" gm="true" />
+	<catalog id="-8059" value="com.jour.gameserver.admin.packet.GM_GetPlayerInfo_New" gm="true" />
+	<!-- -8060 到 -8075 都是留给腾讯用的 谢谢 -->
+
+	<!-- 9000 到 -9100 从这里开始定义跨服 -->
+	<catalog id="-9000" value="com.jour.gameserver.transfer.packet.PlayerTransferVO" gm="true" />
+	<catalog id="-9001" value="com.jour.gameserver.transfer.packet.GM_Get_CenterReward" gm="true" />
+	<catalog id="-9002" value="com.jour.gameserver.transfer.model.Ticket" gm="true" />
+	<catalog id="-9003" value="com.jour.gameserver.transfer.model.CenterReward" gm="true" />
+	<catalog id="-9004" value="com.jour.gameserver.model.player.entity.PlayerEnt" gm="true" />
+	<catalog id="-9005" value="com.jour.gameserver.transfer.packet.GM_Transfer_Heart" gm="true" />
+	<catalog id="-9006" value="com.jour.gameserver.transfer.packet.SM_Transfer_Info" />
+	<catalog id="-9007" value="com.jour.gameserver.transfer.packet.CM_Boss_Center_SignUp" />
+	<catalog id="-9008" value="com.jour.gameserver.transfer.packet.GM_Boss_Center_SignUp" gm="true" />
+	<catalog id="-9009" value="com.jour.gameserver.transfer.packet.CM_Boss_Center_Enter" />
+	<catalog id="-9010" value="com.jour.gameserver.transfer.packet.GM_Console_CenterReward" gm="true" />
+	<catalog id="-9011" value="com.jour.gameserver.model.console.packet.CM_BossCenter_Console" />
+	<catalog id="-9012" value="com.jour.gameserver.transfer.packet.TransferAddress" />
+	<catalog id="-9013" value="com.jour.gameserver.admin.packet.GM_Change_CenterAds" gm="true" />
+	<catalog id="-9014" value="com.jour.gameserver.transfer.packet.SM_Boss_Center_Enter" />
+	<catalog id="-9015" value="com.jour.gameserver.transfer.model.TransferInfo" />
+	<catalog id="-9016" value="com.jour.gameserver.transfer.packet.GM_Remove_CenterReward" gm="true" />
+	<catalog id="-9017" value="com.jour.gameserver.transfer.packet.SGM_Get_CenterReward" gm="true" />
+	<catalog id="-9018" value="com.jour.gameserver.transfer.packet.SGM_Remove_CenterReward" gm="true" />
+	
+
+	<!-- 从这里开始定义GM平台专属的消息请求 -->
+	<catalog id="-28000" value="com.jour.gameserver.admin.packet.SGM_Allow" gm="true" />
+	<catalog id="-28001" value="com.jour.gameserver.admin.packet.SGM_Block" gm="true" />
+	<catalog id="-28002" value="com.jour.gameserver.admin.packet.SGM_Count" gm="true" />
+	<catalog id="-28003" value="com.jour.gameserver.admin.packet.SGM_GetBlockList" gm="true" />
+	<catalog id="-28004" value="com.jour.gameserver.admin.packet.SGM_Kick" gm="true" />
+	<catalog id="-28005" value="com.jour.gameserver.admin.packet.SGM_Post" gm="true" />
+	<catalog id="-28006" value="com.jour.gameserver.admin.packet.SGM_Reload" gm="true" />
+	<catalog id="-28007" value="com.jour.gameserver.admin.packet.SGM_Stop" gm="true" />
+	<catalog id="-28008" value="com.jour.gameserver.admin.packet.SGM_UnBlock" gm="true" />
+	<catalog id="-28009" value="com.jour.gameserver.admin.packet.SGM_UnBlockIP" gm="true" />
+	<catalog id="-28010" value="com.jour.gameserver.admin.packet.SGM_Online" gm="true" />
+	<catalog id="-28011" value="com.jour.gameserver.admin.packet.SGM_SendMail" gm="true" />
+	<catalog id="-28012" value="com.jour.gameserver.admin.packet.SGM_SendMailGroup" gm="true" />
+	<catalog id="-28013" value="com.jour.gameserver.admin.packet.SGM_BlockIP" gm="true" />
+	<catalog id="-28014" value="com.jour.gameserver.admin.packet.SGM_GetIpGroup" gm="true" />
+	<catalog id="-28015" value="com.jour.gameserver.admin.packet.SGM_BlockById" gm="true" />
+	<catalog id="-28016" value="com.jour.gameserver.admin.packet.SGM_UnBlockById" gm="true" />
+	<catalog id="-28017" value="com.jour.gameserver.admin.packet.SGM_GetPlayerInfo" gm="true" />
+	<catalog id="-28018" value="com.jour.gameserver.admin.packet.SGM_GetServerInfo" gm="true" />
+	<catalog id="-28019" value="com.jour.gameserver.admin.packet.SGM_AddWhiteIp" gm="true" />
+	<catalog id="-28020" value="com.jour.gameserver.admin.packet.SGM_MobilePhoneGift" gm="true" />
+	<catalog id="-28021" value="com.jour.gameserver.admin.packet.SGM_ForbidChatById" gm="true" />
+	<catalog id="-28022" value="com.jour.gameserver.admin.packet.SGM_GetForbidChatList" gm="true" />
+	<catalog id="-28023" value="com.jour.gameserver.admin.packet.SGM_GetLoginBanList" gm="true" />
+	<catalog id="-28024" value="com.jour.gameserver.admin.packet.SGM_UnForbidChatById" gm="true" />
+	<catalog id="-28025" value="com.jour.gameserver.admin.packet.SGM_SetGmPrivilege" gm="true" />
+	<catalog id="-28026" value="com.jour.gameserver.admin.packet.SGM_GetSimplePlayerInfoByName" gm="true" />
+	<catalog id="-28027" value="com.jour.gameserver.admin.packet.SGM_Wechat" gm="true" />
+	<catalog id="-28028" value="com.jour.gameserver.admin.packet.SGM_GetSimplePlayerInfoByAccount" gm="true" />
+	<catalog id="-28029" value="com.jour.gameserver.admin.packet.SGM_GetGmList" gm="true" />
+	<catalog id="-28030" value="com.jour.gameserver.admin.packet.SGM_Recharge" gm="true" />
+	<catalog id="-28031" value="com.jour.gameserver.admin.packet.SGM_SuperVip" gm="true" />
+	<catalog id="-28032" value="com.jour.gameserver.admin.packet.SGM_SubInformation" gm="true" />
+	<catalog id="-28033" value="com.jour.gameserver.admin.packet.SGM_Set_AntiAddiction" gm="true" />
+	<catalog id="-28034" value="com.jour.gameserver.admin.packet.SGM_Gang_ChangePosition" gm="true" />
+	<catalog id="-28035" value="com.jour.gameserver.admin.packet.SGM_Gang_DetailInfo" gm="true" />
+	<catalog id="-28036" value="com.jour.gameserver.admin.packet.SGM_Gang_Disband" gm="true" />
+	<catalog id="-28037" value="com.jour.gameserver.admin.packet.SGM_Gang_Expel" gm="true" />
+	<catalog id="-28038" value="com.jour.gameserver.admin.packet.SGM_Gang_List" gm="true" />
+	<catalog id="-28039" value="com.jour.gameserver.admin.packet.SGM_Gang_SetInfo" gm="true" />
+	<catalog id="-28040" value="com.jour.gameserver.admin.packet.SGM_BlockIP_And_BlockAccount" gm="true" />
+
+	<catalog id="-28044" value="com.jour.gameserver.admin.packet.SGM_Dynmic" gm="true" />
+	<catalog id="-28045" value="com.jour.gameserver.admin.packet.SGM_QiHu360Open" gm="true" />
+	<catalog id="-28046" value="com.jour.gameserver.admin.packet.SGM_Get_QiHu360Open" gm="true" />
+	<catalog id="-28047" value="com.jour.gameserver.admin.packet.SGM_Celebrate_Set_ActivityOpen" gm="true" />
+	<catalog id="-28048" value="com.jour.gameserver.admin.packet.SGM_Celebrate_Query_ActivityState" gm="true" />
+	<catalog id="-28049" value="com.jour.gameserver.admin.packet.SGM_Get_QiHu360SpeedOpen" gm="true" />
+	<catalog id="-28050" value="com.jour.gameserver.admin.packet.SGM_QiHu360_Privilege_Open" gm="true" />
+	<catalog id="-28051" value="com.jour.gameserver.admin.packet.SGM_GetSimplePlayerInfoByAccountJson" gm="true" />
+	<catalog id="-28052" value="com.jour.gameserver.admin.packet.SGM_BlackShop_Set_Open" gm="true" />
+	<catalog id="-28053" value="com.jour.gameserver.admin.packet.SGM_BlackShop_Close" gm="true" />
+	<catalog id="-28054" value="com.jour.gameserver.admin.packet.SGM_BlackShop_Query" gm="true" />
+	<catalog id="-28055" value="com.jour.gameserver.admin.packet.SGM_Identify_Treasure_Open" gm="true" />
+	<catalog id="-28056" value="com.jour.gameserver.admin.packet.SGM_Identify_Treasure_Close" gm="true" />
+	<catalog id="-28057" value="com.jour.gameserver.admin.packet.SGM_Identify_Treasure_Query" gm="true" />
+	<catalog id="-28058" value="com.jour.gameserver.admin.packet.SGM_GetPlayerInfo_New" gm="true" />
+
+	<!-- -28059 到 -28070 都是留给腾讯用的 谢谢 -->
+	<!-- 跨服 -->
+	<catalog id="-29000" value="com.jour.gameserver.transfer.packet.SGM_Get_CenterReward" gm="true" />
+	<catalog id="-29001" value="com.jour.gameserver.transfer.packet.SGM_PlayerTransfer" gm="true" />
+	<catalog id="-29002" value="com.jour.gameserver.transfer.packet.SGM_Boss_Center_SignUp" gm="true" />
+	<catalog id="-29003" value="com.jour.gameserver.transfer.packet.SGM_Transfer_Heart" gm="true" />
+	<catalog id="-29004" value="com.jour.gameserver.transfer.packet.SM_Boss_Center_SignUp" />
+	<catalog id="-29005" value="com.jour.gameserver.transfer.packet.SM_BossCenter_Status" />
+	<catalog id="-29006" value="com.jour.gameserver.transfer.packet.SGM_Console_CenterReward" gm="true" />
+	<catalog id="-29007" value="com.jour.gameserver.admin.packet.SGM_Change_CenterAds" gm="true" />
+
+	<!-- 从这里开始定义GM平台专属的Bean -->
+	<catalog id="-18000" value="com.jour.gameserver.model.core.condition.model.CoreConditionResource" gm="true" />
+	<catalog id="-18001" value="com.jour.gameserver.admin.bean.IpGroupBean" gm="true" />
+	<catalog id="-18002" value="com.jour.gameserver.admin.bean.PlayerInfoBean" gm="true" />
+	<catalog id="-18003" value="com.jour.gameserver.admin.bean.PlayerInfoBeanNew" gm="true" />
+
+</protocols>

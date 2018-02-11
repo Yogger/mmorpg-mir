@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:resource="http://www.my9yu.com/common/resource"
+	xmlns:server="http://www.xiaosan.com/common/server" xmlns:dispatcher="http://www.xiaosan.com/common/dispatcher"
+	xmlns:ramcache="http://www.my9yu.com/common/ramcache" xmlns:event="http://www.my9yu.com/common/event"
+	xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd
+http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+http://www.xiaosan.com/common/dispatcher http://www.xiaosan.com/common/dispatcher/dispatcher-1.0.xsd
+http://www.xiaosan.com/common/server http://www.xiaosan.com/common/server/server-1.0.xsd
+http://www.my9yu.com/common/resource http://www.my9yu.com/common/resource/resource-1.0.xsd 
+http://www.my9yu.com/common/ramcache http://www.my9yu.com/common/ramcache/ramcache-1.0.xsd
+http://www.my9yu.com/common/event http://www.my9yu.com/common/event/event-1.0.xsd">
+	<!-- 转换器配置 -->
+	<bean
+		class="org.springframework.context.support.ConversionServiceFactoryBean">
+		<property name="converters">
+			<list>
+				<bean class="com.my9yu.common.resource.support.StringToDateConverter" />
+				<bean class="com.my9yu.common.resource.support.StringToClassConverter" />
+				<bean class="com.my9yu.common.resource.support.JsonToMapConverter" />
+				<bean class="com.my9yu.common.resource.support.JsonToArrayConverter" />
+			</list>
+		</property>
+
+	</bean>
+	<!-- 开启注释配置 -->
+	<context:annotation-config />
+
+	<!-- 自动包扫描配置 -->
+	<context:component-scan
+		base-package="com.my9yu.common,com.jour.gameserver.*.resource,com.jour.gameserver.model.resourcecheck" />
+
+
+	<!-- 静态资源配置 -->
+	<resource:config id="resourceManager">
+		<resource:format location="resource" type="excel"
+			suffix="xlsx" />
+		<resource:package name="com.jour.gameserver" />
+	</resource:config>
+
+	<event:config base-package="com.my9yu.common.event" />
+	<!-- 各模块的公用资源配置 --><!-- <import resource="applicationConfig.xml" /> -->
+
+</beans>

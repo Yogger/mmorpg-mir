@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+encoding//resource/client.properties=UTF-8
+encoding//resource/jdbc.properties=UTF-8
+encoding//resource/migrate.properties=UTF-8
+encoding//resource/server.properties=UTF-8
+encoding/<project>=UTF-8

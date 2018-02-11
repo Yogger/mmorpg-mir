@@ -1,0 +1,14 @@
+package com.mmorpg.mir.admin.packet;
+
+public class GM_Gang_Disband {
+	private long gangId;
+
+	public long getGangId() {
+		return gangId;
+	}
+
+	public void setGangId(long gangId) {
+		this.gangId = gangId;
+	}
+
+}

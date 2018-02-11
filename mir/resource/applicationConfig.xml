@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd
+http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+
+	<!-- 定时器修正参数 -->
+	<bean id="scheduling_delay_time" class="java.lang.Long">
+		<constructor-arg value="1000" />
+	</bean>
+
+	<!-- 事件系统配置参数 -->
+	<bean id="event_queue_size" class="java.lang.Integer">
+		<!-- 事件队列大小 -->
+		<constructor-arg value="10000" />
+	</bean>
+	<bean id="event_pool_size" class="java.lang.Integer">
+		<!-- 事件线程池最小线程数 -->
+		<constructor-arg value="5" />
+	</bean>
+	<bean id="event_pool_max_size" class="java.lang.Integer">
+		<!-- 事件线程池最大线程数 -->
+		<constructor-arg value="10" />
+	</bean>
+	<bean id="event_pool_alive_time" class="java.lang.Integer">
+		<!-- 事件线程池空闲线程活跃时间 -->
+		<constructor-arg value="60" />
+	</bean>
+
+	<!-- 服务器参数配置 -->
+	<bean id="serverConfigValue" class="com.jour.gameserver.model.ServerConfigValue">
+		<property name="opid" value="${server.config.opid}" />
+		<property name="op" value="${server.config.op}" />
+		<property name="serverid" value="${server.config.serverid}" />
+		<property name="key" value="${server.config.key}" />
+		<property name="game" value="${server.config.game}" />
+		<property name="console" value="${server.config.openconsole}" />
+		<property name="antiAdd" value="${server.config.antiAdd}" />
+		<property name="masterAccountUrl" value="${server.config.masterAccountUrl}" />
+		<property name="centerIp" value="${server.config.center.ip}" />
+		<property name="centerPort" value="${server.config.center.port}" />
+		<property name="centerDomain" value="${server.config.cneter.domain}" />
+		<property name="centerRpcPort" value="${server.config.center.rpc.port}" />
+	</bean>
+
+</beans>
