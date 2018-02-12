@@ -3,8 +3,7 @@ package com.mmorpg.mir.model.chooser.model.sample;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.codehaus.jackson.annotate.JsonIgnore;
-
+import com.alibaba.fastjson.annotation.JSONField;
 import com.windforce.common.resource.anno.Id;
 import com.windforce.common.resource.anno.Resource;
 
@@ -22,7 +21,7 @@ public class Chooser {
 	 * 
 	 * @return
 	 */
-	@JsonIgnore
+	@JSONField(serialize = false)
 	public List<String> calcResult() {
 		List<String> result = new ArrayList<String>();
 		for (ItemGroup group : getItemGroups()) {

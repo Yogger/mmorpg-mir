@@ -9,7 +9,6 @@ import org.slf4j.LoggerFactory;
 import org.slf4j.helpers.MessageFormatter;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.mmorpg.mir.admin.console.ConsoleManager;
 import com.mmorpg.mir.model.ServerConfigValue;
 import com.mmorpg.mir.model.SpringComponentStation;
 import com.mmorpg.mir.model.addication.AntiAddictionManager;
@@ -78,7 +77,6 @@ public class Start {
 
 		FirewallFilter firewallFilter = applicationContext.getBean(FirewallFilter.class);
 		firewallFilter.blockAll();
-		ConsoleManager.getInstance().block();
 		String message1 = MessageFormatter.format("服务器已经启动 - [{}]",
 				DateUtils.date2String(new Date(), DateUtils.PATTERN_DATE_TIME)).getMessage();
 		logger.error(message1);
