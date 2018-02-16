@@ -11,8 +11,8 @@ import org.springframework.stereotype.Component;
 
 import com.mmorpg.mir.model.common.ConfigValue;
 import com.mmorpg.mir.model.common.FormulaParmsUtil;
-import com.mmorpg.mir.model.core.action.CoreActionType;
-import com.mmorpg.mir.model.core.action.CoreActions;
+import com.mmorpg.mir.model.core.consumable.CoreActionType;
+import com.mmorpg.mir.model.core.consumable.CoreActions;
 import com.mmorpg.mir.model.formula.Formula;
 import com.mmorpg.mir.model.gameobjects.Player;
 import com.mmorpg.mir.model.item.Equipment;

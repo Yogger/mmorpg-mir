@@ -60,7 +60,7 @@ import com.windforce.common.resource.anno.Static;
  * 
  */
 @Component
-public class GroupManager implements IGroupManager {
+public class GroupManager {
 	/**
 	 * Caching group members
 	 */
@@ -320,40 +320,34 @@ public class GroupManager implements IGroupManager {
 				}
 
 				if (group.size() == 1 || (isLeader && noOneOnlineExceptSelf)) {
-					I18nUtils utils = I18nUtils
-							.valueOf("305005")
+					I18nUtils utils = I18nUtils.valueOf("305005")
 							.addParm("turn", I18nPack.valueOf("" + player.getSuicide().getTurn()))
 							.addParm("user", I18nPack.valueOf(player.createSimple()))
-							.addParm(I18NparamKey.LEVEL, I18nPack.valueOf(player.getSuicide().getPlayerLevelAfterTurn()))
-							.addParm(
-									I18NparamKey.JOB,
-									I18nPack.valueOf(PromotionManager.getInstance().getI18nJobName(player.getRole(),
-											player.getPromotion().getStage())));
+							.addParm(I18NparamKey.LEVEL,
+									I18nPack.valueOf(player.getSuicide().getPlayerLevelAfterTurn()))
+							.addParm(I18NparamKey.JOB, I18nPack.valueOf(PromotionManager.getInstance()
+									.getI18nJobName(player.getRole(), player.getPromotion().getStage())));
 					ChatManager.getInstance().sendSystem(PlayerGroup.GROUP_CHANNEL_ID, utils, null, group);
 				} else {
 					if (force) { // 被T了
 						// notice
-						I18nUtils utils = I18nUtils
-								.valueOf("305003")
+						I18nUtils utils = I18nUtils.valueOf("305003")
 								.addParm("turn", I18nPack.valueOf("" + player.getSuicide().getTurn()))
 								.addParm("user", I18nPack.valueOf(player.createSimple()))
-								.addParm(I18NparamKey.LEVEL, I18nPack.valueOf(player.getSuicide().getPlayerLevelAfterTurn()))
-								.addParm(
-										I18NparamKey.JOB,
-										I18nPack.valueOf(PromotionManager.getInstance().getI18nJobName(
-												player.getRole(), player.getPromotion().getStage())));
+								.addParm(I18NparamKey.LEVEL,
+										I18nPack.valueOf(player.getSuicide().getPlayerLevelAfterTurn()))
+								.addParm(I18NparamKey.JOB, I18nPack.valueOf(PromotionManager.getInstance()
+										.getI18nJobName(player.getRole(), player.getPromotion().getStage())));
 						ChatManager.getInstance().sendSystem(PlayerGroup.GROUP_CHANNEL_ID, utils, null, group);
 					} else { // 自己要退的
 						// notice
-						I18nUtils utils = I18nUtils
-								.valueOf("305004")
+						I18nUtils utils = I18nUtils.valueOf("305004")
 								.addParm("turn", I18nPack.valueOf("" + player.getSuicide().getTurn()))
 								.addParm("user", I18nPack.valueOf(player.createSimple()))
-								.addParm(I18NparamKey.LEVEL, I18nPack.valueOf(player.getSuicide().getPlayerLevelAfterTurn()))
-								.addParm(
-										I18NparamKey.JOB,
-										I18nPack.valueOf(PromotionManager.getInstance().getI18nJobName(
-												player.getRole(), player.getPromotion().getStage())));
+								.addParm(I18NparamKey.LEVEL,
+										I18nPack.valueOf(player.getSuicide().getPlayerLevelAfterTurn()))
+								.addParm(I18NparamKey.JOB, I18nPack.valueOf(PromotionManager.getInstance()
+										.getI18nJobName(player.getRole(), player.getPromotion().getStage())));
 						ChatManager.getInstance().sendSystem(PlayerGroup.GROUP_CHANNEL_ID, utils, null, group);
 					}
 				}
@@ -375,8 +369,8 @@ public class GroupManager implements IGroupManager {
 		try {
 			lock.writeLock().lock();
 			if (leader.getPlayerGroup().getGroupLeader() != leader) {
-				PacketSendUtility
-						.sendPacket(leader, new SM_GROUP_COMMON(ManagedErrorCode.ONLY_GROUP_LEADER_CAN_INVITE));
+				PacketSendUtility.sendPacket(leader,
+						new SM_GROUP_COMMON(ManagedErrorCode.ONLY_GROUP_LEADER_CAN_INVITE));
 				return;
 			}
 			if (leader.getPlayerGroup() != target.getPlayerGroup()) {
@@ -402,8 +396,8 @@ public class GroupManager implements IGroupManager {
 		try {
 			lock.writeLock().lock();
 			if (leader.getPlayerGroup().getGroupLeader() != leader) {
-				PacketSendUtility
-						.sendPacket(leader, new SM_GROUP_COMMON(ManagedErrorCode.ONLY_GROUP_LEADER_CAN_INVITE));
+				PacketSendUtility.sendPacket(leader,
+						new SM_GROUP_COMMON(ManagedErrorCode.ONLY_GROUP_LEADER_CAN_INVITE));
 				return;
 			}
 			if (!leader.getPlayerGroup().equals(target.getPlayerGroup())) {
@@ -415,14 +409,11 @@ public class GroupManager implements IGroupManager {
 			target.getPlayerGroup().refreshSimpleVO();
 			// notice
 			I18nUtils contextl18n = I18nUtils.valueOf("305001");
-			contextl18n
-					.addParm("user", I18nPack.valueOf(target.createSimple()))
+			contextl18n.addParm("user", I18nPack.valueOf(target.createSimple()))
 					.addParm("turn", I18nPack.valueOf("" + target.getSuicide().getTurn()))
 					.addParm(I18NparamKey.LEVEL, I18nPack.valueOf(target.getSuicide().getPlayerLevelAfterTurn()))
-					.addParm(
-							I18NparamKey.JOB,
-							I18nPack.valueOf(PromotionManager.getInstance().getI18nJobName(target.getRole(),
-									target.getPromotion().getStage())));
+					.addParm(I18NparamKey.JOB, I18nPack.valueOf(PromotionManager.getInstance()
+							.getI18nJobName(target.getRole(), target.getPromotion().getStage())));
 			ChatManager.getInstance().sendSystem(PlayerGroup.GROUP_CHANNEL_ID, contextl18n, null,
 					leader.getPlayerGroup());
 		} finally {
@@ -542,8 +533,7 @@ public class GroupManager implements IGroupManager {
 	}
 
 	/**
-	 * This method will handle everything to a player that is invited for a
-	 * group
+	 * This method will handle everything to a player that is invited for a group
 	 * 
 	 * @param inviter
 	 * @param invited

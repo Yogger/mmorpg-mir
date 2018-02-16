@@ -13,7 +13,8 @@ import java.util.concurrent.locks.ReentrantLock;
 
 import javax.annotation.PostConstruct;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
@@ -24,10 +25,10 @@ import com.mmorpg.mir.model.common.ConfigValue;
 import com.mmorpg.mir.model.common.exception.ManagedErrorCode;
 import com.mmorpg.mir.model.common.exception.ManagedException;
 import com.mmorpg.mir.model.complexstate.ComplexStateType;
-import com.mmorpg.mir.model.core.action.CoreActionManager;
-import com.mmorpg.mir.model.core.action.CoreActions;
 import com.mmorpg.mir.model.core.condition.CoreConditionManager;
 import com.mmorpg.mir.model.core.condition.CoreConditions;
+import com.mmorpg.mir.model.core.consumable.CoreActionManager;
+import com.mmorpg.mir.model.core.consumable.CoreActions;
 import com.mmorpg.mir.model.country.manager.CountryManager;
 import com.mmorpg.mir.model.country.model.Country;
 import com.mmorpg.mir.model.country.model.CountryId;
@@ -89,7 +90,7 @@ import com.windforce.common.utility.collection.ConcurrentHashSet;
 @Component
 public class GangManager {
 
-	private static Logger logger = Logger.getLogger(GangManager.class);
+	private static Logger logger = LoggerFactory.getLogger(GangManager.class);
 	@Inject
 	private EntityCacheService<Long, GangEnt> gangEntDbService;
 
@@ -398,8 +399,7 @@ public class GangManager {
 			refreshRank();
 			this.update(gang);
 
-			I18nUtils utils = I18nUtils.valueOf("304000")
-					.addParm(I18NparamKey.FAMILY, I18nPack.valueOf(gang.getName()))
+			I18nUtils utils = I18nUtils.valueOf("304000").addParm(I18NparamKey.FAMILY, I18nPack.valueOf(gang.getName()))
 					.addParm(I18NparamKey.FAMILYID, I18nPack.valueOf(String.valueOf(gang.getId())));
 			ChatManager.getInstance().sendSystem(6, utils, null, player.getCountry());
 
@@ -466,8 +466,8 @@ public class GangManager {
 	public void dealApply(Player player, long id, boolean ok) {
 		try {
 			lock.lock();
-			CoreConditions conditions = CoreConditionManager.getInstance()
-					.getCoreConditions(1, GANG_DISBAND.getValue());
+			CoreConditions conditions = CoreConditionManager.getInstance().getCoreConditions(1,
+					GANG_DISBAND.getValue());
 			if (!conditions.verify(player, true)) {
 				throw new ManagedException(ManagedErrorCode.KINGOFWAR_FIGHTING);
 			}
@@ -483,8 +483,8 @@ public class GangManager {
 		try {
 			lock.lock();
 			// 如果在咸阳争夺战中不允许解散家族
-			CoreConditions conditions = CoreConditionManager.getInstance()
-					.getCoreConditions(1, GANG_DISBAND.getValue());
+			CoreConditions conditions = CoreConditionManager.getInstance().getCoreConditions(1,
+					GANG_DISBAND.getValue());
 			if (!conditions.verify(master, true)) {
 				throw new ManagedException(ManagedErrorCode.KINGOFWAR_FIGHTING);
 			}
@@ -492,8 +492,7 @@ public class GangManager {
 			gang.isRight(master, GangPosition.Master);
 
 			// notice
-			I18nUtils utils = I18nUtils.valueOf("304009")
-					.addParm(I18NparamKey.FAMILY, I18nPack.valueOf(gang.getName()))
+			I18nUtils utils = I18nUtils.valueOf("304009").addParm(I18NparamKey.FAMILY, I18nPack.valueOf(gang.getName()))
 					.addParm("user", I18nPack.valueOf(master.createSimple()));
 			ChatManager.getInstance().sendSystem(2, utils, null, gang);
 
@@ -816,9 +815,9 @@ public class GangManager {
 		}
 		Gang gang = this.load(player.getPlayerGang().getGangId());
 		if (!gang.getMembers().containsKey(player.getObjectId())) {
-			logger.error(String.format("玩家account[%s],name[%s]帮会gangId[%s]丢失！gang[%s]", player.getPlayerEnt()
-					.getAccountName(), player.getName(), player.getPlayerGang().getGangId(), JsonUtils
-					.object2String(gang)));
+			logger.error(String.format("玩家account[%s],name[%s]帮会gangId[%s]丢失！gang[%s]",
+					player.getPlayerEnt().getAccountName(), player.getName(), player.getPlayerGang().getGangId(),
+					JsonUtils.object2String(gang)));
 			player.getPlayerGang().setGangAndUpdate(0l);
 			return;
 		}

@@ -1,12 +1,13 @@
 package com.mmorpg.mir.model.common;
 
 import org.apache.commons.lang.StringUtils;
-import org.apache.log4j.Logger;
-import org.codehaus.jackson.annotate.JsonIgnore;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.slf4j.helpers.FormattingTuple;
 import org.slf4j.helpers.MessageFormatter;
 import org.springframework.core.convert.ConversionService;
 
+import com.alibaba.fastjson.annotation.JSONField;
 import com.windforce.common.resource.anno.Id;
 import com.windforce.common.resource.anno.Inject;
 import com.windforce.common.resource.anno.Resource;
@@ -22,7 +23,7 @@ import com.windforce.common.utility.JsonUtils;
 @SuppressWarnings("rawtypes")
 public class ConfigValue<T> {
 
-	private static final Logger logger = Logger.getLogger(ConfigValue.class);
+	private static final Logger logger = LoggerFactory.getLogger(ConfigValue.class);
 	@Inject
 	private static ConversionService conversionService;
 
@@ -45,7 +46,7 @@ public class ConfigValue<T> {
 	 * @return
 	 */
 	@SuppressWarnings("unchecked")
-	@JsonIgnore
+	@JSONField(serialize = false)
 	public T getValue() {
 		if (value != null) {
 			return value;
@@ -62,14 +63,14 @@ public class ConfigValue<T> {
 							if (!clz.isArray()) {
 								value = (T) JsonUtils.string2Object(content, clz);
 							} else {
-								value = (T) JsonUtils.string2Array(content, clz);
+								value = (T) JsonUtils.string2List(content, clz);
 							}
 						} else {
 							value = (T) JsonUtils.string2Object(content, clz);
 						}
 						break;
 					case ARRAY:
-						value = (T) JsonUtils.string2Array(content, clz);
+						value = (T) JsonUtils.string2List(content, clz);
 						break;
 					}
 				} catch (Exception e) {
@@ -116,7 +117,7 @@ public class ConfigValue<T> {
 		this.content = content;
 	}
 
-	@JsonIgnore
+	@JSONField(serialize = false)
 	public void setValue(T value) {
 		this.value = value;
 	}

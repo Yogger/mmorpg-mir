@@ -5,8 +5,8 @@ import java.util.Map;
 
 import org.h2.util.New;
 
-import com.mmorpg.mir.model.core.action.CoreActions;
 import com.mmorpg.mir.model.core.condition.CoreConditions;
+import com.mmorpg.mir.model.core.consumable.CoreActions;
 import com.mmorpg.mir.model.object.ObjectType;
 import com.mmorpg.mir.model.skill.effecttemplate.Effects;
 import com.mmorpg.mir.model.skill.resource.DamageType;

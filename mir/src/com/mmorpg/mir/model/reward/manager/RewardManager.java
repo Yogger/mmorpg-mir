@@ -7,8 +7,6 @@ import java.util.Map;
 
 import javax.annotation.PostConstruct;
 
-import org.apache.log4j.Logger;
-import org.h2.util.New;
 import org.slf4j.helpers.MessageFormatter;
 import org.springframework.stereotype.Component;
 
@@ -40,7 +38,7 @@ import com.windforce.common.utility.JsonUtils;
  * 
  */
 @Component
-public class RewardManager implements IRewardManager {
+public class RewardManager  {
 	private static final Logger logger = Logger.getLogger(RewardManager.class);
 	@Static
 	private Storage<String, RewardSample> rewardSamples;

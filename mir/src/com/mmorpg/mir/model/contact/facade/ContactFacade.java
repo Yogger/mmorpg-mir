@@ -1,6 +1,7 @@
 package com.mmorpg.mir.model.contact.facade;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -28,13 +29,12 @@ import com.mmorpg.mir.model.system.packet.SM_System_Message;
 import com.mmorpg.mir.model.utils.PacketSendUtility;
 import com.mmorpg.mir.model.utils.SessionUtil;
 import com.windforce.common.event.anno.ReceiverAnno;
-import com.xiaosan.dispatcher.anno.HandlerAnno;
-import com.xiaosan.socket.core.TSession;
+import com.windforce.core.Wsession;
 
 @Component
 public class ContactFacade {
 
-	private static final Logger logger = Logger.getLogger(ContactFacade.class);
+	private static final Logger logger = LoggerFactory.getLogger(ContactFacade.class);
 
 	@Autowired
 	private ContactService contactService;
@@ -42,8 +42,7 @@ public class ContactFacade {
 	@Autowired
 	private PlayerManager playerManager;
 
-	@HandlerAnno
-	public void getAllContactInformation(TSession session, CM_GET_CONTACTINFO req) {
+	public void getAllContactInformation(Wsession session, CM_GET_CONTACTINFO req) {
 		Player player = SessionUtil.getPlayerBySession(session);
 		try {
 			contactService.getAllContactInformation(player);
@@ -55,8 +54,7 @@ public class ContactFacade {
 		}
 	}
 
-	@HandlerAnno
-	public void deliverMoodPhrase(TSession session, CM_DELIVER_MOOD req) {
+	public void deliverMoodPhrase(Wsession session, CM_DELIVER_MOOD req) {
 		Player player = SessionUtil.getPlayerBySession(session);
 		try {
 			contactService.deliverMoodPhrase(player, req.getPhrase(), req.getSign());
@@ -68,8 +66,7 @@ public class ContactFacade {
 		}
 	}
 
-	@HandlerAnno
-	public void setMySettings(TSession session, CM_SET_MY_SETTINGS req) {
+	public void setMySettings(Wsession session, CM_SET_MY_SETTINGS req) {
 		Player player = SessionUtil.getPlayerBySession(session);
 		try {
 			contactService.setMapPublic(player, req.isDisplayOffline(), req.isDisplayHead(), req.isPublicMapInfo(),
@@ -82,8 +79,7 @@ public class ContactFacade {
 		}
 	}
 
-	@HandlerAnno
-	public void queryFriends(TSession session, CM_QUERY_FRIENDS req) {
+	public void queryFriends(Wsession session, CM_QUERY_FRIENDS req) {
 		Player player = SessionUtil.getPlayerBySession(session);
 		try {
 			contactService.queryFriends(player, req.getPartName());
@@ -95,8 +91,7 @@ public class ContactFacade {
 		}
 	}
 
-	@HandlerAnno
-	public void addAttentionFriend(TSession session, CM_ADD_FRIEND req) {
+	public void addAttentionFriend(Wsession session, CM_ADD_FRIEND req) {
 		Player player = SessionUtil.getPlayerBySession(session);
 		try {
 			contactService.addAttentionFriend(player, req.getFriendId());
@@ -108,8 +103,7 @@ public class ContactFacade {
 		}
 	}
 
-	@HandlerAnno
-	public void cancelAttentionFriend(TSession session, CM_DELETE_FRIEND req) {
+	public void cancelAttentionFriend(Wsession session, CM_DELETE_FRIEND req) {
 		Player player = SessionUtil.getPlayerBySession(session);
 		try {
 			contactService.cancelAttentionFriend(player, req.getTargetId());
@@ -141,7 +135,7 @@ public class ContactFacade {
 		contactService.updateMySocialInfo(player, true);
 		contactService.notifyMyFans(player);
 	}
-	
+
 	@ReceiverAnno
 	public void refreshPromotion(PromotionEvent event) {
 		Player player = PlayerManager.getInstance().getPlayer(event.getOwner());
@@ -159,9 +153,8 @@ public class ContactFacade {
 			contactService.addEnemy(event.getOwner(), event.getAttackerId());
 		}
 	}
-	
-	@HandlerAnno
-	public void deleteEnemy(TSession session, CM_DELETE_ENEMY req) {
+
+	public void deleteEnemy(Wsession session, CM_DELETE_ENEMY req) {
 		Player player = SessionUtil.getPlayerBySession(session);
 		try {
 			contactService.deleteEnemy(player, req.getEnemyId());
@@ -173,8 +166,7 @@ public class ContactFacade {
 		}
 	}
 
-	@HandlerAnno
-	public void addTargetToBlackList(TSession session, CM_ADDTO_BLACKLIST req) {
+	public void addTargetToBlackList(Wsession session, CM_ADDTO_BLACKLIST req) {
 		Player player = SessionUtil.getPlayerBySession(session);
 		try {
 			contactService.addTargetToBlackList(player, req.getTargetId());
@@ -186,8 +178,7 @@ public class ContactFacade {
 		}
 	}
 
-	@HandlerAnno
-	public void deleteBlackList(TSession session, CM_CANCEL_SHIELD req) {
+	public void deleteBlackList(Wsession session, CM_CANCEL_SHIELD req) {
 		Player player = SessionUtil.getPlayerBySession(session);
 		try {
 			contactService.removeBlackList(player, req.getTargetId());
@@ -199,8 +190,7 @@ public class ContactFacade {
 		}
 	}
 
-	@HandlerAnno
-	public void setDisbandAddFriends(TSession session, CM_SET_DISBAND_ADD req) {
+	public void setDisbandAddFriends(Wsession session, CM_SET_DISBAND_ADD req) {
 		Player player = SessionUtil.getPlayerBySession(session);
 		try {
 			contactService.setDisbandAddFriends(player, req.isDisbandAddFriend());

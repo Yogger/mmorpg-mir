@@ -11,8 +11,8 @@ import org.apache.commons.lang.ArrayUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.mmorpg.mir.model.core.action.CoreActionManager;
 import com.mmorpg.mir.model.core.condition.CoreConditionManager;
+import com.mmorpg.mir.model.core.consumable.CoreActionManager;
 import com.mmorpg.mir.model.gameobjects.Creature;
 import com.mmorpg.mir.model.gameobjects.Player;
 import com.mmorpg.mir.model.skill.effecttemplate.EffectTemplateManager;

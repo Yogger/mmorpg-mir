@@ -13,7 +13,7 @@ import com.mmorpg.mir.model.dirtywords.model.Node;
  * @author YUTAO
  */
 @Component
-public class NodeManager implements INodeManager {
+public class NodeManager {
 
 	@Autowired
 	private DataManager dataManager;

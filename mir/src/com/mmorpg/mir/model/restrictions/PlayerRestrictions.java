@@ -10,7 +10,7 @@ import com.mmorpg.mir.model.skill.effect.EffectId;
 import com.mmorpg.mir.model.skill.model.Skill;
 import com.mmorpg.mir.model.utils.PacketSendUtility;
 
-public class PlayerRestrictions implements IRestrictions {
+public class PlayerRestrictions {
 
 	public static PlayerRestrictions getInstance() {
 		return Instance.playerRestrictions;
@@ -97,11 +97,12 @@ public class PlayerRestrictions implements IRestrictions {
 			PacketSendUtility.sendErrorMessage(player, ManagedErrorCode.COUNTRY_NOT_SAME);
 			return false;
 		}
-//      在其他队伍
-//		if (target.isInGroup()) {
-//			PacketSendUtility.sendPacket(player, new SM_GROUP_COMMON(ManagedErrorCode.PLAYER_IN_ANOTHER_GROUP));
-//			return false;
-//		}
+		// 在其他队伍
+		// if (target.isInGroup()) {
+		// PacketSendUtility.sendPacket(player, new
+		// SM_GROUP_COMMON(ManagedErrorCode.PLAYER_IN_ANOTHER_GROUP));
+		// return false;
+		// }
 		return true;
 	}
 

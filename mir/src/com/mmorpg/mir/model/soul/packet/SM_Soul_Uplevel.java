@@ -1,6 +1,6 @@
 package com.mmorpg.mir.model.soul.packet;
 
-import com.mmorpg.mir.model.core.action.CoreActions;
+import com.mmorpg.mir.model.core.consumable.CoreActions;
 import com.mmorpg.mir.model.soul.model.Soul;
 
 /**

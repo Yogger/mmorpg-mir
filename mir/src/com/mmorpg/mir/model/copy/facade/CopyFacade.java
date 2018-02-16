@@ -1,6 +1,7 @@
 package com.mmorpg.mir.model.copy.facade;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -51,7 +52,7 @@ import com.xiaosan.socket.core.TSession;
 @Component
 public class CopyFacade {
 
-	private static Logger logger = Logger.getLogger(CopyFacade.class);
+	private static Logger logger = LoggerFactory.getLogger(CopyFacade.class);
 	@Autowired
 	private CopyService copyService;
 

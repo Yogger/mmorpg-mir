@@ -6,14 +6,12 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import javax.persistence.Transient;
 
-import org.apache.log4j.Logger;
-import org.codehaus.jackson.annotate.JsonIgnore;
-import org.h2.util.New;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.mmorpg.mir.model.chat.manager.ChatManager;
 import com.mmorpg.mir.model.common.exception.ManagedErrorCode;
 import com.mmorpg.mir.model.common.exception.ManagedException;
-import com.mmorpg.mir.model.country.model.CountryId;
 import com.mmorpg.mir.model.gameobjects.Player;
 import com.mmorpg.mir.model.gang.entity.GangEnt;
 import com.mmorpg.mir.model.gang.event.PlayerGangChangeEvent;
@@ -29,7 +27,7 @@ import com.mmorpg.mir.model.utils.PacketSendUtility;
 import com.windforce.common.event.core.EventBusManager;
 
 public class Gang {
-	private static Logger logger = Logger.getLogger(Gang.class);
+	private static Logger logger = LoggerFactory.getLogger(Gang.class);
 	public static final int MAX_LOG_COUNT = 50;
 
 	private long id;

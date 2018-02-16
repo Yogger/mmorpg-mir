@@ -14,7 +14,7 @@ import com.mmorpg.mir.model.dirtywords.model.WordsType;
  * @author YUTAO
  */
 @Component
-public class DirtyWordsManager implements IDirtyWordsManager {
+public class DirtyWordsManager {
 
 	@Autowired
 	private DFAFilter filter;

@@ -4,8 +4,8 @@ import org.springframework.stereotype.Component;
 
 import com.mmorpg.mir.model.chooser.model.sample.Chooser;
 import com.mmorpg.mir.model.chooser.model.sample.ChooserGroup;
-import com.mmorpg.mir.model.core.action.model.CoreActionResource;
 import com.mmorpg.mir.model.core.condition.model.CoreConditionResource;
+import com.mmorpg.mir.model.core.consumable.model.CoreActionResource;
 import com.mmorpg.mir.model.country.resource.CountryShopResource;
 import com.mmorpg.mir.model.resourcecheck.ResourceCheckHandle;
 import com.mmorpg.mir.model.reward.model.sample.RewardSample;

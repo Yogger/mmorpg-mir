@@ -4,11 +4,11 @@ import javax.persistence.Transient;
 
 import org.codehaus.jackson.annotate.JsonIgnore;
 
-import com.mmorpg.mir.model.core.action.CoreActionManager;
-import com.mmorpg.mir.model.core.action.CoreActions;
-import com.mmorpg.mir.model.core.action.model.CoreActionResource;
 import com.mmorpg.mir.model.core.condition.CoreConditionManager;
 import com.mmorpg.mir.model.core.condition.CoreConditions;
+import com.mmorpg.mir.model.core.consumable.CoreActionManager;
+import com.mmorpg.mir.model.core.consumable.CoreActions;
+import com.mmorpg.mir.model.core.consumable.model.CoreActionResource;
 import com.windforce.common.resource.anno.Id;
 import com.windforce.common.resource.anno.Resource;
 

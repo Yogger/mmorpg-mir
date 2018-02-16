@@ -2,9 +2,9 @@ package com.mmorpg.mir.model.item.resource;
 
 import org.codehaus.jackson.annotate.JsonIgnore;
 
-import com.mmorpg.mir.model.core.action.CoreActionManager;
-import com.mmorpg.mir.model.core.action.CoreActions;
-import com.mmorpg.mir.model.core.action.model.CoreActionResource;
+import com.mmorpg.mir.model.core.consumable.CoreActionManager;
+import com.mmorpg.mir.model.core.consumable.CoreActions;
+import com.mmorpg.mir.model.core.consumable.model.CoreActionResource;
 import com.mmorpg.mir.model.gameobjects.stats.Stat;
 import com.mmorpg.mir.model.item.storage.EquipmentStorage.EquipmentType;
 import com.windforce.common.resource.anno.Id;

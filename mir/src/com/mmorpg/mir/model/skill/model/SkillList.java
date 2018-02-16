@@ -5,9 +5,9 @@ import org.codehaus.jackson.annotate.JsonIgnore;
 
 import com.mmorpg.mir.log.LogManager;
 import com.mmorpg.mir.model.common.exception.ManagedErrorCode;
-import com.mmorpg.mir.model.core.action.CoreActionManager;
-import com.mmorpg.mir.model.core.action.CoreActions;
 import com.mmorpg.mir.model.core.condition.CoreConditionManager;
+import com.mmorpg.mir.model.core.consumable.CoreActionManager;
+import com.mmorpg.mir.model.core.consumable.CoreActions;
 import com.mmorpg.mir.model.gameobjects.Player;
 import com.mmorpg.mir.model.gameobjects.stats.StatEffectId;
 import com.mmorpg.mir.model.gameobjects.stats.StatEffectType;

@@ -41,7 +41,7 @@ import com.windforce.common.ramcache.service.EntityCacheService;
 import com.windforce.common.utility.JsonUtils;
 
 @Component
-public class MailManager implements IMailManager {
+public class MailManager {
 	private static MailManager self;
 
 	private ReentrantReadWriteLock lock = new ReentrantReadWriteLock();
@@ -170,8 +170,8 @@ public class MailManager implements IMailManager {
 				}
 
 				if (mailGroup.getReceivedCondtionResources() != null) {
-					CoreConditions conditions = CoreConditionManager.getInstance().getCoreConditions(
-							mailGroup.getReceivedCondtionResources());
+					CoreConditions conditions = CoreConditionManager.getInstance()
+							.getCoreConditions(mailGroup.getReceivedCondtionResources());
 					Player player = PlayerManager.getInstance().getPlayer(playerId);
 					if (player == null || (!conditions.verify(player, false))) {
 						continue;

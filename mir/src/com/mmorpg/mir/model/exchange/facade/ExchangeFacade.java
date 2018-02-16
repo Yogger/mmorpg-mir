@@ -1,6 +1,7 @@
 package com.mmorpg.mir.model.exchange.facade;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -26,8 +27,6 @@ import com.mmorpg.mir.model.exchange.service.ExchangeService;
 import com.mmorpg.mir.model.gameobjects.Player;
 import com.mmorpg.mir.model.session.SessionManager;
 import com.mmorpg.mir.model.utils.SessionUtil;
-import com.xiaosan.dispatcher.anno.HandlerAnno;
-import com.xiaosan.socket.core.TSession;
 
 @Component
 public class ExchangeFacade {
@@ -35,7 +34,7 @@ public class ExchangeFacade {
 	@Autowired
 	private ExchangeService exchangeService;
 
-	private static final Logger logger = Logger.getLogger(ExchangeFacade.class);
+	private static final Logger logger = LoggerFactory.getLogger(ExchangeFacade.class);
 
 	@HandlerAnno
 	public SM_Exchange_Request exchangeRequest(TSession session, CM_Exchange_Request req) {

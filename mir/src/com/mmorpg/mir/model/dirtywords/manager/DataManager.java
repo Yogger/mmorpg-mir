@@ -18,7 +18,7 @@ import org.springframework.stereotype.Component;
  * @author YUTAO
  */
 @Component
-public class DataManager implements IDataManager {
+public class DataManager {
 
 	/**
 	 * 把敏感词库加载到内存并初始化过滤模型

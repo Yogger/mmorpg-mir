@@ -26,7 +26,7 @@ import com.mmorpg.mir.model.common.ConfigValue;
 import com.mmorpg.mir.model.common.ResourceReload;
 import com.mmorpg.mir.model.common.exception.ManagedErrorCode;
 import com.mmorpg.mir.model.common.exception.ManagedException;
-import com.mmorpg.mir.model.core.action.CoreActions;
+import com.mmorpg.mir.model.core.consumable.CoreActions;
 import com.mmorpg.mir.model.drop.model.DropHistory;
 import com.mmorpg.mir.model.gameobjects.Player;
 import com.mmorpg.mir.model.log.ModuleInfo;

@@ -2,14 +2,13 @@ package com.mmorpg.mir.model.complexstate;
 
 import java.util.BitSet;
 
-import org.codehaus.jackson.annotate.JsonIgnore;
-
+import com.alibaba.fastjson.annotation.JSONField;
 import com.mmorpg.mir.utils.BitSetConvert;
 
 public class ComplexState {
 	private byte[] states;
 
-	@JsonIgnore
+	@JSONField(serialize = false)
 	private transient BitSet bitSet;
 
 	public static ComplexState valueOf() {
@@ -26,7 +25,7 @@ public class ComplexState {
 		return complexState;
 	}
 
-	@JsonIgnore
+	@JSONField(serialize = false)
 	public boolean isState(ComplexStateType... types) {
 		if (bitSet == null) {
 			bitSet = BitSetConvert.byteArray2BitSet(states);
@@ -39,17 +38,17 @@ public class ComplexState {
 		return true;
 	}
 
-	@JsonIgnore
+	@JSONField(serialize = false)
 	public void setState(ComplexStateType... types) {
 		this.setState(true, true, types);
 	}
 
-	@JsonIgnore
+	@JSONField(serialize = false)
 	public void removeState(ComplexStateType... types) {
 		this.setState(true, false, types);
 	}
 
-	@JsonIgnore
+	@JSONField(serialize = false)
 	public void setState(boolean persistent, boolean state, ComplexStateType... types) {
 		if (bitSet == null) {
 			bitSet = BitSetConvert.byteArray2BitSet(states);
@@ -62,7 +61,7 @@ public class ComplexState {
 		}
 	}
 
-	@JsonIgnore
+	@JSONField(serialize = false)
 	public void bitSet2ByteArray() {
 		if (bitSet == null) {
 			bitSet = new BitSet();

@@ -6,10 +6,10 @@ import javax.persistence.Transient;
 
 import org.codehaus.jackson.annotate.JsonIgnore;
 
-import com.mmorpg.mir.model.core.action.CoreActionManager;
-import com.mmorpg.mir.model.core.action.CoreActionType;
-import com.mmorpg.mir.model.core.action.CoreActions;
-import com.mmorpg.mir.model.core.action.ItemAction;
+import com.mmorpg.mir.model.core.consumable.CoreActionManager;
+import com.mmorpg.mir.model.core.consumable.CoreActionType;
+import com.mmorpg.mir.model.core.consumable.CoreActions;
+import com.mmorpg.mir.model.core.consumable.ItemAction;
 import com.mmorpg.mir.model.gameobjects.stats.Stat;
 import com.windforce.common.resource.anno.Id;
 import com.windforce.common.resource.anno.Index;

@@ -5,8 +5,8 @@ import java.util.Arrays;
 import java.util.List;
 
 import com.mmorpg.mir.model.cooldown.PublicCooldown;
-import com.mmorpg.mir.model.core.action.CoreActions;
 import com.mmorpg.mir.model.core.condition.CoreConditions;
+import com.mmorpg.mir.model.core.consumable.CoreActions;
 import com.mmorpg.mir.model.gameobjects.Creature;
 import com.mmorpg.mir.model.gameobjects.Player;
 import com.mmorpg.mir.model.gameobjects.Summon;

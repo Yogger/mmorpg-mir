@@ -1,6 +1,6 @@
 package com.mmorpg.mir.model.item.resource;
 
-import com.mmorpg.mir.model.core.action.model.CoreActionResource;
+import com.mmorpg.mir.model.core.consumable.model.CoreActionResource;
 import com.windforce.common.resource.anno.Id;
 import com.windforce.common.resource.anno.Resource;
 

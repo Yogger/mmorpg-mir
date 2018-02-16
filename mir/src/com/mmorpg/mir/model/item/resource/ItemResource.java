@@ -7,12 +7,12 @@ import javax.persistence.Transient;
 import org.codehaus.jackson.annotate.JsonIgnore;
 
 import com.mmorpg.mir.model.common.exception.ManagedErrorCode;
-import com.mmorpg.mir.model.core.action.CoreActionManager;
-import com.mmorpg.mir.model.core.action.CoreActions;
 import com.mmorpg.mir.model.core.condition.CoreConditionManager;
 import com.mmorpg.mir.model.core.condition.CoreConditionType;
 import com.mmorpg.mir.model.core.condition.CoreConditions;
 import com.mmorpg.mir.model.core.condition.model.CoreConditionResource;
+import com.mmorpg.mir.model.core.consumable.CoreActionManager;
+import com.mmorpg.mir.model.core.consumable.CoreActions;
 import com.mmorpg.mir.model.gameobjects.stats.Stat;
 import com.mmorpg.mir.model.gameobjects.stats.StatEnum;
 import com.mmorpg.mir.model.item.ItemType;

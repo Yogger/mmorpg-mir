@@ -2,7 +2,7 @@ package com.mmorpg.mir.model.seal.resource;
 
 import org.codehaus.jackson.annotate.JsonIgnore;
 
-import com.mmorpg.mir.model.core.action.model.CoreActionResource;
+import com.mmorpg.mir.model.core.consumable.model.CoreActionResource;
 import com.mmorpg.mir.model.gameobjects.stats.Stat;
 import com.windforce.common.resource.anno.Id;
 import com.windforce.common.resource.anno.Resource;

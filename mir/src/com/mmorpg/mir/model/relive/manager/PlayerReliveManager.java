@@ -23,25 +23,25 @@ import com.windforce.common.resource.anno.Static;
 import com.windforce.common.utility.DateUtils;
 
 @Component
-public class PlayerReliveManager implements IPlayerReliveManager {
+public class PlayerReliveManager {
 
 	@Static("PUBLIC:AUTO_RELIVE_TIME")
 	public ConfigValue<Integer> AUTO_RELIVE_TIME;
-	
+
 	@Static("PERSON:RELIVE_CLEAR_DEAD_COUNT_TIME")
 	public ConfigValue<Integer> RELIVE_CLEAR_DEAD_COUNT_TIME;
 
 	// @Static("PUBLIC:FREE_RELIVE_SKILLID")
 	// private ConfigValue<Integer> FREE_RELIVE_SKILLID;
-	
+
 	@Static("PERSON:RELIVE_BOSS_INSPECTERS")
 	public ConfigValue<String[]> RELIVE_BOSS_INSPECTERS;
-	
+
 	@Static("PERSON:RELIVE_TIME_CD")
 	private Formula RELIVE_TIME_CD;
-	
+
 	private Map<Integer, List<VisibleObject>> INSPECTERMAP;
-	
+
 	public void initAll() {
 		INSPECTERMAP = new HashMap<Integer, List<VisibleObject>>();
 		for (String spawnKey : RELIVE_BOSS_INSPECTERS.getValue()) {
@@ -104,14 +104,16 @@ public class PlayerReliveManager implements IPlayerReliveManager {
 	public long getClearDeadCountTime() {
 		return RELIVE_CLEAR_DEAD_COUNT_TIME.getValue() * DateUtils.MILLIS_PER_SECOND;
 	}
-	
+
 	public int caculateBuyLifeCost(Player player, Formula RELIFE_COST) {
-		return (Integer) FormulaParmsUtil.valueOf(RELIFE_COST).addParm("n", player.getLifeStats().getOriginalBuyCount()).getValue();
+		return (Integer) FormulaParmsUtil.valueOf(RELIFE_COST).addParm("n", player.getLifeStats().getOriginalBuyCount())
+				.getValue();
 	}
-	
+
 	public long caculateBuyCountCD(Player player) {
-		Long time = (Long) FormulaParmsUtil.valueOf(RELIVE_TIME_CD).addParm("n", player.getLifeStats().getOriginalBuyCount()).getValue();
+		Long time = (Long) FormulaParmsUtil.valueOf(RELIVE_TIME_CD)
+				.addParm("n", player.getLifeStats().getOriginalBuyCount()).getValue();
 		return time * DateUtils.MILLIS_PER_SECOND;
 	}
-	
+
 }

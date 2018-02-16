@@ -8,8 +8,8 @@ import java.util.concurrent.ConcurrentHashMap;
 import com.mmorpg.mir.log.LogManager;
 import com.mmorpg.mir.model.common.exception.ManagedErrorCode;
 import com.mmorpg.mir.model.common.exception.ManagedException;
-import com.mmorpg.mir.model.core.action.CoreActionType;
 import com.mmorpg.mir.model.core.condition.CoreConditionType;
+import com.mmorpg.mir.model.core.consumable.CoreActionType;
 import com.mmorpg.mir.model.exchange.core.Exchange;
 import com.mmorpg.mir.model.exchange.core.ExchangeItem;
 import com.mmorpg.mir.model.exchange.packet.SM_Exchange_RealConfirm;
@@ -33,7 +33,7 @@ import com.mmorpg.mir.model.utils.PacketSendUtility;
 import com.windforce.common.event.core.EventBusManager;
 import com.windforce.common.utility.New;
 
-public class ExchangeManager implements IExchangeManager {
+public class ExchangeManager {
 
 	private Map<Long, Exchange> exchanges = new ConcurrentHashMap<Long, Exchange>();
 	/** 交易的双方ID */
@@ -404,7 +404,8 @@ public class ExchangeManager implements IExchangeManager {
 								return type.getErrorCode();
 							}
 						} else {
-							if (!CoreConditionType.createCurrencyCondition(type, entry.getValue()).verify(activePlayer)) {
+							if (!CoreConditionType.createCurrencyCondition(type, entry.getValue())
+									.verify(activePlayer)) {
 								return type.getErrorCode();
 							}
 						}
@@ -427,8 +428,8 @@ public class ExchangeManager implements IExchangeManager {
 			if (item != null && item.getItem() != null) {
 				AbstractItem eItem = item.getItem();
 				player.getPack().addItems(false, item.getItem());
-				LogManager.addItemLog(player, System.currentTimeMillis(), moduleInfo, 1, eItem.getSize(), eItem, player
-						.getPack().getItemSizeByKey(eItem.getKey()));
+				LogManager.addItemLog(player, System.currentTimeMillis(), moduleInfo, 1, eItem.getSize(), eItem,
+						player.getPack().getItemSizeByKey(eItem.getKey()));
 				addItems.add(eItem);
 			}
 		}

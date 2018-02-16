@@ -2,7 +2,7 @@ package com.mmorpg.mir.model.shop.model;
 
 import org.codehaus.jackson.annotate.JsonIgnore;
 
-import com.mmorpg.mir.model.core.action.CoreActions;
+import com.mmorpg.mir.model.core.consumable.CoreActions;
 import com.mmorpg.mir.model.reward.model.Reward;
 
 public class BuyResult {

@@ -4,9 +4,9 @@ import org.springframework.stereotype.Component;
 
 import com.mmorpg.mir.model.common.exception.ManagedErrorCode;
 import com.mmorpg.mir.model.common.exception.ManagedException;
-import com.mmorpg.mir.model.core.action.CoreActionManager;
-import com.mmorpg.mir.model.core.action.CoreActions;
 import com.mmorpg.mir.model.core.condition.CoreConditionManager;
+import com.mmorpg.mir.model.core.consumable.CoreActionManager;
+import com.mmorpg.mir.model.core.consumable.CoreActions;
 import com.mmorpg.mir.model.gameobjects.Creature;
 import com.mmorpg.mir.model.gameobjects.Player;
 import com.mmorpg.mir.model.gameobjects.VisibleObject;

@@ -2,8 +2,8 @@ package com.mmorpg.mir.model.item;
 
 import org.codehaus.jackson.annotate.JsonIgnore;
 
-import com.mmorpg.mir.model.core.action.CoreActions;
 import com.mmorpg.mir.model.core.condition.CoreConditions;
+import com.mmorpg.mir.model.core.consumable.CoreActions;
 
 public class UseableItem extends AbstractUseableItem {
 

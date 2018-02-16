@@ -13,7 +13,7 @@ import com.mmorpg.mir.model.skill.model.Skill;
  * 
  */
 @Component
-public final class RestrictionsManager implements IRestrictionsManager {
+public final class RestrictionsManager {
 
 	/**
 	 * Check whether player can use such skill
@@ -33,9 +33,8 @@ public final class RestrictionsManager implements IRestrictionsManager {
 	public static boolean canTrade(Player player1) {
 		return true;
 	}
-	
-	public boolean canInviteToGroup(Player player, Player target)
-	{
+
+	public boolean canInviteToGroup(Player player, Player target) {
 		throw new AbstractMethodError();
 	}
 

@@ -1,6 +1,7 @@
 package com.mmorpg.mir.model.gameobjects.stats;
 
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -226,7 +227,7 @@ public class PlayerGameStats extends CreatureGameStats<Player> {
 	 */
 	public void listAllStatEffectBattleScore() {
 		int type = owner.getRole();// 职业
-		Set<StatEffectId> addValueCList = New.hashSet();
+		Set<StatEffectId> addValueCList = new HashSet<>();
 		for (Entry<StatEffectId, List<Stat>> entry : statsModifiers.entrySet()) {
 			List<Stat> stats = entry.getValue();
 			for (Stat stat : stats) {

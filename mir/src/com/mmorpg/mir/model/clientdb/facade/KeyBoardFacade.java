@@ -1,6 +1,7 @@
 package com.mmorpg.mir.model.clientdb.facade;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -14,17 +15,14 @@ import com.mmorpg.mir.model.player.service.PlayerService;
 import com.mmorpg.mir.model.system.packet.SM_System_Message;
 import com.mmorpg.mir.model.utils.PacketSendUtility;
 import com.mmorpg.mir.model.utils.SessionUtil;
-import com.xiaosan.dispatcher.anno.HandlerAnno;
-import com.xiaosan.socket.core.TSession;
 
 @Component
 public class KeyBoardFacade {
 
-	private static final Logger logger = Logger.getLogger(KeyBoardFacade.class);
+	private static final Logger logger = LoggerFactory.getLogger(KeyBoardFacade.class);
 	@Autowired
 	private PlayerService playerService;
 
-	@HandlerAnno
 	public void save(TSession session, CM_KEYBOARD keyboard) {
 		Player player = SessionUtil.getPlayerBySession(session);
 		try {
@@ -41,7 +39,6 @@ public class KeyBoardFacade {
 
 	}
 
-	@HandlerAnno
 	public void saveClientSettings(TSession session, CM_CLIENT_SETTINGS req) {
 		Player player = SessionUtil.getPlayerBySession(session);
 		try {

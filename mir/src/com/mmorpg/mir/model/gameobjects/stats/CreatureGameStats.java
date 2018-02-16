@@ -7,11 +7,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.TreeMap;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
-import org.apache.log4j.Logger;
-import org.cliffc.high_scale_lib.NonBlockingHashMap;
-import org.h2.util.New;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.mmorpg.mir.model.ModuleKey;
 import com.mmorpg.mir.model.controllers.stats.PlayerLifeStats;
@@ -21,7 +21,7 @@ import com.mmorpg.mir.model.utils.PacketSendUtility;
 import com.windforce.common.utility.JsonUtils;
 
 public class CreatureGameStats<T extends Creature> {
-	protected static final Logger logger = Logger.getLogger(CreatureGameStats.class);
+	protected static final Logger logger = LoggerFactory.getLogger(CreatureGameStats.class);
 	protected Map<StatEnum, Stat> stats;
 	protected Map<StatEffectId, List<Stat>> statsModifiers;
 
@@ -35,7 +35,7 @@ public class CreatureGameStats<T extends Creature> {
 	protected CreatureGameStats(T owner) {
 		this.owner = owner;
 		this.stats = new HashMap<StatEnum, Stat>();
-		this.statsModifiers = new NonBlockingHashMap<StatEffectId, List<Stat>>();
+		this.statsModifiers = new ConcurrentHashMap<StatEffectId, List<Stat>>();
 	}
 
 	public List<Stat> getAllStat(double rate) {
@@ -71,7 +71,8 @@ public class CreatureGameStats<T extends Creature> {
 			long increaseDefense = getCurrentStat(StatEnum.INCREASE_DEFENSE);
 			resultDefense -= increaseDefense;
 			if (stat == StatEnum.PHYSICAL_ATTACK) {
-				value = (damage - (getCurrentStat(StatEnum.PHYSICAL_DEFENSE) * ((10000 - (resultDefense)) * 1.0 / 10000)));
+				value = (damage
+						- (getCurrentStat(StatEnum.PHYSICAL_DEFENSE) * ((10000 - (resultDefense)) * 1.0 / 10000)));
 			}
 			if (stat == StatEnum.MAGICAL_ATTACK) {
 				value = (damage - (getCurrentStat(StatEnum.MAGICAL_DEFENSE) * ((10000 - resultDefense) * 1.0 / 10000)));
@@ -169,7 +170,7 @@ public class CreatureGameStats<T extends Creature> {
 	}
 
 	public Map<StatEnum, Stat> doRecomputeStats(boolean useNoBattleScoreStats) {
-		Map<Integer, List<Stat>> stats = New.hashMap();
+		Map<Integer, List<Stat>> stats = new ConcurrentHashMap<>();
 		for (Entry<StatEffectId, List<Stat>> entry : statsModifiers.entrySet()) {
 			if (!entry.getKey().isNoBattleScore() || useNoBattleScoreStats) {
 				for (Stat stat : entry.getValue()) {
@@ -180,7 +181,7 @@ public class CreatureGameStats<T extends Creature> {
 				}
 			}
 		}
-		Map<StatEnum, Stat> newStats = New.hashMap();
+		Map<StatEnum, Stat> newStats = new ConcurrentHashMap<>();
 		for (Integer key : stats.keySet()) {
 			if (key == ModuleKey.ALL.value()) {
 				// ALL总值属性
@@ -192,7 +193,7 @@ public class CreatureGameStats<T extends Creature> {
 				}
 			} else {
 				// 计算模块属性
-				Map<StatEnum, Stat> newModuleStats = New.hashMap();
+				Map<StatEnum, Stat> newModuleStats = new ConcurrentHashMap<>();
 				for (Stat stat : stats.get(key)) {
 					if (!newModuleStats.containsKey(stat.getType())) {
 						newModuleStats.put(stat.getType(), new Stat(stat.getType(), 0, 0, 0));
@@ -216,8 +217,8 @@ public class CreatureGameStats<T extends Creature> {
 	 * @return
 	 */
 	public Map<StatEnum, Stat> justForTestRecomputeStats(StatEffectId id) {
-		Map<Integer, List<Stat>> stats = New.hashMap();
-		Map<StatEnum, Stat> newStats = New.hashMap();
+		Map<Integer, List<Stat>> stats = new ConcurrentHashMap<>();
+		Map<StatEnum, Stat> newStats = new ConcurrentHashMap<>();
 		List<Stat> getSpecifieds = statsModifiers.get(id);
 		if (getSpecifieds == null || id.isNoBattleScore()) {
 			return newStats;
@@ -239,7 +240,7 @@ public class CreatureGameStats<T extends Creature> {
 				}
 			} else {
 				// 计算模块属性
-				Map<StatEnum, Stat> newModuleStats = New.hashMap();
+				Map<StatEnum, Stat> newModuleStats = new ConcurrentHashMap<>();
 				for (Stat stat : stats.get(key)) {
 					if (!newModuleStats.containsKey(stat.getType())) {
 						newModuleStats.put(stat.getType(), new Stat(stat.getType(), 0, 0, 0));
