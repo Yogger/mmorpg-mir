@@ -1,25 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
-	xmlns:util="http://www.springframework.org/schema/util" xmlns:aop="http://www.springframework.org/schema/aop"
-	xmlns:resource="http://www.my9yu.com/common/resource" xmlns:server="http://www.xiaosan.com/common/server"
-	xmlns:dispatcher="http://www.xiaosan.com/common/dispatcher" xmlns:ramcache="http://www.my9yu.com/common/ramcache"
-	xmlns:event="http://www.my9yu.com/common/event"
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:resource="http://www.windforce.com/common/resource"
+	xmlns:server="http://www.xiaosan.com/common/server" xmlns:dispatcher="http://www.xiaosan.com/common/dispatcher"
+	xmlns:ramcache="http://www.windforce.com/common/ramcache" xmlns:event="http://www.windforce.com/common/event"
 	xsi:schemaLocation="
 http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
 http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
 http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd
-http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
-http://www.xiaosan.com/common/dispatcher http://www.xiaosan.com/common/dispatcher/dispatcher-1.0.xsd
-http://www.xiaosan.com/common/server http://www.xiaosan.com/common/server/server-1.0.xsd
-http://www.my9yu.com/common/resource http://www.my9yu.com/common/resource/resource-1.0.xsd 
-http://www.my9yu.com/common/ramcache http://www.my9yu.com/common/ramcache/ramcache-1.0.xsd
-http://www.my9yu.com/common/event http://www.my9yu.com/common/event/event-1.0.xsd">
+http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
 	<!-- 事务拦截配置 -->
 	<aop:aspectj-autoproxy proxy-target-class="true" />
 
 	<!-- 配置文件载入配置 -->
-	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="locations">
 			<list>
 				<value>server.properties</value>
@@ -29,13 +25,14 @@ http://www.my9yu.com/common/event http://www.my9yu.com/common/event/event-1.0.xs
 	</bean>
 
 	<!-- 转换器配置 -->
-	<bean class="org.springframework.context.support.ConversionServiceFactoryBean">
+	<bean
+		class="org.springframework.context.support.ConversionServiceFactoryBean">
 		<property name="converters">
 			<list>
-				<bean class="com.my9yu.common.resource.support.StringToDateConverter" />
-				<bean class="com.my9yu.common.resource.support.StringToClassConverter" />
-				<bean class="com.my9yu.common.resource.support.JsonToMapConverter" />
-				<bean class="com.my9yu.common.resource.support.JsonToArrayConverter" />
+				<bean class="com.windforce.common.resource.support.StringToDateConverter" />
+				<bean class="com.windforce.common.resource.support.StringToClassConverter" />
+				<bean class="com.windforce.common.resource.support.JsonToMapConverter" />
+				<bean class="com.windforce.common.resource.support.JsonToArrayConverter" />
 			</list>
 		</property>
 	</bean>
@@ -44,10 +41,11 @@ http://www.my9yu.com/common/event http://www.my9yu.com/common/event/event-1.0.xs
 	<context:annotation-config />
 
 	<!-- 自动包扫描配置 -->
-	<context:component-scan base-package="com.my9yu.common,com.jour,com.xiaosan" />
+	<context:component-scan base-package="com.windforce,com.jour,com.mmorpg.mir" />
 
 	<!-- 数据源配置 -->
-	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
 		<property name="driverClassName" value="${jdbc.driverClassName}" />
 		<property name="url" value="${jdbc.url}" />
 		<property name="username" value="${jdbc.username}" />
@@ -64,9 +62,10 @@ http://www.my9yu.com/common/event http://www.my9yu.com/common/event/event-1.0.xs
 	</bean>
 
 	<!-- Hibernate SessionFactory -->
-	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
-		<property name="packagesToScan" value="com.jour.**.entity" />
+		<property name="packagesToScan" value="com.mmorpg.mir.**.entity" />
 		<property name="hibernateProperties">
 			<props>
 				<prop key="current_session_context_class">thread</prop>
@@ -80,11 +79,12 @@ http://www.my9yu.com/common/event http://www.my9yu.com/common/event/event-1.0.xs
 		</property>
 	</bean>
 
-	<bean id="accessor" class="com.my9yu.common.ramcache.orm.impl.HibernateAccessor">
+	<bean id="accessor"
+		class="com.windforce.common.ramcache.orm.impl.HibernateAccessor">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 
-	<bean id="querier" class="com.my9yu.common.ramcache.orm.impl.HibernateQuerier">
+	<bean id="querier" class="com.windforce.common.ramcache.orm.impl.HibernateQuerier">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 
@@ -102,16 +102,13 @@ http://www.my9yu.com/common/event http://www.my9yu.com/common/event/event-1.0.xs
 			<ramcache:constant name="b35" size="105000" />
 			<ramcache:constant name="b70" size="210000" />
 		</ramcache:constants>
-		<ramcache:persist config="-1:true" type="QUEUE">
-			<ramcache:persister name="identify" config="-1:true" type="QUEUE" />
-			<ramcache:persister name="account-player" config="-1:true" type="QUEUE" />
-			<ramcache:persister name="2m"
-				config="0 0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58 * * * *" type="TIMING" />
-			<ramcache:persister name="30s" config="0 * * * * *" type="TIMING" />
-			<ramcache:persister name="30m" config="0 0,30 * * * *" type="TIMING" />
-		</ramcache:persist>
+		<ramcache:persister name="10s" config="10" type="TIMING" />
+		<ramcache:persister name="2m" config="120" type="TIMING" />
+		<ramcache:persister name="30s" config="30" type="TIMING" />
+		<ramcache:persister name="30m" config="1800" type="TIMING" />
+	</ramcache:persist>
 		<ramcache:entity>
-			<ramcache:package name="com.jour.**.entity" />
+			<ramcache:package name="com.mmorpg.mir.**.entity" />
 		</ramcache:entity>
 	</ramcache:config>
 
@@ -149,9 +146,11 @@ http://www.my9yu.com/common/event http://www.my9yu.com/common/event/event-1.0.xs
 	</bean>
 
 	<!-- 外网的dymaic-open属性要为true 内网为false -->
-	<dispatcher:config id="ServerDispatcher" handler-package="com.jour.gameserver" dynamic-open="true" />
+	<dispatcher:config id="ServerDispatcher"
+		handler-package="com.jour.gameserver" dynamic-open="true" />
 
-	<server:config id="server" dispatcher="ServerDispatcher" parse="ServerParse">
+	<server:config id="server" dispatcher="ServerDispatcher"
+		parse="ServerParse">
 		<server:ipConfigs>
 			<server:ipConfig port="${server.socket.port}" />
 		</server:ipConfigs>
@@ -160,11 +159,12 @@ http://www.my9yu.com/common/event http://www.my9yu.com/common/event/event-1.0.xs
 
 	<!-- 静态资源配置 -->
 	<resource:config id="resourceManager">
-		<resource:format location="resource" type="json" suffix="json" />
+		<resource:format location="resource" type="json"
+			suffix="json" />
 		<resource:package name="com.jour.gameserver" />
 	</resource:config>
 
-	<event:config base-package="com.my9yu.common.event" />
+	<event:config base-package="com.mmorpg.mir.common.event" />
 
 
 	<!-- 各模块的公用资源配置 -->
