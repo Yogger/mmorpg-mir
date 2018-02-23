@@ -31,20 +31,4 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
 		<constructor-arg value="60" />
 	</bean>
 
-	<!-- 服务器参数配置 -->
-	<bean id="serverConfigValue" class="com.jour.gameserver.model.ServerConfigValue">
-		<property name="opid" value="${server.config.opid}" />
-		<property name="op" value="${server.config.op}" />
-		<property name="serverid" value="${server.config.serverid}" />
-		<property name="key" value="${server.config.key}" />
-		<property name="game" value="${server.config.game}" />
-		<property name="console" value="${server.config.openconsole}" />
-		<property name="antiAdd" value="${server.config.antiAdd}" />
-		<property name="masterAccountUrl" value="${server.config.masterAccountUrl}" />
-		<property name="centerIp" value="${server.config.center.ip}" />
-		<property name="centerPort" value="${server.config.center.port}" />
-		<property name="centerDomain" value="${server.config.cneter.domain}" />
-		<property name="centerRpcPort" value="${server.config.center.rpc.port}" />
-	</bean>
-
 </beans>

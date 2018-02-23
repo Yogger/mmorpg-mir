@@ -3,13 +3,15 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:p="http://www.springframework.org/schema/p" xmlns:util="http://www.springframework.org/schema/util"
 	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:resource="http://www.windforce.com/common/resource"
-	xmlns:server="http://www.xiaosan.com/common/server" xmlns:dispatcher="http://www.xiaosan.com/common/dispatcher"
 	xmlns:ramcache="http://www.windforce.com/common/ramcache" xmlns:event="http://www.windforce.com/common/event"
 	xsi:schemaLocation="
 http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
 http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
 http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd
-http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+http://www.windforce.com/common/resource http://www.windforce.com/common/resource/resource-1.0.xsd
+http://www.windforce.com/common/ramcache http://www.windforce.com/common/ramcache/ramcache-1.0.xsd
+http://www.windforce.com/common/event http://www.windforce.com/common/event/event-1.0.xsd">
 	<!-- 事务拦截配置 -->
 	<aop:aspectj-autoproxy proxy-target-class="true" />
 
@@ -41,7 +43,7 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
 	<context:annotation-config />
 
 	<!-- 自动包扫描配置 -->
-	<context:component-scan base-package="com.windforce,com.jour,com.mmorpg.mir" />
+	<context:component-scan base-package="com.windforce,com.mmorpg.mir" />
 
 	<!-- 数据源配置 -->
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
@@ -65,7 +67,7 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
-		<property name="packagesToScan" value="com.mmorpg.mir.**.entity" />
+		<property name="packagesToScan" value="com.mmorpg.**.entity" />
 		<property name="hibernateProperties">
 			<props>
 				<prop key="current_session_context_class">thread</prop>
@@ -78,6 +80,7 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
 			</props>
 		</property>
 	</bean>
+
 
 	<bean id="accessor"
 		class="com.windforce.common.ramcache.orm.impl.HibernateAccessor">
@@ -93,75 +96,22 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
 		<ramcache:querier ref="querier" />
 		<ramcache:constants>
 			<ramcache:constant name="ten" size="10" />
-			<ramcache:constant name="thousand" size="1000" />
-			<ramcache:constant name="b1" size="3000" />
-			<ramcache:constant name="double" size="6000" />
-			<ramcache:constant name="triple" size="9000" />
-			<ramcache:constant name="quad" size="12000" />
-			<ramcache:constant name="penta" size="15000" />
-			<ramcache:constant name="b35" size="105000" />
-			<ramcache:constant name="b70" size="210000" />
+			<ramcache:constant name="maxOnline" size="6000" />
 		</ramcache:constants>
-		<ramcache:persister name="10s" config="10" type="TIMING" />
-		<ramcache:persister name="2m" config="120" type="TIMING" />
-		<ramcache:persister name="30s" config="30" type="TIMING" />
-		<ramcache:persister name="30m" config="1800" type="TIMING" />
-	</ramcache:persist>
+		<ramcache:persist config="10" type="TIMING">
+			<ramcache:persister name="30s" config="30" type="TIMING" />
+			<ramcache:persister name="30m" config="1800" type="TIMING" />
+		</ramcache:persist>
 		<ramcache:entity>
 			<ramcache:package name="com.mmorpg.mir.**.entity" />
 		</ramcache:entity>
 	</ramcache:config>
 
-
-	<!-- 管理后台过滤器 -->
-	<bean id="managementFilter" class="com.jour.gameserver.model.session.ManagementFilter">
-		<property name="allowIpConfig" value="${server.socket.filter.manager.ips}" />
-	</bean>
-
-
-	<!-- 防火墙管理器 -->
-	<bean id="firewallManager" class="com.jour.gameserver.model.session.FirewallFilter">
-		<!-- 设置阻止全部连接状态(白名单除外,默认:false) -->
-		<property name="blockAllState" value="${server.socket.firewall.block.autostart}" />
-		<!-- 永久白名单设置(支持"*"号通配符,多IP个默认:空) -->
-		<property name="allows" value="${server.socket.firewall.allows}" />
-		<!-- 管理后台设置，管理后台必须要在白名单里面 -->
-		<property name="allowIpConfig" value="${server.socket.filter.manager.ips}" />
-		<!-- 永久黑名单设置(支持"*"号通配符,多IP个默认:空) -->
-		<property name="blocks" value="${server.socket.firewall.blocks}" />
-		<!-- 临时黑名单阻止时长，单位:秒(默认:600) -->
-		<property name="blockTimes" value="${server.socket.firewall.block.times}" />
-		<!-- 最大客户端连接数(默认:5000) -->
-		<property name="maxClients" value="${server.socket.firewall.client.max}" />
-		<!-- 设置每秒收到的字节数限制(默认:8192) -->
-		<property name="bytesInSecondLimit" value="${server.socket.firewall.client.bytes}" />
-		<!-- 设置每秒收到的数据包次数限制(默认:128) -->
-		<property name="timesInSecondLimit" value="${server.socket.firewall.client.packages}" />
-		<!-- 设置最大违规次数(默认:5) -->
-		<property name="maxViolateTimes" value="${server.socket.firewall.client.times}" />
-	</bean>
-
-	<bean id="ServerParse" class="com.xiaosan.socket.serializing.SerializerHelper">
-		<property name="location" value="message.xml" />
-	</bean>
-
-	<!-- 外网的dymaic-open属性要为true 内网为false -->
-	<dispatcher:config id="ServerDispatcher"
-		handler-package="com.jour.gameserver" dynamic-open="true" />
-
-	<server:config id="server" dispatcher="ServerDispatcher"
-		parse="ServerParse">
-		<server:ipConfigs>
-			<server:ipConfig port="${server.socket.port}" />
-		</server:ipConfigs>
-	</server:config>
-
-
 	<!-- 静态资源配置 -->
 	<resource:config id="resourceManager">
 		<resource:format location="resource" type="json"
 			suffix="json" />
-		<resource:package name="com.jour.gameserver" />
+		<resource:package name="com.mmorpg.mir" />
 	</resource:config>
 
 	<event:config base-package="com.mmorpg.mir.common.event" />
