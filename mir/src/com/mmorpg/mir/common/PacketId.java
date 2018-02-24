@@ -8,4 +8,13 @@ package com.mmorpg.mir.common;
  *
  */
 public interface PacketId {
+
+	/** 请求登陆验证 */
+	short LOGIN_AUTN_REQ = 1;
+	/** 登陆验证结果 */
+	short LOGIN_AUTN_RESP = 2;
+	/** 请求角色列表信息 */
+	short GET_PLAYERLIST_REQ = 3;
+	/** 返回角色列表信息 */
+	short GET_PLAYERLIST_RESP = 4;
 }

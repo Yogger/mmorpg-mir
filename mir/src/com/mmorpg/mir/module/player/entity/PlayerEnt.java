@@ -11,13 +11,14 @@ import com.windforce.common.ramcache.anno.Persister;
 
 @Entity
 @Cached(size = "maxOnline", persister = @Persister("30s"))
-@NamedQueries({ @NamedQuery(name = "PlayerEnt.name", query = "from PlayerEnt where name = ?") })
+@NamedQueries({
+		@NamedQuery(name = "PlayerEnt.playerShortInfo", query = "SELECT playerId,account,serverId,name,role FROM PlayerEnt") })
 public class PlayerEnt implements IEntity<Long> {
 
 	@Id
 	private long playerId;
 	private String account;
-	private String serverId;
+	private int serverId;
 	private String name;
 	private int role;
 
@@ -63,11 +64,11 @@ public class PlayerEnt implements IEntity<Long> {
 		return true;
 	}
 
-	public String getServerId() {
+	public int getServerId() {
 		return serverId;
 	}
 
-	public void setServerId(String serverId) {
+	public void setServerId(int serverId) {
 		this.serverId = serverId;
 	}
 

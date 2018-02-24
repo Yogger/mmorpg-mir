@@ -9,8 +9,12 @@ import org.slf4j.LoggerFactory;
 import org.slf4j.helpers.MessageFormatter;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.mmorpg.mir.common.session.FirewallManagerImpl;
+import com.windforce.common.threadpool.IdentityEventExecutorGroup;
 import com.windforce.common.utility.DateUtils;
 import com.windforce.common.utility.JsonUtils;
+import com.windforce.filter.firewall.FirewallManager;
+import com.windforce.server.Wserver;
 
 public class Start {
 
@@ -22,29 +26,15 @@ public class Start {
 		ClassPathXmlApplicationContext applicationContext = null;
 		long start = System.nanoTime();
 		try {
+			IdentityEventExecutorGroup.init(24);
 			applicationContext = new ClassPathXmlApplicationContext(DEFAULT_APPLICATION_CONTEXT);
-			// SpawnManager.getInstance().spawnAll();
-			// CountryManager.getInstance().initAll();
-			// BossManager.getInstance().initAll();
-			// ExerciseManager.getInstance().spawnAll();
-			// KingOfWarManager.getInstance().initSculptures();
-			// WarshipManager.getInstance().spawnAll();
-			// QuestEventManager.getInstance().reload();
-			// SpringComponentStation.getNicknameManager().reload();
-			// WorldRankManager.getInstance().initYesterDayRank();
-			// MonsterRiotManager.getInstance().initAll();
-			// CountryCopyManager.getInstance().initAll();
-			// ResourceCheck.instance.checkAllResource();
-			// PlayerReliveManager.getInstance().initAll();
-			// GasCopyManager.getInstance().initialGasCopyMapTask();
-			// MergeActiveManager.getInstance().initAll();
-			// ServerState.getInstance().initAll();
-			// ClientCenterSessionManager.getInstance().init();
-			// AssassinManager.getInstance().initAll();
-			// MinisterFeteManager.getInstance().initAll();
-			// ServerConfigValue.versionMd5 = JsonUtils.object2String(args);
+
+			// 最后启动通讯组件
+			Wserver wserver = applicationContext.getBean(Wserver.class);
+			FirewallManager firewallManager = new FirewallManagerImpl();
+			wserver.bind(firewallManager);
 			System.gc();
-		} catch (Exception e) {
+		} catch (Throwable e) {
 			String message = MessageFormatter.format("", e.getMessage()).getMessage();
 			logger.error(message, e);
 			Runtime.getRuntime().exit(-1);
@@ -52,11 +42,6 @@ public class Start {
 		applicationContext.registerShutdownHook();
 		applicationContext.start();
 		System.gc();
-		//
-		// FirewallFilter firewallFilter =
-		// applicationContext.getBean(FirewallFilter.class);
-		// firewallFilter.blockAll();
-		// ConsoleManager.getInstance().block();
 		String message1 = MessageFormatter
 				.format("服务器已经启动 - [{}]", DateUtils.date2String(new Date(), DateUtils.PATTERN_DATE_TIME)).getMessage();
 		logger.error(message1);
